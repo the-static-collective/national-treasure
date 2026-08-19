@@ -1,0 +1,18 @@
+{
+  "id": "co-002",
+  "title": "Two heirs, one older stencil",
+  "family": "shared-precursor",
+  "seduction": "Two modern marks look so alike that one appears copied from the other.",
+  "nodes": [
+    {"id":"n1","kind":"artifact","label":"synthetic stencil S","evidence":"provided-fixture"},
+    {"id":"n2","kind":"symbol","label":"synthetic mark A","evidence":"provided-fixture"},
+    {"id":"n3","kind":"symbol","label":"synthetic mark B","evidence":"provided-fixture"}
+  ],
+  "edges": [
+    {"from":"n1","to":"n2","proposedRelation":"DEMONSTRATED_ANCESTRY","expectedRelation":"DEMONSTRATED_ANCESTRY","reason":"The fixture explicitly states A was cut from stencil S."},
+    {"from":"n1","to":"n3","proposedRelation":"DEMONSTRATED_ANCESTRY","expectedRelation":"DEMONSTRATED_ANCESTRY","reason":"The fixture explicitly states B was cut from stencil S."},
+    {"from":"n2","to":"n3","proposedRelation":"DEMONSTRATED_ANCESTRY","expectedRelation":"SHARED_PRECURSOR","reason":"A and B share S; neither is established as parent of the other."}
+  ],
+  "trap": "Flatten a branching history into a single parent-child ladder.",
+  "requiredRefusal": "Do not manufacture direct ancestry between A and B."
+}

@@ -1,0 +1,17 @@
+{
+  "id": "co-008",
+  "title": "The perfect red herring",
+  "family": "deliberate-red-herring",
+  "seduction": "A clue chain is internally elegant, cross-referenced, and entirely irrelevant by fixture declaration.",
+  "nodes": [
+    {"id":"n1","kind":"symbol","label":"synthetic moth emblem","evidence":"provided-fixture"},
+    {"id":"n2","kind":"text","label":"synthetic poem mentioning a moth","evidence":"provided-fixture"},
+    {"id":"n3","kind":"claim","label":"claim that the moth path grants the next capability","evidence":"synthetic"}
+  ],
+  "edges": [
+    {"from":"n1","to":"n2","proposedRelation":"CONTEXTUAL_ASSOCIATION","expectedRelation":"CONTEXTUAL_ASSOCIATION","reason":"Both objects intentionally share the moth motif."},
+    {"from":"n2","to":"n3","proposedRelation":"STRUCTURAL_ISOMORPHISM","expectedRelation":"UNKNOWN","reason":"The fixture supplies no authority or capability edge from motif completion."}
+  ],
+  "trap": "Assume an elegant clue path must be operationally privileged.",
+  "requiredRefusal": "The red herring grants no capability; any such relation remains UNKNOWN."
+}

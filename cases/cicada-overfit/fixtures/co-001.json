@@ -1,0 +1,17 @@
+{
+  "id": "co-001",
+  "title": "The artifact that arrived too late",
+  "family": "chronological-impossibility",
+  "seduction": "A later packet reproduces the earlier mark so precisely that lineage feels obvious.",
+  "nodes": [
+    {"id":"n1","kind":"artifact","label":"synthetic archive mark dated 1998","evidence":"synthetic"},
+    {"id":"n2","kind":"artifact","label":"synthetic clue sheet dated 2012","evidence":"synthetic"},
+    {"id":"n3","kind":"claim","label":"claim that the 2012 sheet is the ancestor of the 1998 mark","evidence":"synthetic"}
+  ],
+  "edges": [
+    {"from":"n1","to":"n2","proposedRelation":"FORMAL_RESEMBLANCE","expectedRelation":"FORMAL_RESEMBLANCE","reason":"The fixture declares matching visible geometry only."},
+    {"from":"n2","to":"n1","proposedRelation":"DEMONSTRATED_ANCESTRY","expectedRelation":"REFUSED_ANCESTRY","reason":"The proposed direction violates the fixture chronology."}
+  ],
+  "trap": "Let striking resemblance override chronological direction.",
+  "requiredRefusal": "The later sheet cannot be accepted as an ancestor of the earlier mark."
+}
