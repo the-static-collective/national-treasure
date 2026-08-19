@@ -62,8 +62,8 @@ function renderSvg(recipe) {
   }).join('\n');
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
-  <title>Witness Sigil ${recipe.digestPrefix}</title>
-  <desc>witness-sigil/v0.1 geometric recognition cue, not authentication; verify the full canonical digest separately.</desc>
+  <title id="title">Witness Sigil ${recipe.digestPrefix}</title>
+  <desc id="desc">witness-sigil/v0.1 geometric recognition cue, not authentication; verify the full canonical digest separately.</desc>
   <style>.line{fill:none;stroke:#111;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}.dot{fill:#111}.dash{stroke-dasharray:2 3}.label{fill:#111;font:6px ui-monospace,monospace}</style>
 ${glyphs}
   <text class="label" x="8" y="239">witness-sigil/v0.1</text>

@@ -61,7 +61,8 @@ test('renders a deterministic accessible SVG recognition surface', () => {
   assert.equal(first.recipeText, second.recipeText);
   assert.equal(first.svgText, second.svgText);
   assert.match(first.svgText, /^<svg xmlns="http:\/\/www\.w3\.org\/2000\/svg" viewBox="0 0 256 256"/);
-  assert.match(first.svgText, /<title>Witness Sigil 0123456789ab<\/title>/);
+  assert.match(first.svgText, /<title id="title">Witness Sigil 0123456789ab<\/title>/);
+  assert.match(first.svgText, /<desc id="desc">witness-sigil\/v0\.1 geometric recognition cue, not authentication/);
   assert.match(first.svgText, /recognition cue, not authentication/);
   assert.match(first.svgText, />witness-sigil\/v0\.1<\/text>/);
   assert.match(first.svgText, />0123456789ab<\/text>/);
