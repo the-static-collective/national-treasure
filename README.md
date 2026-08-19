@@ -31,10 +31,17 @@ The first active case is:
 
 - [`cases/coral-castle/`](./cases/coral-castle/) — Edward Leedskalnin, Coral Castle, *A Book in Every Home*, symbolic-number hypotheses, astronomical/magnetic timing, and external comparison objects such as the Philadelphia Masonic Temple.
 
+## Live side threads
+
+Not every clue is ready to become a case. Preserve bounded leads here without promoting them past their evidence:
+
+- [`threads/grebennikov.md`](./threads/grebennikov.md) — Viktor Grebennikov, insect cavity structures, resonance, and the falsifiable mechanical residue beneath the unverified antigravity claim.
+
 ## Repository shape
 
 - [`METHOD.md`](./METHOD.md) — research method and evidence grammar.
 - [`cases/`](./cases/) — one folder per investigation.
+- [`threads/`](./threads/) — live side leads worth preserving before they earn full case status.
 
 ## Rule of the house
 
