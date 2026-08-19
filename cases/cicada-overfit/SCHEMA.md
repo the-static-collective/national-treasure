@@ -92,7 +92,7 @@ REFUSED_ANCESTRY
 UNKNOWN
 ```
 
-The corpus does not introduce `RELATED_TO` or another catch-all edge.
+The corpus does not introduce `RELATED_TO`, `MIXED_ANCESTRY`, or another catch-all edge. A witness with multiple evidenced sources is represented by multiple ordinary incoming relation edges. The corpus must prove that representation is insufficient before a new relation kind is considered.
 
 ## Corpus invariants
 
@@ -107,9 +107,16 @@ The corpus does not introduce `RELATED_TO` or another catch-all edge.
 
 The mixed-edge rule prevents blanket skepticism from passing the exercise. A useful evaluator has to keep strong edges strong while refusing only the unsupported bridge.
 
+The committed corpus currently contains fourteen packets. `co-013` and `co-014` form a matched `mixed-descent-vs-coincidence` pair:
+
+- `co-013` declares two separately witnessed ancestry edges into one mixed descendant;
+- `co-014` presents a similarly striking repeated feature but explicitly supplies no transmission path, so resemblance remains strong while ancestry is refused.
+
+The pair attacks the inference `same pattern therefore same source` without weakening demonstrated ancestry when the fixture actually supplies transmission evidence.
+
 ## v0.1 family set
 
-The committed twelve fixtures cover:
+The committed fourteen fixtures cover:
 
 1. chronological impossibility;
 2. shared precursor;
@@ -122,7 +129,9 @@ The committed twelve fixtures cover:
 9. partial truth chain;
 10. identity/authenticity confusion;
 11. source collapse;
-12. mystery-to-authority escalation.
+12. mystery-to-authority escalation;
+13. mixed descent versus coincidence — witnessed plural ancestry;
+14. mixed descent versus coincidence — independent recurrence.
 
 ## Authority boundary
 

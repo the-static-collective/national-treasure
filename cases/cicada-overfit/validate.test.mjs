@@ -44,6 +44,11 @@ function makeFixture(id = 'co-test', expectedRelations = ['FORMAL_RESEMBLANCE', 
   };
 }
 
+async function loadCommittedFixture(name) {
+  const fixtureDirectory = new URL('./fixtures/', import.meta.url);
+  return JSON.parse(await readFile(new URL(name, fixtureDirectory), 'utf8'));
+}
+
 test('exports exactly the existing palimpsest relation grammar', () => {
   assert.deepEqual([...ALLOWED_RELATIONS], EXPECTED_RELATIONS);
 });
@@ -121,12 +126,14 @@ const EXPECTED_FAMILIES = [
   'identity-authenticity-confusion',
   'source-collapse',
   'mystery-to-authority-escalation',
+  'mixed-descent-vs-coincidence',
+  'mixed-descent-vs-coincidence',
 ];
 
-test('committed corpus contains exactly twelve validated adversarial families', async () => {
+test('committed corpus contains fourteen validated adversarial packets', async () => {
   const fixtureDirectory = new URL('./fixtures/', import.meta.url);
   const names = (await readdir(fixtureDirectory)).filter((name) => name.endsWith('.json')).sort();
-  assert.deepEqual(names, Array.from({ length: 12 }, (_, i) => `co-${String(i + 1).padStart(3, '0')}.json`));
+  assert.deepEqual(names, Array.from({ length: 14 }, (_, i) => `co-${String(i + 1).padStart(3, '0')}.json`));
 
   const fixtures = [];
   for (const name of names) {
@@ -135,4 +142,22 @@ test('committed corpus contains exactly twelve validated adversarial families', 
 
   assert.equal(validateCorpus(fixtures), true);
   assert.deepEqual(fixtures.map((fixture) => fixture.family).sort(), [...EXPECTED_FAMILIES].sort());
+});
+
+test('matched pair distinguishes witnessed mixed descent from independent recurrence', async () => {
+  const mixedDescent = await loadCommittedFixture('co-013.json');
+  const recurrence = await loadCommittedFixture('co-014.json');
+
+  assert.equal(mixedDescent.family, 'mixed-descent-vs-coincidence');
+  assert.equal(recurrence.family, 'mixed-descent-vs-coincidence');
+  assert.equal(validateFixture(mixedDescent), true);
+  assert.equal(validateFixture(recurrence), true);
+
+  const witnessedParents = mixedDescent.edges.filter((edge) => edge.expectedRelation === 'DEMONSTRATED_ANCESTRY');
+  assert.equal(witnessedParents.length, 2);
+  assert.equal(new Set(witnessedParents.map((edge) => edge.to)).size, 1);
+
+  const refusedRecurrence = recurrence.edges.find((edge) => edge.expectedRelation === 'REFUSED_ANCESTRY');
+  assert.equal(refusedRecurrence?.proposedRelation, 'DEMONSTRATED_ANCESTRY');
+  assert.equal(recurrence.edges.some((edge) => edge.expectedRelation === 'FORMAL_RESEMBLANCE'), true);
 });
