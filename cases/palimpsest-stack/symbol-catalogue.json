@@ -1,0 +1,74 @@
+{
+  "schema": "national-treasure/symbol-catalogue/v0.1",
+  "status": "design-experiment",
+  "authorityBoundary": "These symbols are eCODE-native design conventions. They are not claimed to be ancient, cryptographic authority, signatures, or historical script values.",
+  "primitives": [
+    {"id":"P0","hex":"0","name":"particularity","geometry":"point","meaning":"specimen or particular"},
+    {"id":"P1","hex":"1","name":"relation","geometry":"segment","meaning":"carried connection"},
+    {"id":"P2","hex":"2","name":"environment","geometry":"closed-circle","meaning":"bounded context"},
+    {"id":"P3","hex":"3","name":"open-context","geometry":"open-circle","meaning":"unresolved or permeable boundary"},
+    {"id":"P4","hex":"4","name":"attractor","geometry":"oriented-triangle","meaning":"directed proposal or future constraint"},
+    {"id":"P5","hex":"5","name":"constituted-body","geometry":"square","meaning":"current body or stage"},
+    {"id":"P6","hex":"6","name":"transformation","geometry":"crossing","meaning":"crossing of trajectories or state change"},
+    {"id":"P7","hex":"7","name":"invariant","geometry":"parallel-pair","meaning":"distinction maintained across movement"},
+    {"id":"P8","hex":"8","name":"witnessed-specimen","geometry":"point-in-circle","meaning":"observation in context"},
+    {"id":"P9","hex":"9","name":"refusal","geometry":"broken-segment","meaning":"severed reachability or refused edge"},
+    {"id":"PA","hex":"A","name":"iteration","geometry":"recursive-turn","meaning":"return with difference or mutation"},
+    {"id":"PB","hex":"B","name":"neighborhood","geometry":"sixfold-neighborhood","meaning":"lawful local adjacency"},
+    {"id":"PC","hex":"C","name":"palimpsest","geometry":"nested-rings","meaning":"representation inside representation"},
+    {"id":"PD","hex":"D","name":"reflection","geometry":"mirror-axis","meaning":"reversible representation transform"},
+    {"id":"PE","hex":"E","name":"branch","geometry":"diverging-junction","meaning":"sibling lineage or divergence"},
+    {"id":"PF","hex":"F","name":"convergence","geometry":"converging-junction","meaning":"merge with named inputs"}
+  ],
+  "operators": [
+    "TRANSLATE",
+    "ROTATE",
+    "REFLECT",
+    "SCALE",
+    "REPEAT",
+    "OVERLAP",
+    "LIGATE",
+    "CUT",
+    "OPEN",
+    "CLOSE",
+    "NEST",
+    "BRANCH",
+    "MERGE",
+    "PROJECT"
+  ],
+  "relationKinds": [
+    "DEMONSTRATED_ANCESTRY",
+    "CLAIMED_ANCESTRY",
+    "SHARED_PRECURSOR",
+    "DOCUMENTED_INFLUENCE",
+    "TRANSLATION",
+    "TRANSLITERATION",
+    "REENCODING",
+    "REINTERPRETATION",
+    "FORMAL_RESEMBLANCE",
+    "STRUCTURAL_ISOMORPHISM",
+    "CONTEXTUAL_ASSOCIATION",
+    "RETROSPECTIVE_NAMING",
+    "CONTRADICTION",
+    "REFUSED_ANCESTRY",
+    "UNKNOWN"
+  ],
+  "witnessSigil": {
+    "version": "witness-sigil/v0.1",
+    "input": "existing canonical SHA-256 digest",
+    "projection": {
+      "visibleNibbles": 16,
+      "mapping": "hex nibble 0-F maps to primitive P0-PF",
+      "layout": "fixed deterministic four-by-four radial/quadrant arrangement",
+      "rotation": "derived only from declared digest bits",
+      "textCompanion": "display an 8-12 character digest prefix in serious contexts"
+    },
+    "nonGoals": [
+      "replace the canonical digest",
+      "act as a digital signature",
+      "prove identity by visual match",
+      "create authority",
+      "claim cryptographic collision resistance for the reduced visual projection"
+    ]
+  }
+}
