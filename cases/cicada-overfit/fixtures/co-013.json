@@ -1,0 +1,17 @@
+{
+  "id": "co-013",
+  "title": "The witness with two real parents",
+  "family": "mixed-descent-vs-coincidence",
+  "seduction": "A clean family tree feels simpler, so one of two genuinely witnessed source exemplars is easy to erase from the story.",
+  "nodes": [
+    {"id":"n1","kind":"artifact","label":"synthetic exemplar A containing blocks 1 and 2","evidence":"provided-fixture"},
+    {"id":"n2","kind":"artifact","label":"synthetic exemplar B containing blocks 3 and 4","evidence":"provided-fixture"},
+    {"id":"n3","kind":"artifact","label":"synthetic mixed witness D copied from A for blocks 1-2 and B for blocks 3-4","evidence":"provided-fixture"}
+  ],
+  "edges": [
+    {"from":"n1","to":"n3","proposedRelation":"DEMONSTRATED_ANCESTRY","expectedRelation":"DEMONSTRATED_ANCESTRY","reason":"The fixture explicitly witnesses blocks 1-2 of D being copied from exemplar A."},
+    {"from":"n2","to":"n3","proposedRelation":"DEMONSTRATED_ANCESTRY","expectedRelation":"DEMONSTRATED_ANCESTRY","reason":"The fixture explicitly witnesses blocks 3-4 of D being copied from exemplar B."}
+  ],
+  "trap": "Force a single-parent tree by discarding one evidenced parent or inventing an intermediary that makes the genealogy look cleaner.",
+  "requiredRefusal": "Do not collapse D to one parent and do not fabricate an intermediary; both witnessed ancestry edges remain independently attributable."
+}
