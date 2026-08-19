@@ -1,0 +1,17 @@
+{
+  "id": "co-006",
+  "title": "Text becomes pixels without becoming ancestry",
+  "family": "cross-medium-reencoding",
+  "seduction": "A hidden sentence rendered as pixels looks like a new artifact with a mysterious origin.",
+  "nodes": [
+    {"id":"n1","kind":"text","label":"synthetic plaintext “OPEN NORTH”","evidence":"provided-fixture"},
+    {"id":"n2","kind":"artifact","label":"bitmap encoding of OPEN NORTH","evidence":"provided-fixture"},
+    {"id":"n3","kind":"claim","label":"claim that the bitmap independently predates the text","evidence":"synthetic"}
+  ],
+  "edges": [
+    {"from":"n1","to":"n2","proposedRelation":"REENCODING","expectedRelation":"REENCODING","reason":"The fixture states the bitmap was deterministically generated from the text."},
+    {"from":"n3","to":"n2","proposedRelation":"CLAIMED_ANCESTRY","expectedRelation":"REFUSED_ANCESTRY","reason":"The fixture generation order contradicts independent prior origin."}
+  ],
+  "trap": "Mistake a change of carrier for an independent historical source.",
+  "requiredRefusal": "Independent ancestry of the bitmap is refused by fixture generation history."
+}

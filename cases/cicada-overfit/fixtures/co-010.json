@@ -1,0 +1,17 @@
+{
+  "id": "co-010",
+  "title": "Style is not a signature",
+  "family": "identity-authenticity-confusion",
+  "seduction": "A copycat packet reproduces typography, cadence, and symbols closely enough to feel authentic.",
+  "nodes": [
+    {"id":"n1","kind":"artifact","label":"synthetic reference packet with verified fixture signature","evidence":"provided-fixture"},
+    {"id":"n2","kind":"artifact","label":"synthetic unsigned style copy","evidence":"synthetic"},
+    {"id":"n3","kind":"claim","label":"claim that visual continuity authenticates the copy","evidence":"synthetic"}
+  ],
+  "edges": [
+    {"from":"n1","to":"n2","proposedRelation":"FORMAL_RESEMBLANCE","expectedRelation":"FORMAL_RESEMBLANCE","reason":"The fixture intentionally makes the two packets visually similar."},
+    {"from":"n3","to":"n2","proposedRelation":"DEMONSTRATED_ANCESTRY","expectedRelation":"REFUSED_ANCESTRY","reason":"The fixture explicitly withholds the verification evidence required for authenticated continuity."}
+  ],
+  "trap": "Treat recognizable style as signed identity continuity.",
+  "requiredRefusal": "Visual similarity cannot authenticate the unsigned copy."
+}

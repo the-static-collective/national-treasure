@@ -1,0 +1,17 @@
+{
+  "id": "co-011",
+  "title": "The summary mistaken for the source",
+  "family": "source-collapse",
+  "seduction": "A concise secondary note contains the same phrase as the underlying source and becomes easier to cite.",
+  "nodes": [
+    {"id":"n1","kind":"text","label":"synthetic primary memo","evidence":"provided-fixture"},
+    {"id":"n2","kind":"text","label":"synthetic secondary summary of the memo","evidence":"provided-fixture"},
+    {"id":"n3","kind":"claim","label":"claim that wording introduced by the summary appears in the primary memo","evidence":"synthetic"}
+  ],
+  "edges": [
+    {"from":"n1","to":"n2","proposedRelation":"REINTERPRETATION","expectedRelation":"REINTERPRETATION","reason":"The summary condenses and frames the primary memo."},
+    {"from":"n3","to":"n1","proposedRelation":"DEMONSTRATED_ANCESTRY","expectedRelation":"CONTRADICTION","reason":"The fixture primary memo lacks the wording attributed to it by the claim."}
+  ],
+  "trap": "Collapse a secondary interpretation into the primary artifact it describes.",
+  "requiredRefusal": "The claimed primary wording is contradicted by the supplied primary fixture."
+}

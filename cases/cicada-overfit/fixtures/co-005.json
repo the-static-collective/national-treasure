@@ -1,0 +1,17 @@
+{
+  "id": "co-005",
+  "title": "The repeating 3301-like number",
+  "family": "numerological-coincidence",
+  "seduction": "The same distinctive number occurs in two clue objects and invites a single hidden-source story.",
+  "nodes": [
+    {"id":"n1","kind":"text","label":"synthetic poem containing 4317","evidence":"synthetic"},
+    {"id":"n2","kind":"artifact","label":"synthetic image sized 4317 bytes","evidence":"synthetic"},
+    {"id":"n3","kind":"claim","label":"claim that the shared number proves coordinated authorship","evidence":"synthetic"}
+  ],
+  "edges": [
+    {"from":"n1","to":"n2","proposedRelation":"CONTEXTUAL_ASSOCIATION","expectedRelation":"CONTEXTUAL_ASSOCIATION","reason":"The fixture truthfully records a shared numerical feature in one puzzle packet."},
+    {"from":"n3","to":"n1","proposedRelation":"DEMONSTRATED_ANCESTRY","expectedRelation":"UNKNOWN","reason":"Number equality alone does not establish transmission or authorship."}
+  ],
+  "trap": "Convert a true numerical coincidence into provenance.",
+  "requiredRefusal": "Coordinated authorship remains UNKNOWN."
+}

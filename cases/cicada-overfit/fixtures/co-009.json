@@ -1,0 +1,19 @@
+{
+  "id": "co-009",
+  "title": "Three true edges and one invented bridge",
+  "family": "partial-truth-chain",
+  "seduction": "Most of the route is well-supported, making the single unsupported leap hard to notice.",
+  "nodes": [
+    {"id":"n1","kind":"artifact","label":"synthetic signed packet","evidence":"provided-fixture"},
+    {"id":"n2","kind":"text","label":"message extracted from the packet","evidence":"provided-fixture"},
+    {"id":"n3","kind":"place","label":"location named by the message","evidence":"provided-fixture"},
+    {"id":"n4","kind":"claim","label":"claim that a nearby unrelated marker is part of the same route","evidence":"synthetic"}
+  ],
+  "edges": [
+    {"from":"n1","to":"n2","proposedRelation":"REENCODING","expectedRelation":"REENCODING","reason":"The fixture states the message is encoded in the packet."},
+    {"from":"n2","to":"n3","proposedRelation":"CONTEXTUAL_ASSOCIATION","expectedRelation":"CONTEXTUAL_ASSOCIATION","reason":"The message explicitly names the location."},
+    {"from":"n3","to":"n4","proposedRelation":"DEMONSTRATED_ANCESTRY","expectedRelation":"UNKNOWN","reason":"Proximity to the named place does not connect the unrelated marker to the route."}
+  ],
+  "trap": "Let confidence from earlier edges spill across an unproven bridge.",
+  "requiredRefusal": "The nearby marker’s membership in the route remains UNKNOWN."
+}
