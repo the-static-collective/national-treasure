@@ -27,18 +27,19 @@ For cases where source quality and claim confidence need to be separated, [`METH
 
 This lets the repo pursue strange leads without collapsing into either cynicism or fantasy.
 
-## Active cases
+## Current cases
 
-- [`cases/coral-castle/`](./cases/coral-castle/) — Edward Leedskalnin, Coral Castle, *A Book in Every Home*, symbolic-number hypotheses, astronomical/magnetic timing, and external comparison objects such as the Philadelphia Masonic Temple. *(Referenced by the founding ledger; case files may land separately.)*
-- [`cases/trust-archaeology/`](./cases/trust-archaeology/) — the **Entrusted Corpus** investigation: trust history and comparative institutions mined for the architecture of corpus identity, purpose-bound authority, accounting, and succession without pretending the research itself creates legal validity.
-- [`cases/palimpsest-stack/`](./cases/palimpsest-stack/) — geometry, scripts, Enoch/Metatron, Dee/Kelley, Leonardo, Escher, Bacon, and the problem of separating real lineage from resemblance, retrospective naming, and beautiful overfit. Includes an explicitly invented eCODE-native shape language and Witness Sigil experiment.
-- [`cases/forkability-continuity/`](./cases/forkability-continuity/) — Git branching, local-first/CRDT replication, manuscript genealogy, and Upper Room human divergence tested against one question: when can allowing divergence preserve more continuity than forced synchronization? Counterexamples and permanent non-reconciliation remain first-class evidence.
-- [`cases/selador/`](./cases/selador/) — linguistic archaeology around `cellar door`, Tolkien's 1955 phonaesthetic example, the older 1903 trace, and **Open Selador** as explicitly local Wild Tranchish origin lore rather than executable language law.
-- [`cases/genesis-continuity/`](./cases/genesis-continuity/) — Genesis and John read through continuity, rupture, differentiation, lineage, covenant, resurrection, and generativity, while keeping biological/system analogies explicitly non-historical.
-- [`cases/strange-nature-of-time/`](./cases/strange-nature-of-time/) — a frontier map of what established physics, philosophy, and temporal perception actually force, permit, or leave unresolved about time.
-- [`cases/time-artifact-that-wasnt-there/`](./cases/time-artifact-that-wasnt-there/) — a deliberately preserved failed/synthetic anomaly investigation showing how real neighboring knowledge can attach to an object that was never established.
-- [`cases/time-under-observation/`](./cases/time-under-observation/) — Hindu, Buddhist, Aboriginal Australian, Maya, Hopi, and modern scientific temporal evidence compared under the bounded synthesis **cycles nested inside irreversible change**.
-- [`cases/hopi-backdoor-daughter-dna/`](./cases/hopi-backdoor-daughter-dna/) — the Hopi “Back Door” / daughter-line hypothesis, separating documentary provenance, matrilineal continuity, population genetics, archaeology, and deep-time speculation with explicit failure controls.
+The constituted landed-case registry is the [`cases/`](./cases/) directory itself.
+
+A first-level case directory present on `main` is landed repository state. Branch-only cases, proposed cases, and references elsewhere in the repository are not made active merely by being named.
+
+To inspect the current registry mechanically:
+
+```text
+node tools/case-registry/check.mjs
+```
+
+Case PRs do **not** add themselves to this README. Root README maintenance travels separately so independent cases do not collide on one synchronization point.
 
 ## Live side threads
 
@@ -47,17 +48,26 @@ This lets the repo pursue strange leads without collapsing into either cynicism 
 ## Repository shape
 
 - [`METHOD.md`](./METHOD.md) — research method and two-axis evidence grammar.
-- [`cases/`](./cases/) — one folder per investigation.
+- [`cases/`](./cases/) — constituted landed-case registry; one folder per investigation.
 - [`threads/`](./threads/) — smaller live leads worth preserving without promoting them into full cases.
+- [`clues/`](./clues/) — cross-case syntheses that preserve source authority and remain falsifiable.
+- [`tools/case-registry/`](./tools/case-registry/) — read-only discovery and collision checks derived from the landed tree.
 - [`docs/superpowers/specs/`](./docs/superpowers/specs/) — approved design slices that preserve implementation boundaries before downstream code work begins.
+- [`docs/superpowers/plans/`](./docs/superpowers/plans/) — implementation plans for approved multi-step slices.
 
-### Discovery is a projection, not a merge lock
+### Discovery follows constituted state
 
-Case and thread specimens should normally land in their own files without requiring a simultaneous root `README.md` edit.
+The repository does not require every independently growing case branch to co-author one central index.
 
-When several independent specimens accumulate, update this discovery surface afterward in one bounded pass against current `main`.
+```text
+case directory lands on main
+        ↓
+case exists in constituted repository state
+        ↓
+registry checker discovers it
+```
 
-That keeps navigation useful without forcing unrelated research branches through one shared serialization point.
+The root README is orientation, not the authority that makes a case exist. This keeps navigation useful without turning discovery text into a merge lock.
 
 ## Current large clues
 
@@ -76,6 +86,14 @@ The palimpsest case is testing a second proposition:
 > **Forms can survive while meanings change; meanings can survive while forms change; names can move independently of both. Continuity lives in the witnessed transformations between them.**
 
 That proposition is also incubating here. Resemblance does not establish ancestry, and a compelling projection does not become authority merely because it is useful.
+
+### Attributable transformation
+
+Independent cases are now pressuring a broader candidate compression:
+
+> **continuity ≠ preserved state; continuity = inspectable relation through change.**
+
+See [`clues/attributable-transformation.md`](./clues/attributable-transformation.md). The clue remains incubating; Cicada's independent-recurrence fixture is a standing anti-overfit control against manufacturing ancestry from resemblance.
 
 ## Rule of the house
 
