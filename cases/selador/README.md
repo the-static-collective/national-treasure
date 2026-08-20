@@ -2,6 +2,7 @@
 
 **Status:** bounded origin-resonance note; not executable language law  
 **Neighbor:** [TranchNode Tranchish v0 spike](https://github.com/the-static-collective/tranchnode/blob/main/docs/TRANCHISH_V0_SPIKE.md)  
+**Deepening:** [Tolkien language-making — decompression as an analytical lens](./tolkien-language-decompression.md)  
 **Seed:** `open cellar door`
 
 ## Why this clue exists
