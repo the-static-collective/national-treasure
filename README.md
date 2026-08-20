@@ -101,3 +101,5 @@ See [`clues/attributable-transformation.md`](./clues/attributable-transformation
 
 A clue becomes stronger when independently sourced structures converge on it.
 A clue becomes weaker when the procedure used to find it could have manufactured it.
+
+<!-- INTENTIONAL CASE-REGISTRY COLLISION SMOKE TEST — THIS BRANCH MUST NEVER MERGE -->
