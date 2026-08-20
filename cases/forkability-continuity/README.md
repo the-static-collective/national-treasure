@@ -82,7 +82,9 @@ obligation to merge
 
 A merge can be available without already being constituted, authoritative, required, or preferable.
 
-That edge is now being pressure-tested directly in Project0 PR #55 using the existing Typed Continuity Braid. Until that PR lands, it remains current project work rather than settled National Treasure evidence.
+Project0 PR #55 has now pressure-tested that edge against the existing Typed Continuity Braid and landed as `NO_GAP`. The existing grammar represented merge proposal, coexistence, and refusal as separately addressable continuations while the merge proposal acquired no authority and replaced neither parent.
+
+That is project-owned executable evidence for the anti-collapse edge. It is still not evidence that every domain should expose those exact dispositions or that branching is inherently continuity-preserving.
 
 ## Counterevidence and failure cases
 
@@ -107,6 +109,7 @@ Any architecture extracted from this case must be able to represent successful r
 - CRDT research formalizes convergence for specially designed replicated data types.
 - INTF documentation distinguishes analytical/potential ancestry from actual historical ancestry.
 - Upper Room has landed a project-local continuity-without-captivity design.
+- Project0 PR #55 landed executable evidence that merge proposal, coexistence, and refusal can remain separately addressable without a merge proposal acquiring authority or replacing its parents.
 
 **Inference:**
 
