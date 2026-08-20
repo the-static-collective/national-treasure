@@ -1,0 +1,30 @@
+name: Case registry
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Registry tests
+        run: node --test tools/case-registry/check.test.mjs
+      - name: Registry state
+        run: node tools/case-registry/check.mjs
+      - name: Reject case plus root README collision
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          git diff --name-only "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}" \
+            | node tools/case-registry/check.mjs --changed-files-stdin
