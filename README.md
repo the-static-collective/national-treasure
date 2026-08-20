@@ -34,7 +34,6 @@ This lets the repo pursue strange leads without collapsing into either cynicism 
 - [`cases/palimpsest-stack/`](./cases/palimpsest-stack/) — geometry, scripts, Enoch/Metatron, Dee/Kelley, Leonardo, Escher, Bacon, and the problem of separating real lineage from resemblance, retrospective naming, and beautiful overfit. Includes an explicitly invented eCODE-native shape language and Witness Sigil experiment.
 - [`cases/forkability-continuity/`](./cases/forkability-continuity/) — Git branching, local-first/CRDT replication, manuscript genealogy, and Upper Room human divergence tested against one question: when can allowing divergence preserve more continuity than forced synchronization? Counterexamples and permanent non-reconciliation remain first-class evidence.
 - [`cases/selador/`](./cases/selador/) — linguistic archaeology around `cellar door`, Tolkien's 1955 phonaesthetic example, the older 1903 trace, and **Open Selador** as explicitly local Wild Tranchish origin lore rather than executable language law.
-- [`cases/hopi-backdoor-daughter-dna/`](./cases/hopi-backdoor-daughter-dna/) — the **Daughter / Back Door** case: Hopi matrilineal continuity, the published “North to the Back Door” motif, Beringian population history, and the user-generated `found/made` readings kept under an explicit failure ledger so structural resonance cannot masquerade as deep-time proof.
 
 ## Repository shape
 
