@@ -34,12 +34,30 @@ This lets the repo pursue strange leads without collapsing into either cynicism 
 - [`cases/palimpsest-stack/`](./cases/palimpsest-stack/) — geometry, scripts, Enoch/Metatron, Dee/Kelley, Leonardo, Escher, Bacon, and the problem of separating real lineage from resemblance, retrospective naming, and beautiful overfit. Includes an explicitly invented eCODE-native shape language and Witness Sigil experiment.
 - [`cases/forkability-continuity/`](./cases/forkability-continuity/) — Git branching, local-first/CRDT replication, manuscript genealogy, and Upper Room human divergence tested against one question: when can allowing divergence preserve more continuity than forced synchronization? Counterexamples and permanent non-reconciliation remain first-class evidence.
 - [`cases/selador/`](./cases/selador/) — linguistic archaeology around `cellar door`, Tolkien's 1955 phonaesthetic example, the older 1903 trace, and **Open Selador** as explicitly local Wild Tranchish origin lore rather than executable language law.
+- [`cases/genesis-continuity/`](./cases/genesis-continuity/) — Genesis and John read through continuity, rupture, differentiation, lineage, covenant, resurrection, and generativity, while keeping biological/system analogies explicitly non-historical.
+- [`cases/strange-nature-of-time/`](./cases/strange-nature-of-time/) — a frontier map of what established physics, philosophy, and temporal perception actually force, permit, or leave unresolved about time.
+- [`cases/time-artifact-that-wasnt-there/`](./cases/time-artifact-that-wasnt-there/) — a deliberately preserved failed/synthetic anomaly investigation showing how real neighboring knowledge can attach to an object that was never established.
+- [`cases/time-under-observation/`](./cases/time-under-observation/) — Hindu, Buddhist, Aboriginal Australian, Maya, Hopi, and modern scientific temporal evidence compared under the bounded synthesis **cycles nested inside irreversible change**.
+- [`cases/hopi-backdoor-daughter-dna/`](./cases/hopi-backdoor-daughter-dna/) — the Hopi “Back Door” / daughter-line hypothesis, separating documentary provenance, matrilineal continuity, population genetics, archaeology, and deep-time speculation with explicit failure controls.
+
+## Live side threads
+
+- [`threads/grebennikov.md`](./threads/grebennikov.md) — Viktor Grebennikov's cavity-structure / insect-flight claims preserved beside grounded insect resonance and elasticity research as a falsifiable side thread, not established antigravity physics.
 
 ## Repository shape
 
 - [`METHOD.md`](./METHOD.md) — research method and two-axis evidence grammar.
 - [`cases/`](./cases/) — one folder per investigation.
+- [`threads/`](./threads/) — smaller live leads worth preserving without promoting them into full cases.
 - [`docs/superpowers/specs/`](./docs/superpowers/specs/) — approved design slices that preserve implementation boundaries before downstream code work begins.
+
+### Discovery is a projection, not a merge lock
+
+Case and thread specimens should normally land in their own files without requiring a simultaneous root `README.md` edit.
+
+When several independent specimens accumulate, update this discovery surface afterward in one bounded pass against current `main`.
+
+That keeps navigation useful without forcing unrelated research branches through one shared serialization point.
 
 ## Current large clues
 
