@@ -16,6 +16,8 @@ Stable records:
 - Smithsonian Libraries and Archives: https://www.si.edu/object/book-hopi-frank-waters-drawings-and-source-material-recorded-oswald-white-bear-fredericks%3Asiris_sil_771579
 - Google Books bibliographic/contents record: https://books.google.com/books/about/Book_of_the_Hopi.html?id=pEN1AAAAMAAJ
 
+The Google Books contents record independently confirms the sequence `Migrations of the Clans → The Four Migrations → North to the Back Door` and places the chapter at p. 37. This confirms the English publication title, not its pre-1963 antiquity or Hopi-language form.
+
 ### A2. eHRAF World Cultures — *Book of the Hopi* document record.
 
 **Role:** independent anthropological metadata/evaluation of Waters/Fredericks.  
@@ -91,6 +93,15 @@ PDF archive: https://www.archaeologysouthwest.org/pdf/arch-sw-v21-no2.pdf
 
 University of Arizona Press open-access materials: https://open.uapress.arizona.edu/
 
+### C3. Bernardini, Wesley. *Hopi Oral Tradition and the Archaeology of Identity*. University of Arizona Press, 2005.
+
+Publisher record: https://uapress.arizona.edu/book/hopi-oral-tradition-and-the-archaeology-of-identity
+
+**Role:** strongest source found in the deep-research hardening pass for the migration→identity relationship.  
+**Use:** Bernardini's formulation treats clan identity as something accumulated through experiences on a group's distinct migration pathway. That makes “identity formed along the route” a documented Hopi-migration proposition rather than a metaphor imported from genetics.
+
+**Restraint:** the book concerns Hopi oral tradition, identity formation, and archaeologically testable later migration processes. It does not establish that the Back Door motif itself is Pleistocene.
+
 ---
 
 ## D. Beringia and Indigenous American population history
@@ -132,11 +143,12 @@ DOI / article: https://www.nature.com/articles/nature25173
 **Role:** Ancient Beringian genome from Upward Sun River.  
 **Use:** nuclear-genome evidence for deep branching among populations ancestral/related to Native Americans in Beringia.
 
-### D6. Castro e Silva, Marcos Araújo, et al. “The Evolutionary History and Unique Genetic Diversity of Indigenous Americans.” *Nature* (2026).
+### D6. Castro e Silva, Marcos Araújo, et al. “The Evolutionary History and Unique Genetic Diversity of Indigenous Americans.” *Nature* 653 (2026): 134–145.
 
-Article: https://www.nature.com/articles/s41586-026-10406-w
+DOI: https://doi.org/10.1038/s41586-026-10406-w  
+PubMed: https://pubmed.ncbi.nlm.nih.gov/42020734/
 
-**Role:** current broad genomic synthesis and new high-coverage Indigenous American genomes.  
+**Role:** current broad genomic synthesis and 128 newly generated high-coverage Indigenous American genomes.  
 **Use:** current statement that Indigenous American ancestry formation began about 25,000 years ago in and around Beringia, followed after partial isolation by major dispersal and later complex continental differentiation.
 
 **Restraint:** this broad continental result does not identify the ancestry or route encoded by any particular Hopi narrative.
@@ -149,6 +161,17 @@ DOI: https://doi.org/10.1002/ajpa.10138
 **Use:** demonstrate that Southwest mtDNA has been studied in relation to migration hypotheses.
 
 **Restraint:** legacy regional sampling cannot bear a story-specific Pleistocene inference by itself.
+
+### D8. Perego, Ugo A., et al. “The Initial Peopling of the Americas: A Growing Number of Founding Mitochondrial Genomes from Beringia.” *Genome Research* 20, no. 9 (2010): 1174–1179.
+
+DOI: https://doi.org/10.1101/gr.109231.110  
+PMCID: PMC2928495  
+Open text: https://pmc.ncbi.nlm.nih.gov/articles/PMC2928495/
+
+**Role:** corrective source for the tempting but over-simple C1 family tree.  
+**Use:** resolves C1d into the same broad founding-age range as C1b/C1c and identifies two C1d founder genomes; concludes that recognized Native American maternal founding lineages were already at least fifteen at that resolution.
+
+**Restraint:** C1a should not be drawn as though it were simply the direct Asian parent node of C1b/C1c/C1d. The useful insight is related branching and founder differentiation, not the mnemonic topology of a simplified sketch.
 
 ---
 
@@ -179,6 +202,19 @@ The case should actively seek skeptical literature as well as positive analogues
 5. Search Hopi Cultural Preservation Office publications for public/community-approved discussions of northward clan migration and emergence geography.
 6. Build a motif table only after independent variants are found: direction, boundary, ice/snow, water, mountains, peoples beyond, route order, ritual function, clan attribution, and stopping places.
 7. Keep the genetic inquiry continental unless Hopi-led research supplies ethically appropriate finer-grained evidence.
+
+---
+
+## G. Archaeogenomic maternal-continuity analogue
+
+### G1. Kennett, Douglas J., et al. “Archaeogenomic Evidence Reveals Prehistoric Matrilineal Dynasty.” *Nature Communications* 8 (2017): 14115.
+
+DOI: https://doi.org/10.1038/ncomms14115
+
+**Role:** independent ancient-DNA specimen showing durable maternal descent in the ancestral Pueblo world.  
+**Use:** nine Pueblo Bonito burials shared identical mitochondrial genomes; genome-wide data resolved a mother–daughter pair and a grandmother–grandson relation; the authors infer an elite matriline persisting for roughly 330 years.
+
+**Restraint:** the paper explicitly states that relationships between prehistoric Chaco people and specific modern Native American groups remain uncertain. This source supports the reality of durable matrilineal continuity in the region, not a direct Hopi genealogy and not the Back Door hypothesis.
 
 ## Source rule for this case
 
