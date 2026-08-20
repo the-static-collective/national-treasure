@@ -32,7 +32,8 @@ This lets the repo pursue strange leads without collapsing into either cynicism 
 - [`cases/coral-castle/`](./cases/coral-castle/) — Edward Leedskalnin, Coral Castle, *A Book in Every Home*, symbolic-number hypotheses, astronomical/magnetic timing, and external comparison objects such as the Philadelphia Masonic Temple. *(Referenced by the founding ledger; case files may land separately.)*
 - [`cases/trust-archaeology/`](./cases/trust-archaeology/) — the **Entrusted Corpus** investigation: trust history and comparative institutions mined for the architecture of corpus identity, purpose-bound authority, accounting, and succession without pretending the research itself creates legal validity.
 - [`cases/palimpsest-stack/`](./cases/palimpsest-stack/) — geometry, scripts, Enoch/Metatron, Dee/Kelley, Leonardo, Escher, Bacon, and the problem of separating real lineage from resemblance, retrospective naming, and beautiful overfit. Includes an explicitly invented eCODE-native shape language and Witness Sigil experiment.
-- [`cases/genesis-continuity/`](./cases/genesis-continuity/) — Genesis reread through continuity, rupture, differentiation, lineage, covenant, and the bounded side-analogy of mitosis: **division can preserve continuity without implying ancient knowledge of modern cell biology.**
+- [`cases/forkability-continuity/`](./cases/forkability-continuity/) — Git branching, local-first/CRDT replication, manuscript genealogy, and Upper Room human divergence tested against one question: when can allowing divergence preserve more continuity than forced synchronization? Counterexamples and permanent non-reconciliation remain first-class evidence.
+- [`cases/selador/`](./cases/selador/) — linguistic archaeology around `cellar door`, Tolkien's 1955 phonaesthetic example, the older 1903 trace, and **Open Selador** as explicitly local Wild Tranchish origin lore rather than executable language law.
 
 ## Repository shape
 
