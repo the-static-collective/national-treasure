@@ -13,7 +13,7 @@ This ledger uses the repository's two-axis method. Provenance class and support 
 | FC-007 | Project0's existing continuity braid can represent plural ancestry without a special mixed-ancestry primitive. | Observed | Established | Project0 PR #53 | Synthetic conformance evidence does not reconstruct real manuscript history. | Evidence against prematurely adding a new re-entry/genealogy primitive. |
 | FC-008 | A system can preserve continuity across divergence when ancestry, transformations, surviving differences, and conditions of re-entry remain attributable. | Inference | Possible | Cross-family synthesis | Counterexamples include dead branches, duplicated work, access-control problems, permanent schism, and false ancestry. | Candidate architectural extraction; not shared law. |
 | FC-009 | Branching inherently preserves continuity. | Failed | Unsupported | Cross-family overclaim | Git conflicts, abandoned branches, semantic non-convergence, and governance failure directly defeat the unconditional claim. | Keep as a named rejected formulation. |
-| FC-010 | If two descendants are technically mergeable, a merged descendant is therefore constituted, authoritative, required, or preferable. | Failed | Unsupported | Git + Project0 pressure test | Merge is an explicit operation/admission; multiple other dispositions can remain possible. | Core anti-collapse edge: `MERGEABILITY != MERGE OBLIGATION`. |
+| FC-010 | If two descendants are technically mergeable, a merged descendant is therefore constituted, authoritative, required, or preferable. | Failed | Unsupported | Git + landed Project0 PR #55 | Project0 represented merge proposal, coexistence, and refusal as separate lawful continuations; the merge proposal acquired no authority and replaced neither parent. | Core anti-collapse edge: `MERGEABILITY != MERGE OBLIGATION`. |
 | FC-011 | A future cross-domain re-entry grammar may be useful if multiple independent systems repeatedly require coexist / merge / refuse / return distinctions. | Speculation | Possible | Current cross-project pattern | Not yet demonstrated across enough executable domains; naming it now risks premature ontology. | Preserve as incubation only; no `Re-entry Topology` primitive yet. |
 
 ## Failure ledger
@@ -40,4 +40,4 @@ Why it failed: INTF explicitly distinguishes analytical/potential relations from
 
 **Rejected formulation:** `a lawful merge candidate has authority because it can be constructed`.
 
-Why it failed: construction/representation is not constitution, warrant, or admission. The current Project0 attack is specifically testing that boundary.
+Why it failed: construction/representation is not constitution, warrant, or admission. Landed Project0 PR #55 mechanically preserves merge proposal, coexistence, and refusal as separate continuations while the merge proposal establishes no authority.
