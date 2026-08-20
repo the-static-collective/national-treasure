@@ -33,6 +33,8 @@ This lets the repo pursue strange leads without collapsing into either cynicism 
 - [`cases/trust-archaeology/`](./cases/trust-archaeology/) — the **Entrusted Corpus** investigation: trust history and comparative institutions mined for the architecture of corpus identity, purpose-bound authority, accounting, and succession without pretending the research itself creates legal validity.
 - [`cases/palimpsest-stack/`](./cases/palimpsest-stack/) — geometry, scripts, Enoch/Metatron, Dee/Kelley, Leonardo, Escher, Bacon, and the problem of separating real lineage from resemblance, retrospective naming, and beautiful overfit. Includes an explicitly invented eCODE-native shape language and Witness Sigil experiment.
 - [`cases/forkability-continuity/`](./cases/forkability-continuity/) — Git branching, local-first/CRDT replication, manuscript genealogy, and Upper Room human divergence tested against one question: when can allowing divergence preserve more continuity than forced synchronization? Counterexamples and permanent non-reconciliation remain first-class evidence.
+- [`cases/time-artifact-that-wasnt-there/`](./cases/time-artifact-that-wasnt-there/) — a deliberately preserved **failed/synthetic research specimen** in which an underspecified time inquiry caused the research process to manufacture an anomalous artifact, provenance, incidents, and chronology. Useful as a provenance-first warning: plausible evidence-shaped narrative is not evidence.
+- [`cases/strange-nature-of-time/`](./cases/strange-nature-of-time/) — an open inquiry into the objectively strange nature of time across relativity, thermodynamic arrows, quantum gravity, philosophy of time, and temporal perception. v0.1 preserves what is established, what is interpretation, and the substantial primary-source research debt still open.
 
 ## Repository shape
 
@@ -57,6 +59,14 @@ The palimpsest case is testing a second proposition:
 > **Forms can survive while meanings change; meanings can survive while forms change; names can move independently of both. Continuity lives in the witnessed transformations between them.**
 
 That proposition is also incubating here. Resemblance does not establish ancestry, and a compelling projection does not become authority merely because it is useful.
+
+### Time before anomaly
+
+The paired time specimens now preserve a useful distinction:
+
+> **Time is already strange in established inquiry; an invented anomaly is not required to make it strange.**
+
+The substantive time case asks what physics and philosophy actually support. The neighboring failed specimen records how easily an underspecified research target can acquire a synthetic provenance-shaped center. Neither is allowed to borrow evidentiary weight from the other.
 
 ## Rule of the house
 
