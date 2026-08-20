@@ -101,21 +101,42 @@ replacement: old X ends; new Y occupies the role
 resurrection: X crosses a rupture and remains X
 ```
 
-### Counter-pressure: Job's "second wife"
+### Counter-specimen: Job's restoration asymmetry
 
-A useful side thought presses against over-universalizing this principle.
+The joking memory of "Job's second wife — the better wife" turns out to expose a real distinction precisely because the text does **not** say that.
 
-At the end of Job, children are given again after catastrophic loss (Job 42:10–13). The text does **not** say that Job receives a second wife, and it does not describe a replacement wife at all. Therefore the joking formulation "Job's second wife — the better wife" must stay labeled as speculation / interpretive pressure, not textual fact.
+Job's closing restoration treats different categories differently:
 
-But the thought exposes a real question:
+```text
+material possessions -> explicitly increased / doubled
+children             -> seven sons + three daughters again
+wife                 -> no replacement wife is narrated
+```
 
-> When Scripture speaks of restoration, what must be numerically or personally identical, and what may instead be newly given within the continuity of the larger story?
+The opening gives Job seven sons and three daughters (Job 1:2); the ending again gives seven sons and three daughters (Job 42:13). By contrast, the livestock inventory is explicitly enlarged beyond the opening inventory (compare Job 1:3 with 42:12). Job's wife is not replaced in the closing account.
 
-John 11 gives one answer for resurrection: **personal identity matters**.
+That asymmetry matters.
 
-Job's restoration gives a different kind of case: restoration of a life-world does not mean every lost particular is simply replaced by an equivalent token.
+If restoration were merely quantitative replacement, persons could be handled like livestock: loss counted, equivalent units supplied, ledger balanced. But the narrative does not comfortably permit that reading. New children do not make the dead children cease to have been Job's children, and a hypothetical new wife would not make her numerically identical to the first.
 
-The tension is useful. "Continuity" must not be flattened into "everything returns in the same form."
+So the useful inference is:
+
+> **Restoration has different semantics for possessions than for persons.**
+
+Or more sharply:
+
+> **A person is not restored merely because another person can occupy the same role.**
+
+This is exactly why Lazarus matters. A replacement Lazarus could satisfy the social role — brother, friend, household member — while failing the sign entirely. Resurrection requires **identity continuity**, not functional equivalence.
+
+Job therefore supplies a useful counter-pressure against two opposite errors:
+
+1. **continuity = unchanged configuration** — false; genuinely new life and new relations can arise;
+2. **restoration = fungible replacement** — also false where personal identity is constitutive of the claim.
+
+The broader life-world may be restored without every lost particular returning in the same form. But where the claim itself is resurrection, covenantal identity, witness, or personal return, substitution is not enough.
+
+This distinction is interpretive rather than a claim that Job presents a formal metaphysics of personal identity.
 
 ## 6. The seed: continuity can multiply by passing through loss of form
 
@@ -255,8 +276,8 @@ Shared attention can divide, wander, return, deepen, disagree, and multiply whil
 
 ## Evidence boundary
 
-- **Primary textual objects:** John 1, 4, 6, 10–12, 14–17, 20–21; Job 42:10–13.
-- **Interpretive inference:** continuity / severance / generativity language above.
+- **Primary textual objects:** John 1, 4, 6, 10–12, 14–17, 20–21; Job 1:2–3; Job 42:10–13.
+- **Interpretive inference:** continuity / severance / generativity language above; the distinction between personal identity and functional replacement.
 - **Speculation:** any claim that these passages intentionally encode modern systems architecture, information theory, or cell biology.
 - **Architectural extraction:** may remain useful even if the theological analogy is later revised.
 
