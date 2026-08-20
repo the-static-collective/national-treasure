@@ -146,44 +146,50 @@ A clue may combine independently owned cases while preserving each source's epis
 
 ## Prevention hack
 
-The workflow deliberately favors a small hack over a centralized service.
+The workflow deliberately favors a small hard rule over a centralized service.
 
 ### Rule 1 — case PRs do not edit the root README
 
-New or updated case PRs should modify only their owned case directory and, when genuinely necessary, a local source/claim file.
+New or updated case PRs modify their owned case directory and local evidence files only.
 
-A new full case should not add itself to the root README.
+A PR that changes any path under `cases/**` must not also change root `README.md`.
+
+There is no in-PR escape hatch. If legitimate root README maintenance is needed, make it a separate PR. This keeps parallel case branches from contending for one shared file and makes the exception mechanically obvious instead of socially negotiated.
 
 ### Rule 2 — derive the registry from the filesystem
 
 Add a dependency-free Node `.mjs` utility consistent with the repository's existing executable style.
 
-Proposed command:
+Command:
 
 ```text
 node tools/case-registry/check.mjs
 ```
 
-It should:
+It must:
 
 - enumerate first-level directories under `cases/`;
 - sort deterministically;
 - verify every landed case contains a `README.md`;
-- optionally emit a human-readable current-case list;
-- fail if the stable root README contains a legacy manually-maintained active-case block that can drift from the tree;
+- print a human-readable current-case list;
+- fail if the stable root README contains the legacy `## Active cases` hand-maintained block;
 - remain read-only and non-authoritative beyond reporting the Git tree it observes.
 
 No external packages are required.
 
 ### Rule 3 — CI catches hotspot regression
 
-Add a tiny GitHub Actions or repository check that runs the registry test and rejects future PRs that reintroduce the root README as the per-case synchronization surface.
+Add `.github/workflows/case-registry.yml`.
 
-A deliberately blunt first rule is acceptable:
+The workflow must:
 
-- if a PR adds/changes `cases/**` and also changes the root `README.md`, fail with an explanation unless an explicit maintenance escape hatch is present.
+1. run the registry tests;
+2. run `node tools/case-registry/check.mjs`;
+3. on pull requests, compute changed paths against the PR base;
+4. fail when both root `README.md` and any `cases/**` path are present in the same PR diff;
+5. explain that README maintenance must be split from case work.
 
-The preferred escape hatch is a commit/PR label or a narrowly named maintenance path, not heuristic content parsing. If labels are awkward in the first implementation, a simpler documented manual exception is acceptable; the primary goal is making accidental collisions noisy.
+This rule has no label, title, commit-message, or content-based bypass.
 
 ### Rule 4 — post-merge reconciliation is derived, not hand-edited
 
@@ -197,8 +203,8 @@ National Treasure:
 - `clues/README.md` — explain clue/synthesis authority boundary.
 - `clues/attributable-transformation.md` — five-clue convergence + Cicada negative control.
 - `tools/case-registry/check.mjs` — deterministic read-only registry/checker.
-- `tools/case-registry/check.test.mjs` — focused tests for directory enumeration and hotspot policy where feasible.
-- optional `.github/workflows/...` or existing CI integration — run the check.
+- `tools/case-registry/check.test.mjs` — focused tests for directory enumeration, missing README, deterministic ordering, and legacy-index refusal.
+- `.github/workflows/case-registry.yml` — registry validation + root/case collision guard.
 
 No existing case body should be rewritten merely to make the convergence cleaner.
 
@@ -258,9 +264,10 @@ Implementation is complete when:
 2. no manually maintained active-case list can silently disagree with `cases/`;
 3. adding a synthetic case directory changes the derived registry without requiring a root README edit;
 4. missing local case README is detected;
-5. parallel case branches can add separate case directories without contending for the same index file;
-6. the convergence clue names Cicada as a negative control, not supporting evidence for ancestry;
-7. GitBook projection preserves National Treasure as evidence authority and keeps the compression incubating.
+5. a PR that touches `cases/**` and root `README.md` fails the workflow;
+6. parallel case branches can add separate case directories without contending for the same index file;
+7. the convergence clue names Cicada as a negative control, not supporting evidence for ancestry;
+8. GitBook projection preserves National Treasure as evidence authority and keeps the compression incubating.
 
 ## Design sentence
 
