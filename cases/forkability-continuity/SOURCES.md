@@ -78,6 +78,8 @@ Source families remain separate. Several entries describe analogous structures; 
 ### Project0 PR #55 — mergeability / merge-obligation pressure test
 
 - URL: https://github.com/the-static-collective/project0/pull/55
-- Status: current PR at case creation; not treated as landed evidence until merged
-- Source class: current project experiment
-- Question: can merge, coexistence, and refusal remain separately addressable lawful continuations without a merge proposal acquiring authority or replacing its parents?
+- Status: landed 2026-08-20; squash commit `b92d83d97baa95528ff4c24a54f68ff24236f23f`
+- Source class: observed project-owned executable evidence
+- Result: `NO_GAP`; the existing Typed Continuity Braid represented merge proposal, coexistence, and refusal as separately addressable continuations without production-code changes.
+- Relevant claim: a merge proposal can remain representable without acquiring authority, replacing either parent, or making reconciliation obligatory.
+- Limit: synthetic conformance evidence does not establish that every domain should expose those exact dispositions or that branching inherently preserves continuity.
