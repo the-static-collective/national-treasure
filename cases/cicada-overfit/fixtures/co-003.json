@@ -1,0 +1,17 @@
+{
+  "id": "co-003",
+  "title": "The name that traveled backward",
+  "family": "retrospective-naming",
+  "seduction": "A modern title fits the old diagram so well that the title feels ancient too.",
+  "nodes": [
+    {"id":"n1","kind":"artifact","label":"synthetic unlabeled diagram from an older catalogue","evidence":"synthetic"},
+    {"id":"n2","kind":"text","label":"modern label “Gate Wheel”","evidence":"synthetic"},
+    {"id":"n3","kind":"claim","label":"claim that the old maker used the modern label","evidence":"synthetic"}
+  ],
+  "edges": [
+    {"from":"n2","to":"n1","proposedRelation":"RETROSPECTIVE_NAMING","expectedRelation":"RETROSPECTIVE_NAMING","reason":"The fixture declares the label was coined later and applied backward."},
+    {"from":"n3","to":"n1","proposedRelation":"CLAIMED_ANCESTRY","expectedRelation":"UNKNOWN","reason":"No fixture evidence establishes the older maker used the later name."}
+  ],
+  "trap": "Treat a useful later name as evidence about the older object’s own vocabulary.",
+  "requiredRefusal": "Older naming remains UNKNOWN."
+}

@@ -1,0 +1,17 @@
+{
+  "id": "co-004",
+  "title": "Influence with a look-alike decoy",
+  "family": "documented-influence-vs-resemblance",
+  "seduction": "The decoy looks more similar than the source that the maker actually studied.",
+  "nodes": [
+    {"id":"n1","kind":"artifact","label":"source packet explicitly listed in synthetic workshop notes","evidence":"provided-fixture"},
+    {"id":"n2","kind":"artifact","label":"finished synthetic design","evidence":"provided-fixture"},
+    {"id":"n3","kind":"artifact","label":"unsourced look-alike decoy","evidence":"synthetic"}
+  ],
+  "edges": [
+    {"from":"n1","to":"n2","proposedRelation":"DOCUMENTED_INFLUENCE","expectedRelation":"DOCUMENTED_INFLUENCE","reason":"The fixture provides a direct study note connecting source and design."},
+    {"from":"n3","to":"n2","proposedRelation":"DOCUMENTED_INFLUENCE","expectedRelation":"FORMAL_RESEMBLANCE","reason":"The decoy has visual similarity but no transmission evidence."}
+  ],
+  "trap": "Prefer visual closeness over explicit encounter evidence.",
+  "requiredRefusal": "Do not upgrade the decoy from resemblance to documented influence."
+}

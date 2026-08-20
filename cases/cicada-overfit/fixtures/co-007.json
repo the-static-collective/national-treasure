@@ -1,0 +1,17 @@
+{
+  "id": "co-007",
+  "title": "The solver story everyone repeats",
+  "family": "community-rumor",
+  "seduction": "Multiple synthetic forum posts repeat the same backstage story until repetition feels like corroboration.",
+  "nodes": [
+    {"id":"n1","kind":"text","label":"synthetic forum post A repeating a rumor","evidence":"synthetic"},
+    {"id":"n2","kind":"text","label":"synthetic forum post B quoting post A indirectly","evidence":"synthetic"},
+    {"id":"n3","kind":"claim","label":"claim about an unnamed organizer","evidence":"synthetic"}
+  ],
+  "edges": [
+    {"from":"n1","to":"n2","proposedRelation":"REINTERPRETATION","expectedRelation":"REINTERPRETATION","reason":"Post B repeats and reframes the same synthetic story."},
+    {"from":"n2","to":"n3","proposedRelation":"DEMONSTRATED_ANCESTRY","expectedRelation":"UNKNOWN","reason":"Repeated secondary assertion supplies no primary evidence for the organizer claim."}
+  ],
+  "trap": "Count copies of one rumor as independent sources.",
+  "requiredRefusal": "Organizer identity remains UNKNOWN."
+}

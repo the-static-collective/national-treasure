@@ -23,25 +23,41 @@ We distinguish clearly between:
 - **Speculation** — a hypothesis not yet sufficiently grounded.
 - **Failed** — a hypothesis, count, mapping, or alignment that did not survive testing.
 
+For cases where source quality and claim confidence need to be separated, [`METHOD.md`](./METHOD.md) adds a second axis: **Established / Probable / Possible / Unsupported**.
+
 This lets the repo pursue strange leads without collapsing into either cynicism or fantasy.
 
-## First case
+## Active cases
 
-The first active case is:
-
-- [`cases/coral-castle/`](./cases/coral-castle/) — Edward Leedskalnin, Coral Castle, *A Book in Every Home*, symbolic-number hypotheses, astronomical/magnetic timing, and external comparison objects such as the Philadelphia Masonic Temple.
-
-## Live side threads
-
-Not every clue is ready to become a case. Preserve bounded leads here without promoting them past their evidence:
-
-- [`threads/grebennikov.md`](./threads/grebennikov.md) — Viktor Grebennikov, insect cavity structures, resonance, and the falsifiable mechanical residue beneath the unverified antigravity claim.
+- [`cases/coral-castle/`](./cases/coral-castle/) — Edward Leedskalnin, Coral Castle, *A Book in Every Home*, symbolic-number hypotheses, astronomical/magnetic timing, and external comparison objects such as the Philadelphia Masonic Temple. *(Referenced by the founding ledger; case files may land separately.)*
+- [`cases/trust-archaeology/`](./cases/trust-archaeology/) — the **Entrusted Corpus** investigation: trust history and comparative institutions mined for the architecture of corpus identity, purpose-bound authority, accounting, and succession without pretending the research itself creates legal validity.
+- [`cases/palimpsest-stack/`](./cases/palimpsest-stack/) — geometry, scripts, Enoch/Metatron, Dee/Kelley, Leonardo, Escher, Bacon, and the problem of separating real lineage from resemblance, retrospective naming, and beautiful overfit. Includes an explicitly invented eCODE-native shape language and Witness Sigil experiment.
+- [`cases/forkability-continuity/`](./cases/forkability-continuity/) — Git branching, local-first/CRDT replication, manuscript genealogy, and Upper Room human divergence tested against one question: when can allowing divergence preserve more continuity than forced synchronization? Counterexamples and permanent non-reconciliation remain first-class evidence.
+- [`cases/selador/`](./cases/selador/) — linguistic archaeology around `cellar door`, Tolkien's 1955 phonaesthetic example, the older 1903 trace, and **Open Selador** as explicitly local Wild Tranchish origin lore rather than executable language law.
 
 ## Repository shape
 
-- [`METHOD.md`](./METHOD.md) — research method and evidence grammar.
+- [`METHOD.md`](./METHOD.md) — research method and two-axis evidence grammar.
 - [`cases/`](./cases/) — one folder per investigation.
-- [`threads/`](./threads/) — live side leads worth preserving before they earn full case status.
+- [`docs/superpowers/specs/`](./docs/superpowers/specs/) — approved design slices that preserve implementation boundaries before downstream code work begins.
+
+## Current large clues
+
+### Entrusted corpus
+
+The trust-archaeology case is testing a potentially portable systems proposition:
+
+> **A durable corpus can outlive any particular custodian when authority around it is purpose-bound, bounded, receipt-bearing, reviewable, and succession-capable.**
+
+That proposition is currently an architectural hypothesis, not shared law and not a legal trust instrument.
+
+### Palimpsest continuity
+
+The palimpsest case is testing a second proposition:
+
+> **Forms can survive while meanings change; meanings can survive while forms change; names can move independently of both. Continuity lives in the witnessed transformations between them.**
+
+That proposition is also incubating here. Resemblance does not establish ancestry, and a compelling projection does not become authority merely because it is useful.
 
 ## Rule of the house
 

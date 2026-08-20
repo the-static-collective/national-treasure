@@ -1,0 +1,20 @@
+{
+  "id": "co-014",
+  "title": "The same mark with no road between them",
+  "family": "mixed-descent-vs-coincidence",
+  "seduction": "Two independently produced witnesses contain the same striking feature, making transmission feel more economical than coincidence.",
+  "nodes": [
+    {"id":"n1","kind":"artifact","label":"synthetic witness P produced in workshop north","evidence":"provided-fixture"},
+    {"id":"n2","kind":"artifact","label":"synthetic witness Q produced independently in workshop south","evidence":"provided-fixture"},
+    {"id":"n3","kind":"symbol","label":"four-notch spiral in witness P","evidence":"provided-fixture"},
+    {"id":"n4","kind":"symbol","label":"four-notch spiral in witness Q","evidence":"provided-fixture"}
+  ],
+  "edges": [
+    {"from":"n1","to":"n3","proposedRelation":"CONTEXTUAL_ASSOCIATION","expectedRelation":"CONTEXTUAL_ASSOCIATION","reason":"The fixture directly places the first spiral in witness P."},
+    {"from":"n2","to":"n4","proposedRelation":"CONTEXTUAL_ASSOCIATION","expectedRelation":"CONTEXTUAL_ASSOCIATION","reason":"The fixture directly places the second spiral in witness Q."},
+    {"from":"n3","to":"n4","proposedRelation":"DEMONSTRATED_ANCESTRY","expectedRelation":"FORMAL_RESEMBLANCE","reason":"The two spirals share the declared visible feature, but the fixture supplies no transmission path between them."},
+    {"from":"n1","to":"n2","proposedRelation":"DEMONSTRATED_ANCESTRY","expectedRelation":"REFUSED_ANCESTRY","reason":"The fixture explicitly declares independent production and supplies no shared exemplar, encounter, copying event, or transmission bridge."}
+  ],
+  "trap": "Treat a highly specific repeated feature as ancestry merely because independent recurrence feels less satisfying.",
+  "requiredRefusal": "Preserve the formal resemblance while refusing ancestry between P and Q; same pattern is not itself a transmission receipt."
+}
