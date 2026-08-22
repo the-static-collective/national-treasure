@@ -41,6 +41,8 @@ node tools/case-registry/check.mjs
 
 Case PRs do **not** add themselves to this README. Root README maintenance travels separately so independent cases do not collide on one synchronization point.
 
+> Disposable hosted-CI negative control for issue #21: this branch intentionally changes root README alongside a `cases/**` path. This line must never land on `main`.
+
 ## Live side threads
 
 - [`threads/grebennikov.md`](./threads/grebennikov.md) — Viktor Grebennikov's cavity-structure / insect-flight claims preserved beside grounded insect resonance and elasticity research as a falsifiable side thread, not established antigravity physics.
