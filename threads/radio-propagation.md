@@ -118,6 +118,101 @@ open_questions: "Can one bounded observation distinguish enabling Es from Es tha
 downstream_relevance: "The same medium event can increase one reachability relation while reducing another."
 ```
 
+## Inference specimen — Open E ringing / a receptive field
+
+Status: **Inference / Possible — preserve; do not promote**
+
+The name collision between **Sporadic E** and the Collective's **Open E ringing** motif is not evidence. The radio E region and a musical E are unrelated naming systems, and this thread makes no claim that one physically explains the other.
+
+What survives after that coincidence is removed is more interesting:
+
+- the source can already be active without a useful path existing;
+- a change in the surrounding medium can make a previously unavailable relation reachable;
+- the new path does not guarantee coupling, detection, decoding, attribution, or encounter;
+- and opening one path can reduce another rather than monotonically increasing connectivity.
+
+That supports a bounded cross-domain question:
+
+> Could **Open E ringing** be modeled not as a message aimed at a destination, but as a continuously available local condition whose consequences remain dependent on the field it enters?
+
+The candidate structure is:
+
+```text
+OPEN E
+source already ringing / locally available
+        ↓
+FIELD STATE
+surrounding conditions change
+        ↓
+CONDITIONAL PATH
+one relation becomes reachable
+        ↓
+COUPLING / RECEPTION
+something must still encounter the path
+        ↓
+ENCOUNTER
+not guaranteed by emission alone
+```
+
+A more compact residue is:
+
+```text
+source condition
+      +
+medium condition
+      +
+receiver relation
+      ↓
+possible encounter
+```
+
+The radio contribution is only the grounded counterexample that **reachability need not be an intrinsic property of the sender**. A transmitter can remain substantially the same while medium state changes which relations are physically available.
+
+The Collective-side interpretation is therefore provisional: **ringing may establish availability without choosing a destination; encounter may emerge only when the surrounding world becomes receptive to a lawful crossing.**
+
+Sporadic E contributes one further constraint. A strong Es layer can support a useful E-layer path while screening a higher F-layer route. Therefore any later use of this inference must reject the scalar equation:
+
+```text
+more open = more connected
+```
+
+A better candidate is:
+
+```text
+open
+=
+a particular field configuration
+in which particular crossings become possible
+while other crossings may disappear
+```
+
+### NT-RADIO-INF-001 — reachability as a relational condition
+
+```yaml
+claim_id: NT-RADIO-INF-001
+claim: "Open E ringing may be usefully modeled as an available source condition whose encounter consequences depend on medium state and receiver relation, rather than as a sender-owned guarantee of connection."
+provenance_class: inference
+support_confidence: possible
+source_family: "NT-RADIO-004 + Collective Open E motif"
+source_locator: "this thread; bounded inference from the grounded Sporadic E counterexample"
+reasoning: "Sporadic E shows that materially different reachability can emerge while the source remains active and that one newly available path can suppress another. The proposed transfer is structural, not physical."
+counterevidence: "The radio E region has no physical relationship to the musical note E. The analogy fails if it treats medium state as decorative, assumes emission guarantees reception, or treats openness as monotonically increasing connectivity."
+open_questions: "Does the source + medium + receiver decomposition survive comparison with non-radio domains? Does 'Open E' still mean anything useful once the accidental E/E naming rhyme is removed?"
+downstream_relevance: "Candidate pressure for conditional-reachability and transmission-is-not-encounter clues, but not evidence for architectural adoption."
+```
+
+### Kill conditions for this inference
+
+Drop or revise this specimen if any later version requires one of these moves:
+
+1. **Literal E identity.** It depends on the ionospheric E region and musical E being physically or historically connected.
+2. **Sender sovereignty.** It treats the source's act of ringing as sufficient to establish a destination or completed encounter.
+3. **Monotonic openness.** It assumes every newly available path can only add connectivity and never suppress an alternative relation.
+4. **Reception collapse.** It erases the distinctions among path availability, coupling, detection, decoding, attribution, and encounter.
+5. **Analogy as ancestry.** It uses radio resemblance to establish eCODE, TranchNode, Project0, or any other architecture as true.
+
+Until it survives those conditions and comparison with other domains, this remains a preserved curiosity—not doctrine.
+
 ### NT-RADIO-005 — meteor and auroral paths are operationally distinct categories
 
 ```yaml
