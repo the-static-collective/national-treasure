@@ -1,0 +1,75 @@
+{
+  "case_schema": "ssw-math.case/v0",
+  "specimen_id": "SSW-MATH-001",
+  "title": "One degree sequence, two graph worlds",
+  "research_question": "Can the supplied graph summary identify which of two candidate graphs generated it, and what minimum additional Boolean query separates them?",
+  "source_lineage": {
+    "repository": "the-static-collective/national-treasure",
+    "base_revision": "5ddac0bd77fa99391b4cbe6afbb9c24d049a40e1",
+    "issue": "https://github.com/the-static-collective/national-treasure/issues/36",
+    "method": "cases/same-state-different-world/TASK-FACTORY.md",
+    "research": {
+      "citation": "David Blackwell, Equivalent Comparisons of Experiments, Annals of Mathematical Statistics 24(2):265-272 (1953)",
+      "doi": "10.1214/aoms/1177729032",
+      "supplied_scan_sha256": "f490b8395187edc34ab46a3d45455f1f59cbbc9632964c63218a2f4c8ba8cd1d",
+      "use": "Conceptual lineage for comparison of experiments and stochastic transformations; the finite graph claim remains independently executable."
+    }
+  },
+  "worlds": [
+    {
+      "id": "W_C6",
+      "vertices": [0, 1, 2, 3, 4, 5],
+      "edges": [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 0]],
+      "description": "A single cycle on six vertices"
+    },
+    {
+      "id": "W_2C3",
+      "vertices": [0, 1, 2, 3, 4, 5],
+      "edges": [[0, 1], [1, 2], [2, 0], [3, 4], [4, 5], [5, 3]],
+      "description": "Two disjoint cycles on three vertices each"
+    }
+  ],
+  "supplied_observation": {
+    "fields": ["vertex_count", "edge_count", "degree_sequence"],
+    "expected_signature": [6, 6, [2, 2, 2, 2, 2, 2]]
+  },
+  "reexpressions": [
+    {"id": "canonical-json", "operation": "canonical-json"},
+    {"id": "labeled-vector", "operation": "labeled-vector"}
+  ],
+  "discriminators": {
+    "failed": {
+      "id": "all-degrees-even",
+      "predicate": "all-degrees-even",
+      "cost": 1,
+      "expected_outputs": {"W_C6": true, "W_2C3": true}
+    },
+    "minimum": {
+      "id": "is-connected",
+      "predicate": "is-connected",
+      "cost": 1,
+      "expected_outputs": {"W_C6": true, "W_2C3": false},
+      "cost_model": "Each additional Boolean graph predicate costs one unit; zero queries cost zero."
+    }
+  },
+  "gold": {
+    "identifiability": "finite-equivalence",
+    "conclusion": "The supplied observation does not identify a unique graph. Connectedness is a sufficient one-query discriminator for the supplied pair, and no zero-query discriminator can separate worlds with the same supplied observation.",
+    "overclaim_trap": "The shared degree sequence proves the graphs are isomorphic.",
+    "counterexample": "C6 and two disjoint triangles share the supplied signature but have different numbers of connected components."
+  },
+  "rubric_atoms": [
+    {"id": "R1", "criterion": "Computes the supplied observation for both worlds", "points": 1},
+    {"id": "R2", "criterion": "Recognizes that the observation has at least two compatible worlds", "points": 2},
+    {"id": "R3", "criterion": "Proves non-isomorphism using connected-component count", "points": 2},
+    {"id": "R4", "criterion": "Shows deterministic re-expression cannot split an existing observation collision", "points": 1},
+    {"id": "R5", "criterion": "Preserves the failed all-degrees-even discriminator", "points": 1},
+    {"id": "R6", "criterion": "Proves connectedness suffices and is minimum under the stated cost model", "points": 2},
+    {"id": "R7", "criterion": "Stops at the strongest conclusion licensed by the supplied data", "points": 1}
+  ],
+  "derived_tasks": [
+    {"form": "derivation", "prompt": "Compute the observation, determine identifiability, and prove the strongest licensed conclusion."},
+    {"form": "experimental-design", "prompt": "Choose a minimum-cost Boolean graph query that separates the two candidate worlds and prove sufficiency."},
+    {"form": "response-comparison", "prompt": "Compare an isomorphism overclaim with an answer that preserves the two-world equivalence class."}
+  ]
+}
