@@ -143,9 +143,14 @@ This is a working source map, not a claim that every source was inspected at ide
 
 ## Silver halides / latent physical receipt
 
-30. J. F. Hamilton, **The Silver Halide Photographic Process**, *Advances in Physics* and related photographic-chemistry literature; use primary photographic chemistry when a latent-image claim becomes load-bearing.
+30. J. F. Hamilton, **The Silver Halide Photographic Process**, *Advances in Physics* 37(4) (1988), 359–441.  
+    https://doi.org/10.1080/00018738800101399
 
-**Current case use:** only the conservative, well-established statement that photon exposure can produce tiny metallic-silver latent-image centers in silver-halide grains which development later amplifies. A dedicated source audit is a future bounty if this branch becomes central.
+31. T. Tani, **Physics of the Photographic Latent Image**, *Physics Today* 42(9) (1989).  
+    https://doi.org/10.1063/1.881181
+
+**Use:** absorption of a small number of photons can produce tiny metallic-silver latent-image clusters on silver-halide grains; those clusters can catalyze much larger reduction during development.  
+**Boundary:** this is a physical latent-state/amplification mechanism, not evidence for generalized memory outside the photographic system.
 
 ---
 
