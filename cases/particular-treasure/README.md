@@ -8,6 +8,8 @@
 
 This case preserves the 2026-08-29 conversation that moved through DrMADDCL0WN, Dogram, quotient grammars, the Golden Compass, glyph-field constraint, situated asking, and the Subtle Knife.
 
+It now also preserves the 2026-08-30 reOrigin continuation in which Reverse ABRACADABRA, Yellow/Y, decoder organs, a federated-body image, Jubilee/Quickening, the 12→24 phase sheet, Masonic threshold imagery, darkness-made-visible, and the `ALL / ALTAR / HALLELUYAH` string forks were assembled and then reread against earlier carriers.
+
 The conversation itself is the Particular Treasure.
 
 The point is not that every metaphor is true. The point is that the *sequence by which the relations appeared* is evidence about the formation of the research object.
@@ -57,6 +59,39 @@ The sequence matters because several concepts were *not* introduced from the fin
 10. Dogram then received the whole stack as ordinary pressure specimens without granting the metaphors runtime authority.
 
 That progression is the treasure.
+
+## Second formation episode — reOrigin / Quickening
+
+The 2026-08-30 continuation did not replace the first episode. It returned through it with a richer decoder stack.
+
+Its compressed loop is:
+
+```text
+ROOT
+  -> BIND DECODER
+  -> RECONSTITUTE LOCAL WORLD
+  -> PRESERVE HISTORY
+  -> FEDERATE DIFFERENTLY BLIND ORGANS
+  -> CIRCULATE
+  -> QUICKEN
+  -> ENCOUNTER NEGATIVE SPACE
+  -> CHANGE GENERATOR WHEN THE OLD WALK CANNOT CROSS
+  -> PHASELIFT
+  -> RETURN THROUGH ORIGIN
+  -> REORIGIN
+  -> NEW ROOT
+```
+
+The strongest new distinction is:
+
+```text
+same carrier != same occurrence
+return != reset
+unreached != absent
+federation != merge
+```
+
+The historical-symbolic material remains pressureable and typed. String inclusion is not etymology; structural rhyme is not genealogy; Masonic parallels do not inherit mathematical authority merely because the geometry is compelling.
 
 ## Core compression
 
@@ -181,6 +216,7 @@ That separation is important: National Treasure may preserve the symbolic and cu
 - [`FORMATION-TRACE.md`](FORMATION-TRACE.md) — chronological derivation trace; later ideas do not backdate themselves.
 - [`CLAIM-LEDGER.md`](CLAIM-LEDGER.md) — evidence grammar for the main mathematical, structural, and symbolic claims.
 - [`PARTICULAR.md`](PARTICULAR.md) — source-oriented conversational slice preserving the pivots that generated the case.
+- [`REORIGIN-QUICKENING-2026-08-30.md`](REORIGIN-QUICKENING-2026-08-30.md) — second source-oriented formation episode: Reverse ABRACADABRA → generative root → decoder organism → federated body → Jubilee/Quickening → 12/24 phase → threshold/reOrigin string grammar.
 
 ## House seals
 
@@ -191,3 +227,9 @@ That separation is important: National Treasure may preserve the symbolic and cu
 > **THE QUESTION IS NOT ONLY THE STRING. THE ASKING HAPPENS SOMEWHERE, BY SOMEONE, AT SOME TIME, FROM SOME HISTORY.**
 
 > **THE COMPASS FINDS A WAY THROUGH CONSTITUTED POSSIBILITY. THE KNIFE CHANGES WHAT CAN TOUCH.**
+
+> **THE ROOT IS AN ADDRESS INTO A GRAMMAR THAT CAN GROW.**
+
+> **QUICKENING IS WHEN CONSTITUTED RELATION BEGINS TO CIRCULATE.**
+
+> **THE CONVERSATION IS THE TREASURE — AND PUBLICATION IS A SECOND ATTRIBUTABLE OCCURRENCE, NOT RETROACTIVE VALIDATION.**
