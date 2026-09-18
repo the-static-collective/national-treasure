@@ -264,3 +264,12 @@ RELATION CAN SURVIVE REPRESENTATION CHANGE
 SPARSE STRUCTURE + RULE MAY REGENERATE DENSE STRUCTURE
 THOUGHT <-> NUMBER <-> REALITY
 ```
+
+
+## Later descendant — Sweet Sixteen / 02 → 100
+
+A 2026-09-18 National Treasure synthesis applies the number-grammar discriminator to a source-local Leedskalnin cluster and the older `022100` carrier:
+
+- [Sweet Sixteen / 02 → 100 — The Two Remain While the World Scales](../clues/sweet-sixteen-02-100-the-two-remain-while-the-world-scales.md)
+
+The descendant keeps this thread's boundary intact: number is tested as **carrier / classifier / operator / relation constraint**, not promoted into a secret dictionary.
