@@ -205,3 +205,16 @@ Compost or narrow this clue if:
 > **THE THIRTEENTH MAY BE THE OPENING, NOT THE EXTRA OBJECT.**
 
 > **A WORLD CAN REMEMBER HOW TO RECEIVE NOVELTY WITHOUT DECIDING IN ADVANCE WHAT THE NOVELTY MUST BECOME.**
+
+
+## Later descendant — a different relation class
+
+The 2026-09-18 [Sweet Sixteen / 02 → 100](./sweet-sixteen-02-100-the-two-remain-while-the-world-scales.md) clue keeps OPEN BERTH intact and adds a neighboring question:
+
+```text
+ABSENT OTHER
+!=
+ABSENT RELATION
+```
+
+This is **not** another definition of the Thirteenth. It tests whether a relation can remain causally formative after one participant is absent from the immediate scene, without turning the relation into a sovereign extra member.
