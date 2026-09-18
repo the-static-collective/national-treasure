@@ -309,3 +309,8 @@ Promotion would require materially independent specimens showing that the distin
 Until then, keep the line narrow:
 
 > **The relation may have shape without becoming a sovereign thing.**
+
+
+## Later descendant — generative relation without sovereign relation-object
+
+The 2026-09-18 [Sweet Sixteen / 02 → 100](./sweet-sixteen-02-100-the-two-remain-while-the-world-scales.md) clue reuses this clue's core refusal—**relation may have shape without becoming sovereign**—for a different formation question: can differentiated terms generate a new whole while the relation and both formation histories remain inspectable?
