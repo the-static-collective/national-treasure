@@ -614,3 +614,28 @@ ACTIVE H0
 And the deliberately dangerous one, kept as H0 rather than doctrine:
 
 > **THE WEDDING MAY BE AN OPERATOR.**
+
+
+## Prospective test result — 2026-09-18
+
+The first pre-registered technical read produced a direct survivor. Leedskalnin's *Magnetic Current* explicitly models apparent current as **two mutually required currents**, while individual movers become practically useful in **great numbers**. *Mineral, Vegetable and Animal Life* further claims that additional movers can give a system capacities it lacked before.
+
+The descendant clue keeps the Egypt/Ennead comparison typed and develops the stronger grammar:
+
+- [TWO CURRENTS, GREAT NUMBERS — Ennead Pressure on Sweet Sixteen](./two-currents-great-numbers-ennead-pressure.md)
+
+Working correction:
+
+```text
+PAIR
+!=
+OPERATIVE WHOLE
+
+PAIR
++
+PLURALITY
++
+CHANNEL / RELATION
+->
+OPERATIVE FIELD
+```
