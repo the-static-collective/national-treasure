@@ -496,3 +496,56 @@ NOT PROMOTED:
 And the old control remains:
 
 > **Keep the gate. Keep the magnetism. Keep the clock. Keep the Sweet Sixteen. Do not invent the bridge.**
+
+
+## Prospective technical pressure — 2026-09-18
+
+Descendant: [TWO CURRENTS, GREAT NUMBERS — Ennead Pressure on Sweet Sixteen](../clues/two-currents-great-numbers-ennead-pressure.md)
+
+### NT-CC-010 — pyramid-builder orientation is documented in the institutional record
+
+```yaml
+claim_id: NT-CC-010
+claim: "The National Register nomination records Leedskalnin as repeatedly explaining his construction through comprehension of pyramid-builder methods together with practical knowledge of leverage and weight; Coral Castle's present institutional history preserves the same pyramid-builder claim."
+provenance_class: primary
+support_confidence: probable
+source_family: "National Register record / Coral Castle institutional history"
+source_locator: "https://spacesarchives.org/assets/Uploads/NRHP/rock-gate-coral-castle.pdf ; https://coralcastle.com/home/about-edward-leedskalnin/"
+chronology: "claim attributed to Leedskalnin during his lifetime; surviving institutional records are later"
+reasoning: "Egypt/pyramid orientation is not being imported solely by the current investigation."
+counterevidence: "This does not establish deep study of Egyptian religion, the Ennead, or a specific ancient technique."
+open_questions: "Push the statement backward into contemporaneous newspapers, advertisements, pamphlets, or witness records."
+downstream_relevance: "Allows Egypt to enter as a typed historical lane while keeping Ennead comparison separate."
+```
+
+### NT-CC-011 — two currents / great numbers / one cannot run alone
+
+```yaml
+claim_id: NT-CC-011
+claim: "In Magnetic Current, Leedskalnin describes North- and South-pole streams as two currents, states that one cannot run alone, and says individual magnets become practically useful only in great numbers."
+provenance_class: primary
+support_confidence: established
+source_family: "Edward Leedskalnin, Magnetic Current (1945)"
+source_locator: "https://www.rockgatepark.com/the-writings/magnetic-current"
+chronology: "1945"
+reasoning: "The pair -> mutual operation -> organized plurality structure is explicit in the technical text."
+counterevidence: "Leedskalnin's magnetic theory is not accepted modern physics."
+open_questions: "Does the same relation grammar recur across his remaining technical corpus?"
+downstream_relevance: "First prospective hit for the Sweet Sixteen generative-relation H0."
+```
+
+### NT-CC-012 — quantity and organization change capacity inside Leedskalnin's life model
+
+```yaml
+claim_id: NT-CC-012
+claim: "In Mineral, Vegetable and Animal Life, Leedskalnin says additional magnets can let a living system perform things it could not do before and that different substances are held together by different numbers of magnets."
+provenance_class: primary
+support_confidence: established
+source_family: "Edward Leedskalnin, Mineral, Vegetable and Animal Life (1945)"
+source_locator: "https://www.rockgatepark.com/the-writings/mineral-vegetable-and-animal-life"
+chronology: "1945"
+reasoning: "Within his own theory, number and organized relation alter capability rather than merely inventory."
+counterevidence: "The biological and physical mechanism he proposes is scientifically unsupported."
+open_questions: "Separate the historically documented conceptual grammar from empirical validity."
+downstream_relevance: "Direct NuMatherology specimen: quantity participates in the space of possible actions inside the author's model."
+```
