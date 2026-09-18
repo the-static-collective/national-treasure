@@ -180,7 +180,7 @@ downstream_relevance: "Candidate generative-creation primitive if it survives so
 claim_id: NT-CC-009
 claim: "The alchemical 'chemical wedding' provides a historically documented comparison class for representing transformation through a union of differentiated/opposed terms."
 provenance_class: inference
-support_confidence: established_as_comparator_only
+support_confidence: established
 source_family: "history of alchemical imagery / metaphor"
 source_locator: "https://www.cambridge.org/core/journals/bjhs-themes/article/nourishing-the-alchemical-child-metaphors-of-family-life-as-textual-cohesion-in-the-fifteenthcentury-the-gracious-work/C4F12E209AC273AADD88DB75582FFFE1 ; https://www.cambridge.org/core/journals/bjhs-themes/article/imagining-alchemy-visual-and-figurative-representations-in-premodern-sciences/29F7BA9EFB99B2B3A8A8B57FFE136896"
 chronology: "premodern alchemical traditions; modern scholarly analysis"
