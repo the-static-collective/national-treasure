@@ -1,0 +1,84 @@
+{
+  "witness_id": "NT-LC003-MATTHEW-20-16",
+  "title": "Last first / first last",
+  "verse": "Matthew 20:16",
+  "source_scope": "common shorter core saying; subsequent many-called/few-chosen clause belongs to some Greek textual traditions and the KJV full verse",
+  "authority": "Greek witness plus public-domain KJV excerpt, with textual-variant boundary",
+  "sources": [
+    {
+      "role": "Greek New Testament display witness",
+      "url": "https://www.greekbible.com/matthew/20/16"
+    },
+    {
+      "role": "King James Version, public domain English translation",
+      "url": "https://www.biblegateway.com/passage/?search=Matthew+20%3A16&version=KJV"
+    }
+  ],
+  "variants": [
+    {
+      "label": "longer Byzantine/TR ending and KJV full verse",
+      "words": "πολλοὶ γάρ εἰσιν κλητοί, ὀλίγοι δὲ ἐκλεκτοί",
+      "url": "https://biblehub.com/text/matthew/20-16.htm",
+      "status": "attested expansion not included in comparison excerpt"
+    }
+  ],
+  "layers": [
+    {
+      "id": "gospel-greek",
+      "language": "grc",
+      "script": "Greek",
+      "witness_class": "attested Greek Gospel text excerpt",
+      "text": "Οὕτως ἔσονται οἱ ἔσχατοι πρῶτοι καὶ οἱ πρῶτοι ἔσχατοι",
+      "annotations": {
+        "structure_tags": [
+          "inversion",
+          "parallelism",
+          "rank-reversal",
+          "lexical-repetition:first-last"
+        ],
+        "semantic_tags": [
+          "rank-reversal"
+        ],
+        "morphology": {
+          "ἔσονται": "future indicative third person plural of εἰμί",
+          "ἔσχατοι": "nominative masculine plural adjective, last",
+          "πρῶτοι": "nominative masculine plural adjective, first"
+        },
+        "provenance_note": "Greek shorter core text: the extra many-called/few-chosen clause in the KJV full verse is not included in this Greek excerpt; its historical transmission remains a separate witness."
+      }
+    },
+    {
+      "id": "kjv-english",
+      "language": "en",
+      "script": "Latin",
+      "witness_class": "attested KJV English translation excerpt",
+      "text": "So the last shall be first and the first last",
+      "annotations": {
+        "structure_tags": [
+          "inversion",
+          "parallelism",
+          "rank-reversal",
+          "lexical-repetition:first-last"
+        ],
+        "semantic_tags": [
+          "rank-reversal"
+        ],
+        "provenance_note": "Public domain KJV core saying with punctuation omitted; KJV full verse includes an additional many-called/few-chosen clause, excluded for aligned-scope comparison. Labels are human-declared."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "gospel-greek",
+      "to": "kjv-english",
+      "type": "translation-comparison",
+      "evidence_class": "observed textual witnesses",
+      "note": "The KJV has an additional clause absent from the shorter Greek witness. Comparison is explicitly restricted to the shared core saying."
+    }
+  ],
+  "nonclaims": [
+    "No historical Aramaic source text has been reconstructed.",
+    "Morphological annotations and semantic tags are researcher declarations.",
+    "The omitted additional clause is not claimed never to have circulated in Greek."
+  ]
+}

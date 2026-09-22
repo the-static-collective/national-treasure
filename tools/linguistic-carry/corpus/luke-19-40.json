@@ -1,0 +1,82 @@
+{
+  "witness_id": "NT-LC003-LUKE-19-40",
+  "title": "People silent / stones cry",
+  "verse": "Luke 19:40",
+  "source_scope": "direct-speech excerpt; narratorial material omitted",
+  "authority": "attested source excerpts + researcher-declared morphology and rhetorical tags",
+  "sources": [
+    {
+      "role": "Greek New Testament display witness",
+      "url": "https://www.greekbible.com/luke/19/40"
+    },
+    {
+      "role": "King James Version, public domain English translation",
+      "url": "https://www.biblegateway.com/passage/?search=Luke+19%3A40&version=KJV"
+    }
+  ],
+  "variants": [
+    {
+      "label": "Byzantine / Textus Receptus",
+      "words": "σιωπήσωσιν … κεκράξονται",
+      "url": "https://biblehub.com/text/luke/19-40.htm",
+      "status": "attested alternative textual reading"
+    }
+  ],
+  "layers": [
+    {
+      "id": "gospel-greek",
+      "language": "grc",
+      "script": "Greek",
+      "witness_class": "attested Greek Gospel text excerpt",
+      "text": "Λέγω ὑμῖν ἐὰν οὗτοι σιωπήσουσιν οἱ λίθοι κράξουσιν",
+      "annotations": {
+        "structure_tags": [
+          "conditional",
+          "contrast:silence-cry",
+          "image:stones",
+          "parallel-future-verbs"
+        ],
+        "semantic_tags": [
+          "proclamation-not-silenced"
+        ],
+        "morphology": {
+          "ἐὰν": "conditional conjunction",
+          "σιωπήσουσιν": "future active indicative third person plural, be silent; this textual form",
+          "κράξουσιν": "future active indicative third person plural, cry out; this textual form"
+        },
+        "provenance_note": "This Greek textual witness reads σιωπήσουσιν/κράξουσιν. Byzantine/Textus Receptus differ (σιωπήσωσιν/κεκράξονται); the KJV immediately has no standalone adverb in this Greek wording. Record a variant witness rather than falsely scoring all Greek textual traditions as identical."
+      }
+    },
+    {
+      "id": "kjv-english",
+      "language": "en",
+      "script": "Latin",
+      "witness_class": "attested 1611/1769 KJV English translation excerpt",
+      "text": "I tell you that if these should hold their peace the stones would immediately cry out",
+      "annotations": {
+        "structure_tags": [
+          "conditional",
+          "contrast:silence-cry",
+          "image:stones"
+        ],
+        "semantic_tags": [
+          "proclamation-not-silenced"
+        ],
+        "provenance_note": "KJV passage at supplied URL, punctuation/narrative omitted for comparative direct-speech scope; tags are researcher-declared, not automatically detected. This Greek textual witness reads σιωπήσουσιν/κράξουσιν. Byzantine/Textus Receptus differ (σιωπήσωσιν/κεκράξονται); the KJV immediately has no standalone adverb in this Greek wording. Record a variant witness rather than falsely scoring all Greek textual traditions as identical."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "gospel-greek",
+      "to": "kjv-english",
+      "type": "translation-comparison",
+      "evidence_class": "observed textual witnesses",
+      "note": "Comparison edge does not claim KJV translated from this exact Greek edition or word-for-word equivalence."
+    }
+  ],
+  "nonclaims": [
+    "No historical Aramaic source text has been reconstructed.",
+    "Morphological annotations are researcher declarations; downstream scores are not independent confirmation."
+  ]
+}

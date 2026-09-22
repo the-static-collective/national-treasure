@@ -126,3 +126,18 @@ node tools/linguistic-carry/math-cli.mjs null hebrew-standard 2 18
 ```
 
 See `threads/linguistic-carry/LC-002-deeper-math.md` for the evidence boundary and null-model limits.
+
+## LC-003 — attested paired corpus and held-out frequency null
+
+Eight attested Greek/KJV direct-speech comparisons are under `corpus/`, each with specific URLs, typed comparison edge, researcher-supplied morphology and tags, editorial scope, and nonclaims.
+
+```bash
+node --test tools/linguistic-carry/*.test.mjs
+node tools/linguistic-carry/corpus-cli.mjs check
+node tools/linguistic-carry/corpus-cli.mjs report
+node tools/linguistic-carry/corpus-cli.mjs holdout luke-4-21 Σήμερον
+```
+
+The held-out probability is an **independent-character model estimated from a tiny, nonrepresentative sample**, not a meaningful probability of hidden intent. Morphology and structural tags are supplied by researchers, not discovered by this tool. Distinguish an attested Greek or Syriac textual witness from a hypothetical oral-language retroversion.
+
+See `threads/linguistic-carry/LC-003-attested-corpus.md`.

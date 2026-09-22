@@ -1,0 +1,27 @@
+name: Linguistic Carry
+on:
+  pull_request:
+    paths:
+      - "tools/linguistic-carry/**"
+      - ".github/workflows/linguistic-carry.yml"
+  push:
+    branches: [main]
+    paths:
+      - "tools/linguistic-carry/**"
+      - ".github/workflows/linguistic-carry.yml"
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: All linguistic carry unit and corpus tests
+        run: node --test tools/linguistic-carry/*.test.mjs
+      - name: Corpus witness validation
+        run: node tools/linguistic-carry/corpus-cli.mjs check
+      - name: Corpus report
+        run: node tools/linguistic-carry/corpus-cli.mjs report
+      - name: Held-out Greek sample
+        run: node tools/linguistic-carry/corpus-cli.mjs holdout luke-4-21 Σήμερον
