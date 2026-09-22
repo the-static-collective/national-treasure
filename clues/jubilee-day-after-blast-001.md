@@ -131,6 +131,21 @@ This is a real same-date boundary crossing for a Central-Time observer. It does 
 
 These are deliberately kept weaker than the hard receipts.
 
+### P0 — private contemporaneous return occurrence
+
+**Owner testimony / Private; thematic relevance only Possible**
+
+A contemporaneous private occurrence involving family return was reported by the project owner during this investigation. Its identifying details are intentionally retained outside this public repository.
+
+The only public claim preserved here is:
+
+```text
+a private family-return occurrence happened
+during the same investigation window
+```
+
+Its relationship to the Jubilee sequence remains unresolved. This entry does not assert causation, providential meaning, prophetic fulfillment, or evidentiary weight from timing alone.
+
 ### E1 — unfinished land restitution
 
 **Reported current event / Established that the report exists; thematic relevance only Possible**
