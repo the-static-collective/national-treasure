@@ -45,7 +45,7 @@ export function validateCorpus(witnesses) {
     }
     try {analyzeWitness(w);} catch(error) {errors.push(w.witness_id+": "+error.message);}
   }
-  if (witnesses.length<7) errors.push("corpus must contain at least seven attested pairs");
+  if (witnesses.length<8) errors.push("corpus must contain at least eight attested pairs");
   return {passed:errors.length===0,witness_count:witnesses.length,errors};
 }
 
