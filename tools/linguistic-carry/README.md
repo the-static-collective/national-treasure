@@ -113,3 +113,16 @@ receiver structure survives
 The tool measures the easy parts and keeps the hard parts declared rather than hallucinated.
 
 > The words may mutate. The relation may carry.
+
+
+## Deeper math commands
+
+The LC-002 extension adds typed transformation edges, declared phonology, root/pattern graph metrics, and a first numeric-collision null model.
+
+```bash
+node tools/linguistic-carry/math-cli.mjs root-graph entries.json
+node tools/linguistic-carry/math-cli.mjs collisions items.json
+node tools/linguistic-carry/math-cli.mjs null hebrew-standard 2 18
+```
+
+See `threads/linguistic-carry/LC-002-deeper-math.md` for the evidence boundary and null-model limits.
