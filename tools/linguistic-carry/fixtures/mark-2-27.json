@@ -1,0 +1,45 @@
+{
+  "witness_id": "NT-LC-MARK-2-27",
+  "title": "Mark 2:27 — reversible purpose relation",
+  "authority": "textual measurement + declared annotations; no source-language reconstruction",
+  "layers": [
+    {
+      "id": "gospel-greek",
+      "language": "grc",
+      "script": "Greek",
+      "witness_class": "primary-text witness",
+      "text": "Τὸ σάββατον διὰ τὸν ἄνθρωπον ἐγένετο καὶ οὐχ ὁ ἄνθρωπος διὰ τὸ σάββατον",
+      "annotations": {
+        "structure_tags": [
+          "inversion",
+          "parallelism",
+          "negation",
+          "relation:purpose"
+        ],
+        "semantic_tags": [
+          "human-sabbath-ordering"
+        ],
+        "provenance_note": "Greek Gospel witness."
+      }
+    },
+    {
+      "id": "wooden-english",
+      "language": "en",
+      "script": "Latin",
+      "witness_class": "analytic rendering",
+      "text": "THE SABBATH FOR THE HUMAN CAME-TO-BE NOT THE HUMAN FOR THE SABBATH",
+      "annotations": {
+        "structure_tags": [
+          "inversion",
+          "parallelism",
+          "negation",
+          "relation:purpose"
+        ],
+        "semantic_tags": [
+          "human-sabbath-ordering"
+        ],
+        "provenance_note": "Structural rendering made for comparison."
+      }
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "witness_id": "NT-LC-MATT-10-27",
+  "title": "Matthew 10:27 — ear to rooftop signal path",
+  "authority": "textual measurement + declared annotations; no source-language reconstruction",
+  "layers": [
+    {
+      "id": "gospel-greek",
+      "language": "grc",
+      "script": "Greek",
+      "witness_class": "primary-text witness",
+      "text": "ὃ λέγω ὑμῖν ἐν τῇ σκοτίᾳ εἴπατε ἐν τῷ φωτί καὶ ὃ εἰς τὸ οὖς ἀκούετε κηρύξατε ἐπὶ τῶν δωμάτων",
+      "annotations": {
+        "structure_tags": [
+          "parallelism",
+          "contrast:dark-light",
+          "signal:ear",
+          "broadcast:rooftop",
+          "imperative"
+        ],
+        "semantic_tags": [
+          "private-to-public",
+          "hearing-to-proclamation"
+        ],
+        "provenance_note": "Greek Gospel witness; does not establish the exact language or syntax of the historical utterance."
+      }
+    },
+    {
+      "id": "wooden-english",
+      "language": "en",
+      "script": "Latin",
+      "witness_class": "analytic rendering",
+      "text": "WHAT I SAY TO YOU IN DARKNESS SAY IN LIGHT WHAT INTO THE EAR YOU HEAR PROCLAIM UPON THE ROOFTOPS",
+      "annotations": {
+        "structure_tags": [
+          "parallelism",
+          "contrast:dark-light",
+          "signal:ear",
+          "broadcast:rooftop",
+          "imperative"
+        ],
+        "semantic_tags": [
+          "private-to-public",
+          "hearing-to-proclamation"
+        ],
+        "provenance_note": "Structural rendering made for comparison, not a published translation."
+      }
+    }
+  ]
+}

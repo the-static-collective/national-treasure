@@ -1,0 +1,54 @@
+{
+  "witness_id": "NT-LC-LUKE-4-21",
+  "title": "Luke 4:21 — temporal/source/receiver deixis",
+  "authority": "textual measurement + declared annotations; no source-language reconstruction",
+  "layers": [
+    {
+      "id": "gospel-greek",
+      "language": "grc",
+      "script": "Greek",
+      "witness_class": "primary-text witness",
+      "text": "Σήμερον πεπλήρωται ἡ γραφὴ αὕτη ἐν τοῖς ὠσὶν ὑμῶν",
+      "numeric_system": "greek-milesian",
+      "annotations": {
+        "structure_tags": [
+          "deixis:time",
+          "deixis:source",
+          "deixis:receiver",
+          "body:ears",
+          "fulfillment-state"
+        ],
+        "semantic_tags": [
+          "present-availability",
+          "scripture-relation"
+        ],
+        "morphology": {
+          "σήμερον": "temporal adverb",
+          "πεπλήρωται": "perfect indicative middle/passive, third singular"
+        },
+        "provenance_note": "Greek Gospel wording; does not establish the language of the historical utterance."
+      }
+    },
+    {
+      "id": "wooden-english",
+      "language": "en",
+      "script": "Latin",
+      "witness_class": "analytic rendering",
+      "text": "TODAY has-been-fulfilled THIS SCRIPTURE in YOUR EARS",
+      "annotations": {
+        "structure_tags": [
+          "deixis:time",
+          "deixis:source",
+          "deixis:receiver",
+          "body:ears",
+          "fulfillment-state"
+        ],
+        "semantic_tags": [
+          "present-availability",
+          "scripture-relation"
+        ],
+        "provenance_note": "Deliberately structural English rendering, not a published Bible translation."
+      }
+    }
+  ]
+}
