@@ -1,0 +1,205 @@
+{
+  "schema": "national-treasure.linguistic-carry.reference-corpus.v1",
+  "corpus_id": "RP2018-HASH-SAMPLE-001",
+  "generated_on": "2026-09-22",
+  "source": {
+    "title": "The New Testament in the Original Greek: Byzantine Textform (Robinson-Pierpont 2018)",
+    "edition": "RP2018; repository Unicode TEI, no-accents representation",
+    "repository": "https://github.com/byztxt/byzantine-majority-text",
+    "commit": "27a45ff1b7be6c17ccbfeac414f3f55732ae8e28",
+    "license": "Public Domain / Unlicense; attribution and disclaimer retained",
+    "license_url": "https://github.com/byztxt/byzantine-majority-text/blob/27a45ff1b7be6c17ccbfeac414f3f55732ae8e28/LICENSE.txt",
+    "responsibility": "Maurice A. Robinson and William G. Pierpont, The New Testament in the Original Greek: Byzantine Textform",
+    "disclaimer": "Use or reproduction does not imply doctrinal or theological agreement by the editors or publisher with views maintained by downstream users.",
+    "files": [
+      {
+        "path": "tei-xml-unicode/no-accents/MAT.xml",
+        "sha256": "8b4be318374bd6a3abcad330be8dfc6087cc782282dba19b6236bff6c2e62b6d"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/MAR.xml",
+        "sha256": "c20d9f52e4b8c3194235ab2801061c74f279a7c2618e42a521a6a63d8b0777ac"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/LUK.xml",
+        "sha256": "a063ee81571bd299be20e4b1278971059052fd7e53c2b5aa5ab2989066e88245"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/JOH.xml",
+        "sha256": "b63f9bc354ad132901c5bc1c1ef2d926e735f336362230c472465ea1e48e3a5d"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/ACT.xml",
+        "sha256": "e1ed64467824b6c881a6e2b090018d410afaaf34cab9a36780b589eb0e3c7a8e"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/ROM.xml",
+        "sha256": "b778ac1790ac4b798b1d80c4483bd634a537cfa2a91832bbb5513108902909a3"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/1CO.xml",
+        "sha256": "b198da8908d1624d5d2bf19b42cc304900c64590f2ddf474b6771f9700c0590f"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/2CO.xml",
+        "sha256": "7a88cb86b95f9f9e4695ef475460cba96d408ab85fd29564ad0c879a49efea39"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/GAL.xml",
+        "sha256": "b8b2e11df2ce37d07fc9934357a55641e4acd0db243ff247afa7e9909020ddfa"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/EPH.xml",
+        "sha256": "3cc6e2719b5bd30740ddeead32224fcf6062d0f3ac3101c3caa51e17b58cbdde"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/PHP.xml",
+        "sha256": "5538139572290b679275e1b1428c2a273adc53e96bc153620e0c8bf0b7b7f213"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/COL.xml",
+        "sha256": "9c6518cf36e9c7088c8d54d5ecdb367790c6401494e0d717623ce262cb29c200"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/1TH.xml",
+        "sha256": "b83a23f36a49a4dcfb3c82f2adbbb353bfcab8845991735495ad85787e1f86c0"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/2TH.xml",
+        "sha256": "ed28353f835a72139a661d50ddd92f83db4e07b2742e5bdf9b783abc81f6a22e"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/1TI.xml",
+        "sha256": "1bdd6ad958a67a957bb48935067bf21df5617103841c4ed503f4ec7a20c79ced"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/2TI.xml",
+        "sha256": "1cd763d9d23547fd42c6f83c9415bd50c0954a86654ebf44bb70f9ba95b887f1"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/TIT.xml",
+        "sha256": "5b1bb7745fb1eb556c423c4f25cea63c42d93c20309c7edf6d822ec6c3b5bb6e"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/PHM.xml",
+        "sha256": "728caf582fa3d75acdbe7553799368fba2430a93c958164158ad929cfd0e9d28"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/HEB.xml",
+        "sha256": "58e1e4846dc247fbccdf2cfd9371aecfeffe8be1f39d5b869d8b4c17b6db082e"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/JAM.xml",
+        "sha256": "6ca1ea1b7a4f1305a526ae437de9fbab8f9ffa25c9c4cbdf3aa69851de2f03ab"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/1PE.xml",
+        "sha256": "f01067f4524ff4699065c1809fdb5aa5a704799754f88b1a005e4640372eaca7"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/2PE.xml",
+        "sha256": "a4b080754dd4b13972c51756b491721dfe46103f3ac2f5f4d03fab65533250a3"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/1JO.xml",
+        "sha256": "2a3f640c8f3d23db9a0c16951d96ad3951f671a308f28265967af8d8cddc59fa"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/2JO.xml",
+        "sha256": "8cd5d58079fc4f5de60b4983e11bf2d7060503f1097593c67fc55910151bfbf6"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/3JO.xml",
+        "sha256": "034bb6d3802cdf3b4dcd57683cdd13f9ddae1fa09510dc0ceb54cd0ce19542ee"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/JUD.xml",
+        "sha256": "c90e619d1558d4d3200dbccf0121af5167583fc0219d411aebd58e15ae977227"
+      },
+      {
+        "path": "tei-xml-unicode/no-accents/REV.xml",
+        "sha256": "a31f3c6901b433d069702d9b22dbf5d24f1fee8a1feaf9f6295d4abf7dae3e57"
+      }
+    ]
+  },
+  "selection": {
+    "algorithm": "sha256-rank-v1",
+    "seed": "NT-LC004-RP2018-REFERENCE-v1",
+    "unit": "verse",
+    "rule": "Rank eligible verse locators by SHA-256(seed + NUL + locator); take the first 256 per declared stratum.",
+    "strata": {
+      "gospel": 256,
+      "non-gospel": 256
+    },
+    "excluded_targets": [
+      {
+        "witness_id": "NT-LC003-JOHN-8-58",
+        "verse": "John 8:58",
+        "normalized_text": "πριναβρααμγενεσθαιεγωειμι",
+        "normalized_text_sha256": "9ddc576333eef93fc2a89190932266709370466b35922aa176e91656502d6f3c",
+        "locator": "RP2018:B04K8V58"
+      },
+      {
+        "witness_id": "NT-LC003-LUKE-19-40",
+        "verse": "Luke 19:40",
+        "normalized_text": "λεγωυμινεανουτοισιωπησουσινοιλιθοικραξουσιν",
+        "normalized_text_sha256": "980b35aa6c3dfdac844dde58590ea46e171e49c6922b2403e673da55f9a027e4",
+        "locator": "RP2018:B03K19V40"
+      },
+      {
+        "witness_id": "NT-LC003-LUKE-4-21",
+        "verse": "Luke 4:21",
+        "normalized_text": "σημερονπεπληρωταιηγραφηαυτηεντοισωσινυμων",
+        "normalized_text_sha256": "3300650b928e0474aca547db459344925f0d64deafb32b2ef02e011e9c9b5d30",
+        "locator": "RP2018:B03K4V21"
+      },
+      {
+        "witness_id": "NT-LC003-LUKE-9-60",
+        "verse": "Luke 9:60",
+        "normalized_text": "αφεστουσνεκρουσθαψαιτουσεαυτωννεκρουσσυδεαπελθωνδιαγγελλετηνβασιλειαντουθεου",
+        "normalized_text_sha256": "7ac7e36031c92c75449e23712f94abbf5def1b9a6d460e095457431446d40cec",
+        "locator": "RP2018:B03K9V60"
+      },
+      {
+        "witness_id": "NT-LC003-MARK-2-27",
+        "verse": "Mark 2:27",
+        "normalized_text": "τοσαββατονδιατονανθρωπονεγενετοκαιουχοανθρωποσδιατοσαββατον",
+        "normalized_text_sha256": "b9e50729365e68b9ec0e4787dcf6e0cc8e51e0b8b5eb6ce581c1e066554e4cb7",
+        "locator": "RP2018:B02K2V27"
+      },
+      {
+        "witness_id": "NT-LC003-MATTHEW-10-27",
+        "verse": "Matthew 10:27",
+        "normalized_text": "ολεγωυμινεντησκοτιαειπατεεντωφωτικαιοειστοουσακουετεκηρυξατεεπιτωνδωματων",
+        "normalized_text_sha256": "fe507aeccce6725895d2ed450d5504ab210af21163f10d1918a8c20dc33eb408",
+        "locator": "RP2018:B01K10V27"
+      },
+      {
+        "witness_id": "NT-LC003-MATTHEW-20-16",
+        "verse": "Matthew 20:16",
+        "normalized_text": "ουτωσεσονταιοιεσχατοιπρωτοικαιοιπρωτοιεσχατοι",
+        "normalized_text_sha256": "e28a25db32347ca67e41c736bef8b88d78fe494f4cd4f2c19bebecdb3c4faefd",
+        "locator": "RP2018:B01K20V16"
+      },
+      {
+        "witness_id": "NT-LC003-MATTHEW-23-24",
+        "verse": "Matthew 23:24",
+        "normalized_text": "οδηγοιτυφλοιοιδιυλιζοντεστονκωνωπατηνδεκαμηλονκαταπινοντεσ",
+        "normalized_text_sha256": "1e8b1c26950949795fde6d76abe90e03ffb5338d9837e4f558e4566803bab25d",
+        "locator": "RP2018:B01K23V24"
+      }
+    ],
+    "nonclaim": "Hash ranking is deterministic pseudo-random sampling, not proof of statistical representativeness."
+  },
+  "artifact": {
+    "path": "rp2018-sample.jsonl",
+    "record_count": 512,
+    "sha256": "bad23892891d8516d33354dcb068370eb8f2f9935a18261295d38b838bf4d3a0"
+  },
+  "boundaries": [
+    "The reference is a different declared Greek edition from the current greekbible.com display witnesses.",
+    "The sample is a control surface for sensitivity analysis, not the reconstructed language of Jesus.",
+    "No Syriac or Aramaic layer is introduced by this artifact.",
+    "Reference frequency cannot establish intention, ancestry, semantics, prophecy, or theology."
+  ]
+}
