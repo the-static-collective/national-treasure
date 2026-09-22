@@ -4,11 +4,11 @@ import { loadCorpus, validateCorpus } from "./corpus-cli.mjs";
 import { profileFromLayers, weightedValueProbability, heldOutTarget } from "./frequency-null.mjs";
 import { analyzeWitness } from "./analyze.mjs";
 
-test("seven attested Greek/KJV pairs have source locators and token-anchored morphology",async()=>{
+test("eight attested Greek/KJV pairs have source locators and token-anchored morphology",async()=>{
  const corpus=await loadCorpus();
  const r=validateCorpus(corpus);
  assert.equal(r.passed,true,r.errors.join("\n"));
- assert.equal(r.witness_count,7);
+ assert.equal(r.witness_count,8);
  for(const w of corpus) {
    const result=analyzeWitness(w);
    assert.equal(result.edges.length,1);
