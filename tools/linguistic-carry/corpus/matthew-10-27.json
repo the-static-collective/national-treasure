@@ -1,0 +1,80 @@
+{
+  "witness_id": "NT-LC003-MATTHEW-10-27",
+  "title": "Into the ear / rooftops",
+  "verse": "Matthew 10:27",
+  "source_scope": "direct-speech excerpt; narratorial material omitted",
+  "authority": "attested source excerpts + researcher-declared morphology and rhetorical tags",
+  "sources": [
+    {
+      "role": "Greek New Testament display witness",
+      "url": "https://www.greekbible.com/matthew/10/27"
+    },
+    {
+      "role": "King James Version, public domain English translation",
+      "url": "https://www.biblegateway.com/passage/?search=Matthew+10%3A27&version=KJV"
+    }
+  ],
+  "variants": [],
+  "layers": [
+    {
+      "id": "gospel-greek",
+      "language": "grc",
+      "script": "Greek",
+      "witness_class": "attested Greek Gospel text excerpt",
+      "text": "ὃ λέγω ὑμῖν ἐν τῇ σκοτίᾳ εἴπατε ἐν τῷ φωτί καὶ ὃ εἰς τὸ οὖς ἀκούετε κηρύξατε ἐπὶ τῶν δωμάτων",
+      "annotations": {
+        "structure_tags": [
+          "parallelism",
+          "contrast:dark-light",
+          "signal:ear",
+          "broadcast:rooftop",
+          "imperative"
+        ],
+        "semantic_tags": [
+          "private-to-public",
+          "hearing-to-proclamation"
+        ],
+        "morphology": {
+          "εἴπατε": "aorist active imperative, second person plural",
+          "κηρύξατε": "aorist active imperative, second person plural",
+          "εἰς": "preposition taking accusative here, into/toward"
+        },
+        "provenance_note": "Greek direct-speech text and punctuation-normalized KJV wording. English includes function words absent from compact Greek expressions."
+      }
+    },
+    {
+      "id": "kjv-english",
+      "language": "en",
+      "script": "Latin",
+      "witness_class": "attested 1611/1769 KJV English translation excerpt",
+      "text": "What I tell you in darkness that speak ye in light and what ye hear in the ear that preach ye upon the housetops",
+      "annotations": {
+        "structure_tags": [
+          "parallelism",
+          "contrast:dark-light",
+          "signal:ear",
+          "broadcast:rooftop",
+          "imperative"
+        ],
+        "semantic_tags": [
+          "private-to-public",
+          "hearing-to-proclamation"
+        ],
+        "provenance_note": "KJV passage at supplied URL, punctuation/narrative omitted for comparative direct-speech scope; tags are researcher-declared, not automatically detected. Greek direct-speech text and punctuation-normalized KJV wording. English includes function words absent from compact Greek expressions."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "gospel-greek",
+      "to": "kjv-english",
+      "type": "translation-comparison",
+      "evidence_class": "observed textual witnesses",
+      "note": "Comparison edge does not claim KJV translated from this exact Greek edition or word-for-word equivalence."
+    }
+  ],
+  "nonclaims": [
+    "No historical Aramaic source text has been reconstructed.",
+    "Morphological annotations are researcher declarations; downstream scores are not independent confirmation."
+  ]
+}
