@@ -63,12 +63,10 @@ function numericMap(system) {
 export function numericOverlay(text, system) {
   const values = numericMap(system);
   if (!values) return null;
-
   const normalized = stripMarks(String(text)).toLocaleLowerCase();
   let total = 0;
   let countedLetters = 0;
   const ignoredLetters = [];
-
   for (const ch of normalized) {
     if (!/\p{L}/u.test(ch)) continue;
     if (values.has(ch)) {
@@ -78,7 +76,6 @@ export function numericOverlay(text, system) {
       ignoredLetters.push(ch);
     }
   }
-
   return {
     system,
     total,
@@ -86,6 +83,28 @@ export function numericOverlay(text, system) {
     ignored_letters: [...new Set(ignoredLetters)],
     evidence_warning:
       "Alphabetic-number equality is a measurement only. A collision does not establish semantic relation, ancestry, intention, or theological significance."
+  };
+}
+
+function analyzePhonology(phonology) {
+  if (!phonology) return null;
+  const phonemes = Array.isArray(phonology.phonemes) ? phonology.phonemes : [];
+  const normalized = phonemes.map((p) => String(p));
+  const unique = new Set(normalized);
+  return {
+    source: phonology.source ?? "declared",
+    phonemes: normalized,
+    phoneme_count: normalized.length,
+    unique_phoneme_count: unique.size,
+    phoneme_entropy_bits: shannonEntropy(normalized),
+    phoneme_repetition_ratio:
+      normalized.length ? (normalized.length - unique.size) / normalized.length : 0,
+    syllable_count: Number.isInteger(phonology.syllable_count)
+      ? phonology.syllable_count
+      : null,
+    stress_or_accent: phonology.stress_or_accent ?? null,
+    nonclaim:
+      "Phonology is analyzed only when supplied. The tool does not infer historical pronunciation from orthography."
   };
 }
 
@@ -120,6 +139,7 @@ export function analyzeLayer(layer = {}) {
       letter_count: letters.length,
       mirror_score: mirrorScore(lowered)
     },
+    phonology: analyzePhonology(layer.phonology),
     numeric_overlay: layer.numeric_system
       ? numericOverlay(layer.text ?? "", layer.numeric_system)
       : null
@@ -154,20 +174,53 @@ export function compareLayers(left, right) {
   };
 }
 
+function normalizeEdges(inputEdges, layers) {
+  const known = new Set(layers.map((layer) => layer.id));
+  return (inputEdges ?? []).map((edge) => {
+    if (!known.has(edge.from) || !known.has(edge.to)) {
+      throw new Error(`edge references unknown layer: ${edge.from} -> ${edge.to}`);
+    }
+    return {
+      from: edge.from,
+      to: edge.to,
+      type: edge.type ?? "unspecified",
+      evidence_class: edge.evidence_class ?? "unspecified",
+      note: edge.note ?? null
+    };
+  });
+}
+
 export function analyzeWitness(input = {}) {
   const layers = input.layers ?? [];
+  const byId = new Map(layers.map((layer) => [layer.id, layer]));
+  const declaredEdges = normalizeEdges(input.edges, layers);
+  const comparisons = declaredEdges.length
+    ? declaredEdges.map((edge) => ({
+        edge,
+        comparison: compareLayers(byId.get(edge.from), byId.get(edge.to))
+      }))
+    : layers.slice(0, -1).map((layer, index) => ({
+        edge: {
+          from: layer.id,
+          to: layers[index + 1].id,
+          type: "adjacent-order",
+          evidence_class: "structural-only",
+          note: "Auto-created because no explicit edges were supplied."
+        },
+        comparison: compareLayers(layer, layers[index + 1])
+      }));
+
   return {
     witness_id: input.witness_id ?? null,
     title: input.title ?? null,
     authority: input.authority ?? "measurement only",
     layers: layers.map(analyzeLayer),
-    adjacent_comparisons: layers.slice(0, -1).map((layer, index) =>
-      compareLayers(layer, layers[index + 1])
-    ),
+    edges: comparisons,
     nonclaims: [
       "The analyzer does not infer historical source language.",
       "The analyzer does not reconstruct Aramaic or Hebrew originals.",
       "The analyzer does not infer morphology or semantics from raw text.",
+      "The analyzer does not infer phonology from orthography.",
       "Numeric overlays are optional measurements and never evidence of meaning by themselves."
     ]
   };
