@@ -1,0 +1,75 @@
+{
+  "witness_id": "NT-LC003-MATTHEW-23-24",
+  "title": "Strain out gnat / swallow camel",
+  "verse": "Matthew 23:24",
+  "source_scope": "direct-speech excerpt; narratorial material omitted",
+  "authority": "attested source excerpts + researcher-declared morphology and rhetorical tags",
+  "sources": [
+    {
+      "role": "Greek New Testament display witness",
+      "url": "https://www.greekbible.com/matthew/23/24"
+    },
+    {
+      "role": "King James Version, public domain English translation",
+      "url": "https://www.biblegateway.com/passage/?search=Matthew+23%3A24&version=KJV"
+    }
+  ],
+  "variants": [],
+  "layers": [
+    {
+      "id": "gospel-greek",
+      "language": "grc",
+      "script": "Greek",
+      "witness_class": "attested Greek Gospel text excerpt",
+      "text": "ὁδηγοὶ τυφλοί οἱ διϋλίζοντες τὸν κώνωπα τὴν δὲ κάμηλον καταπίνοντες",
+      "annotations": {
+        "structure_tags": [
+          "parallelism",
+          "contrast:small-large",
+          "image:gnat-camel",
+          "participles"
+        ],
+        "semantic_tags": [
+          "inconsistent-filtering"
+        ],
+        "morphology": {
+          "διϋλίζοντες": "present active participle nominative masculine plural, straining out",
+          "καταπίνοντες": "present active participle nominative masculine plural, swallowing",
+          "δὲ": "contrastive connective"
+        },
+        "provenance_note": "KJV strain AT is not Greek strain OUT: the translation preserves an image but changes how the first action is expressed. The figurative scale contrast is a declared reading."
+      }
+    },
+    {
+      "id": "kjv-english",
+      "language": "en",
+      "script": "Latin",
+      "witness_class": "attested 1611/1769 KJV English translation excerpt",
+      "text": "Ye blind guides which strain at a gnat and swallow a camel",
+      "annotations": {
+        "structure_tags": [
+          "parallelism",
+          "contrast:small-large",
+          "image:gnat-camel"
+        ],
+        "semantic_tags": [
+          "inconsistent-filtering"
+        ],
+        "provenance_note": "KJV passage at supplied URL, punctuation/narrative omitted for comparative direct-speech scope; tags are researcher-declared, not automatically detected. KJV strain AT is not Greek strain OUT: the translation preserves an image but changes how the first action is expressed. The figurative scale contrast is a declared reading."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "gospel-greek",
+      "to": "kjv-english",
+      "type": "translation-comparison",
+      "evidence_class": "observed textual witnesses",
+      "note": "Comparison edge does not claim KJV translated from this exact Greek edition or word-for-word equivalence."
+    }
+  ],
+  "nonclaims": [
+    "No historical Aramaic source text has been reconstructed.",
+    "Morphological annotations are researcher declarations; downstream scores are not independent confirmation."
+  ]
+}
