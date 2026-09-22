@@ -25,3 +25,7 @@ jobs:
         run: node tools/linguistic-carry/corpus-cli.mjs report
       - name: Held-out Greek sample
         run: node tools/linguistic-carry/corpus-cli.mjs holdout luke-4-21 Σήμερον
+      - name: Independent Greek reference corpus gate
+        run: node tools/linguistic-carry/reference-cli.mjs check
+      - name: Cross-model reference stress test
+        run: node tools/linguistic-carry/reference-cli.mjs stress Σήμερον

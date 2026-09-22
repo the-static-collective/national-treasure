@@ -141,3 +141,32 @@ node tools/linguistic-carry/corpus-cli.mjs holdout luke-4-21 Σήμερον
 The held-out probability is an **independent-character model estimated from a tiny, nonrepresentative sample**, not a meaningful probability of hidden intent. Morphology and structural tags are supplied by researchers, not discovered by this tool. Distinguish an attested Greek or Syriac textual witness from a hypothetical oral-language retroversion.
 
 See `threads/linguistic-carry/LC-003-attested-corpus.md`.
+
+## LC-004 — independently sampled Greek control deck
+
+The reference corpus under `reference/` contains 512 deterministically sampled verses from the public-domain Robinson-Pierpont 2018 Byzantine Textform: 256 Gospel verses and 256 non-Gospel New Testament verses. The upstream repository is pinned to an exact commit; every source TEI file and the generated JSONL artifact carry SHA-256 receipts. All eight Red Letter targets are excluded by locator before selection.
+
+```bash
+node tools/linguistic-carry/reference-cli.mjs check
+node tools/linguistic-carry/reference-cli.mjs profile gospel
+node tools/linguistic-carry/reference-cli.mjs score Σήμερον all word
+node tools/linguistic-carry/reference-cli.mjs stress Σήμερον
+```
+
+`stress` compares three distinct null surfaces:
+
+- the LC-003 independent-character model, now trained on the 512-verse control deck;
+- actual same-length Greek words;
+- same-length character windows that never cross a verse boundary.
+
+It also keeps Gospel and non-Gospel strata separate so genre sensitivity remains visible. A low or high collision rate is still not evidence of intention, ancestry, semantics, or theology.
+
+Rebuild only from the pinned upstream checkout:
+
+```bash
+node tools/linguistic-carry/scripts/build-rp2018-reference.mjs \
+  /path/to/byzantine-majority-text \
+  27a45ff1b7be6c17ccbfeac414f3f55732ae8e28
+```
+
+See `threads/linguistic-carry/LC-004-independent-reference.md`.
