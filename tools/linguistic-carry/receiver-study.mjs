@@ -121,7 +121,7 @@ export function compileAssignment(study, participantKey) {
     study_receipt,
     participant,
     trials,
-    privacy:"Participant-facing assignment contains opaque trial/material tokens only. Item identity, hypothesis, answer key, relation class, source URL, and arm identity remain operator-side."
+    privacy:"Opaque allocation receipt only. Interpretive and source metadata remain outside this artifact."
   };
 }
 
