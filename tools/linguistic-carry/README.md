@@ -207,8 +207,20 @@ node tools/linguistic-carry/receiver-cli.mjs assign participant-local-key
 python3 -m http.server 8765 -d tools/linguistic-carry/survey
 ```
 
-The browser instrument splits presenter and participant entrypoints and emits SHA-256 packet-bound response receipts interoperable with the Node verifier. See `tools/linguistic-carry/survey/README.md`.
+The browser instrument splits presenter and participant entrypoints. Its **current participant page is pilot-only**: it verifies SHA-256 packet receipts but exports usability feedback with no comprehension answers. The separate Node scoring kernel remains a future substantive-study component, not the pilot's output path. See `tools/linguistic-carry/survey/README.md`.
 
 Aggregation HOLDS until both arms meet the declared cell floor, then reports descriptive arm-local comprehension deltas without ranking translations or converting reader response into source-text authority.
 
 See `threads/linguistic-carry/LC-005B-receiver-uptake.md`.
+
+
+## LC-005C — frozen local-only pilot gate
+
+The original ten-item receiver study is pinned by a Git blob hash in `studies/living-bible-pilot-freeze-001.json`. The participant page now requires voluntary pilot-information acknowledgement and exports only `pilot_only` usability feedback. Normal comprehension scoring and aggregation explicitly reject pilot feedback.
+
+```bash
+node tools/linguistic-carry/pilot-cli.mjs check
+node --test tools/linguistic-carry/*.test.mjs
+```
+
+See `threads/linguistic-carry/LC-005C-pilot-gate.md` and `survey/README.md`. No participants have been recruited or results collected by this repository change.
