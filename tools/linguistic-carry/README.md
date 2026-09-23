@@ -185,3 +185,25 @@ node tools/linguistic-carry/transform-cli.mjs passage john-8-58
 The TLB target text is not vendored. The study preserves external source locators plus researcher-declared, non-substitutive observations. `REVEAL` is explicitly receiver-relative; `PROJECTION` does not mean false; `LOSS` does not mean globally inferior.
 
 See `threads/linguistic-carry/LC-005-living-bible-carry.md`.
+
+
+## LC-005B — blinded receiver-local uptake
+
+LC-005B gives `REVEAL` an empirical path. Ten relation-specific probes are assigned between ASV and TLB with participant-scoped deterministic blinding. Public assignments contain opaque material tokens only; presenter-side resolution is separate so translation identity and URLs do not leak.
+
+The response receipt keeps five channels separate:
+
+- comprehension;
+- clarity;
+- preference;
+- perceived fidelity;
+- theological agreement.
+
+```bash
+node tools/linguistic-carry/receiver-cli.mjs check
+node tools/linguistic-carry/receiver-cli.mjs assign participant-local-key
+```
+
+Aggregation HOLDS until both arms meet the declared cell floor, then reports descriptive arm-local comprehension deltas without ranking translations or converting reader response into source-text authority.
+
+See `threads/linguistic-carry/LC-005B-receiver-uptake.md`.
