@@ -2,6 +2,13 @@ import crypto from "node:crypto";
 
 const VALID_CLASSES = new Set(["CARRY","REVEAL","PROJECTION","LOSS","HOLD"]);
 const VALID_ARMS = new Set(["asv","tlb"]);
+const RESPONSE_FIELDS = Object.freeze([
+  "answer_index",
+  "clarity_1_5",
+  "preference_1_5",
+  "perceived_fidelity_1_5",
+  "theological_agreement_1_5"
+]);
 
 function canonical(value) {
   if (Array.isArray(value)) return value.map(canonical);
@@ -63,19 +70,35 @@ export function armFor(study, participantPseudo, itemId) {
   return assignmentBit(study.blinding.seed,participantPseudo,itemId)===0 ? "asv" : "tlb";
 }
 
+export function trialToken(study, participantPseudo, itemId) {
+  return sha256(`${study.study_id}\0${study.blinding.seed}\0${participantPseudo}\0${itemId}\0trial`).slice(0,32);
+}
+
 export function materialToken(study, participantPseudo, itemId) {
   return sha256(`${study.study_id}\0${study.blinding.seed}\0${participantPseudo}\0${itemId}\0material`).slice(0,32);
 }
 
-export function resolveTrialMaterial(study, participantPseudo, itemId) {
-  const item=study.items.find((candidate)=>candidate.id===itemId);
-  if (!item) throw new Error("unknown study item");
-  const arm=armFor(study,participantPseudo,itemId);
+function itemForTrialToken(study, participantPseudo, token) {
+  return study.items.find((item)=>trialToken(study,participantPseudo,item.id)===token) ?? null;
+}
+
+export function resolveTrialMaterial(study, participantPseudo, token) {
+  const item=itemForTrialToken(study,participantPseudo,token);
+  if (!item) throw new Error("unknown trial token");
+  const arm=armFor(study,participantPseudo,item.id);
   return {
-    material_token:materialToken(study,participantPseudo,itemId),
+    trial_token:token,
+    material_token:materialToken(study,participantPseudo,item.id),
+    item_id:item.id,
+    passage_id:item.passage_id,
+    relation_id:item.relation_id,
+    expected_class:item.expected_class,
     arm,
     url:item.materials[arm].url,
-    presenter_boundary:"Presenter-side resolution only. Do not expose version metadata, URL query parameters, or arm identity to the participant."
+    prompt:item.prompt,
+    options:item.options,
+    response_fields:[...RESPONSE_FIELDS],
+    presenter_boundary:"Presenter-side resolution only. Do not expose item identity, answer key, hypothesis, version metadata, URL query parameters, or arm identity to the participant."
   };
 }
 
@@ -90,37 +113,108 @@ export function compileAssignment(study, participantKey) {
   );
   const trials=ordered.map((item,index)=>({
     trial_index:index,
-    item_id:item.id,
-    passage_id:item.passage_id,
-    relation_id:item.relation_id,
-    expected_class:item.expected_class,
-    material_token:materialToken(study,participant,item.id),
-    prompt:item.prompt,
-    options:item.options,
-    response_fields:["answer_index","clarity_1_5","preference_1_5","perceived_fidelity_1_5","theological_agreement_1_5"],
-    nonclaim:"Material token is opaque presentation routing only. It carries no truth, fidelity, or authority status."
+    trial_token:trialToken(study,participant,item.id),
+    material_token:materialToken(study,participant,item.id)
   }));
   return {
     study_id:study.study_id,
     study_receipt,
     participant,
     trials,
-    privacy:"participant key and arm identity are absent from the public assignment; only the study-scoped pseudonym belongs in response receipts"
+    privacy:"Participant-facing assignment contains opaque trial/material tokens only. Item identity, hypothesis, answer key, relation class, source URL, and arm identity remain operator-side."
   };
 }
 
-export function scoreResponse(study, assignment, response) {
+export function packetReceipt(packetWithoutReceipt) {
+  return sha256(JSON.stringify(canonical(packetWithoutReceipt)));
+}
+
+const PARTICIPANT_FORBIDDEN_KEYS = new Set([
+  "arm","url","item_id","passage_id","relation_id","expected_class",
+  "correct_index","hypothesis","materials","version","translation"
+]);
+
+function findForbiddenKeys(value, path="$", found=[]) {
+  if (Array.isArray(value)) {
+    value.forEach((item,index)=>findForbiddenKeys(item,`${path}[${index}]`,found));
+  } else if (value && typeof value==="object") {
+    for (const [key,item] of Object.entries(value)) {
+      if (PARTICIPANT_FORBIDDEN_KEYS.has(key)) found.push(`${path}.${key}`);
+      findForbiddenKeys(item,`${path}.${key}`,found);
+    }
+  }
+  return found;
+}
+
+export function buildTrialPacket(study, assignment, resolution, passageText) {
+  if (assignment.study_id!==study.study_id || assignment.study_receipt!==studyReceipt(study)) {
+    throw new Error("assignment does not match current study");
+  }
+  const trial=assignment.trials.find((candidate)=>candidate.trial_token===resolution.trial_token);
+  if (!trial) throw new Error("resolution is not part of assignment");
+  if (trial.material_token!==resolution.material_token) throw new Error("material token mismatch");
+  if (typeof passageText!=="string" || !passageText.trim()) throw new Error("passage text is required");
+
+  const packet={
+    schema:"national-treasure.linguistic-carry.participant-packet.v1",
+    study_id:study.study_id,
+    study_receipt:assignment.study_receipt,
+    participant:assignment.participant,
+    trial_index:trial.trial_index,
+    trial_token:trial.trial_token,
+    material_token:trial.material_token,
+    passage_text:passageText.trim(),
+    prompt:resolution.prompt,
+    options:resolution.options,
+    response_fields:[...RESPONSE_FIELDS],
+    created_at:new Date().toISOString()
+  };
+  const forbidden=findForbiddenKeys(packet);
+  if (forbidden.length) throw new Error(`participant packet leaks forbidden keys: ${forbidden.join(", ")}`);
+  return {...packet,packet_receipt:packetReceipt(packet)};
+}
+
+export function validateTrialPacket(study, assignment, packet) {
+  const errors=[];
+  if (packet?.schema!=="national-treasure.linguistic-carry.participant-packet.v1") errors.push("unexpected packet schema");
+  if (packet?.study_id!==study.study_id || packet?.study_receipt!==studyReceipt(study)) errors.push("packet study mismatch");
+  if (packet?.participant!==assignment.participant) errors.push("packet participant mismatch");
+  const trial=assignment.trials.find((candidate)=>candidate.trial_token===packet?.trial_token);
+  if (!trial) errors.push("unknown packet trial token");
+  if (trial && trial.material_token!==packet?.material_token) errors.push("packet material token mismatch");
+  if (!packet?.passage_text || !packet?.prompt || !Array.isArray(packet?.options)) errors.push("packet content incomplete");
+  const forbidden=findForbiddenKeys(packet);
+  if (forbidden.length) errors.push(`participant packet leaks forbidden keys: ${forbidden.join(", ")}`);
+  if (packet?.packet_receipt) {
+    const {packet_receipt,...base}=packet;
+    if (packet_receipt!==packetReceipt(base)) errors.push("packet receipt mismatch");
+  } else errors.push("missing packet receipt");
+  return {passed:errors.length===0,errors};
+}
+
+export function scoreResponse(study, assignment, response, packet=null) {
   if (assignment.study_id !== study.study_id || assignment.study_receipt !== studyReceipt(study)) {
     throw new Error("assignment does not match current study receipt");
   }
-  const item=study.items.find((candidate)=>candidate.id===response.item_id);
-  const trial=assignment.trials.find((candidate)=>candidate.item_id===response.item_id);
-  if (!item || !trial) throw new Error("unknown response item");
+  const trial=assignment.trials.find((candidate)=>candidate.trial_token===response.trial_token);
+  if (!trial) throw new Error("unknown response trial");
+  if (response.material_token!==trial.material_token) throw new Error("response material token mismatch");
+  const item=itemForTrialToken(study,assignment.participant,response.trial_token);
+  if (!item) throw new Error("trial token does not resolve to study item");
   if (!Number.isInteger(response.answer_index)) throw new Error("answer_index must be an integer");
 
-  const ratingFields=["clarity_1_5","preference_1_5","perceived_fidelity_1_5","theological_agreement_1_5"];
-  for (const field of ratingFields) {
-    if (response[field] !== undefined && (!Number.isInteger(response[field]) || response[field] < 1 || response[field] > 5)) {
+  if (packet) {
+    const validation=validateTrialPacket(study,assignment,packet);
+    if (!validation.passed) throw new Error(validation.errors.join("; "));
+    if (packet.trial_token!==response.trial_token || packet.material_token!==response.material_token) {
+      throw new Error("response does not match packet");
+    }
+    if (response.packet_receipt!==packet.packet_receipt) throw new Error("response packet receipt mismatch");
+  }
+
+  for (const field of RESPONSE_FIELDS.slice(1)) {
+    if (response[field] !== undefined && response[field] !== null &&
+        (!Number.isInteger(response[field]) || response[field] < 1 || response[field] > 5)) {
       throw new Error(`${field} must be an integer from 1 to 5`);
     }
   }
@@ -129,11 +223,13 @@ export function scoreResponse(study, assignment, response) {
     study_id:study.study_id,
     study_receipt:assignment.study_receipt,
     participant:assignment.participant,
+    trial_token:trial.trial_token,
+    material_token:trial.material_token,
+    packet_receipt:response.packet_receipt ?? null,
     item_id:item.id,
     passage_id:item.passage_id,
     relation_id:item.relation_id,
     expected_class:item.expected_class,
-    material_token:trial.material_token,
     correct:response.answer_index===item.correct_index,
     answer_index:response.answer_index,
     clarity_1_5:response.clarity_1_5 ?? null,
@@ -160,17 +256,19 @@ export function summarizeReceipts(study, assignmentMap, receipts, {minimum_cell=
   const assignmentKeys=new Set();
   for (const assignment of assignmentMap) {
     for (const trial of assignment.trials) {
-      assignmentKeys.add(`${assignment.participant}\0${trial.item_id}\0${trial.material_token}`);
+      assignmentKeys.add(`${assignment.participant}\0${trial.trial_token}\0${trial.material_token}`);
     }
   }
 
   const groups=new Map();
   for (const receipt of receipts) {
     if (receipt.study_receipt !== studyReceipt(study)) throw new Error("mixed study receipts");
-    const assignmentKey=`${receipt.participant}\0${receipt.item_id}\0${receipt.material_token}`;
+    const assignmentKey=`${receipt.participant}\0${receipt.trial_token}\0${receipt.material_token}`;
     if (!assignmentKeys.has(assignmentKey)) throw new Error("receipt lacks matching assignment");
-    const arm=armFor(study,receipt.participant,receipt.item_id);
-    const key=`${receipt.item_id}\0${arm}`;
+    const item=study.items.find((candidate)=>candidate.id===receipt.item_id);
+    if (!item) throw new Error("receipt item is not in study");
+    const arm=armFor(study,receipt.participant,item.id);
+    const key=`${item.id}\0${arm}`;
     if (!groups.has(key)) groups.set(key,[]);
     groups.get(key).push(receipt);
   }
