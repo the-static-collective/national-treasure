@@ -1,0 +1,297 @@
+{
+  "schema": "national-treasure.linguistic-carry.receiver-study.v1",
+  "study_id": "NT-LC005-RECEIVER-UPTAKE-001",
+  "title": "Blinded receiver-local uptake study for Living Bible transformations",
+  "status": "experimental scaffold; no human-subject data collected",
+  "date": "2026-09-23",
+  "parent_study": "NT-LC005-TLB-REDLETTER-001",
+  "receiver": {
+    "id": "modern-general-english-reader-v1",
+    "definition": "adult English reader; no source-language competence assumed",
+    "boundary": "The receiver definition scopes the measurement. It is not a claim about all readers."
+  },
+  "blinding": {
+    "method": "deterministic study-scoped pseudonym + SHA-256 arm allocation + participant-specific item order",
+    "seed": "NT-LC005-RECEIVER-UPTAKE-001/v1",
+    "participant_surface": "The public assignment contains opaque material tokens but no version identity or source URL.",
+    "presenter_surface": "A separate resolver maps the token to ASV or TLB. Version metadata must not be shown with the passage."
+  },
+  "materials": {
+    "text_policy": "external-reference-only",
+    "arms": [
+      "asv",
+      "tlb"
+    ],
+    "reason": "Do not vendor copyrighted TLB wording. A presenter retrieves the cited rendering at run time and displays only the passage text."
+  },
+  "measurement": {
+    "primary": "relation-specific comprehension probe",
+    "secondary": [
+      "clarity_1_5",
+      "preference_1_5",
+      "perceived_fidelity_1_5",
+      "theological_agreement_1_5"
+    ],
+    "separation_law": "Preference, perceived fidelity, theological agreement, and comprehension remain distinct fields.",
+    "default_report": "descriptive arm-local rates and TLB-minus-ASV comprehension delta only after minimum cell size"
+  },
+  "items": [
+    {
+      "id": "luke-4-21-today-fulfillment",
+      "passage_id": "luke-4-21",
+      "relation_id": "today-fulfillment",
+      "expected_class": "REVEAL",
+      "hypothesis": "The paraphrase may increase recovery of the present-time fulfillment relation.",
+      "prompt": "According to the sentence, when is the scriptural promise presented as being fulfilled?",
+      "options": [
+        "In the present hearing",
+        "At an unspecified future time",
+        "Only after the speaker's death",
+        "The sentence does not say"
+      ],
+      "correct_index": 0,
+      "materials": {
+        "asv": {
+          "arm": "asv",
+          "url": "https://www.biblegateway.com/passage/?search=Luke+4%3A21&version=ASV"
+        },
+        "tlb": {
+          "arm": "tlb",
+          "url": "https://www.biblegateway.com/passage/?search=Luke+4%3A21&version=TLB"
+        }
+      }
+    },
+    {
+      "id": "mark-2-27-sabbath-purpose",
+      "passage_id": "mark-2-27",
+      "relation_id": "sabbath-for-human-purpose",
+      "expected_class": "REVEAL",
+      "hypothesis": "The paraphrase may make the Sabbath-for-human purpose relation more explicit.",
+      "prompt": "Which direction of purpose does the sentence assert?",
+      "options": [
+        "Human beings exist to serve the Sabbath",
+        "The Sabbath exists for human beings",
+        "Both exist only for religious officials",
+        "No purpose relation is given"
+      ],
+      "correct_index": 1,
+      "materials": {
+        "asv": {
+          "arm": "asv",
+          "url": "https://www.biblegateway.com/passage/?search=Mark+2%3A27&version=ASV"
+        },
+        "tlb": {
+          "arm": "tlb",
+          "url": "https://www.biblegateway.com/passage/?search=Mark+2%3A27&version=TLB"
+        }
+      }
+    },
+    {
+      "id": "matthew-6-34-day-local",
+      "passage_id": "matthew-6-34",
+      "relation_id": "day-local-sufficiency",
+      "expected_class": "REVEAL",
+      "hypothesis": "The paraphrase may increase recovery of the one-day-at-a-time relation.",
+      "prompt": "How does the saying divide trouble across time?",
+      "options": [
+        "Tomorrow's trouble should be solved today",
+        "Yesterday's trouble controls tomorrow",
+        "Today's trouble is enough for today",
+        "All trouble is treated as one undivided burden"
+      ],
+      "correct_index": 2,
+      "materials": {
+        "asv": {
+          "arm": "asv",
+          "url": "https://www.biblegateway.com/passage/?search=Matthew+6%3A34&version=ASV"
+        },
+        "tlb": {
+          "arm": "tlb",
+          "url": "https://www.biblegateway.com/passage/?search=Matthew+6%3A34&version=TLB"
+        }
+      }
+    },
+    {
+      "id": "matthew-20-16-rank-reversal",
+      "passage_id": "matthew-20-16",
+      "relation_id": "first-last-reversal",
+      "expected_class": "CARRY",
+      "hypothesis": "Both carriers should make the rank reversal recoverable.",
+      "prompt": "What reversal structures the saying?",
+      "options": [
+        "The last become first and the first become last",
+        "The poor become rich and the rich become poor",
+        "The young become old and the old become young",
+        "No reversal is stated"
+      ],
+      "correct_index": 0,
+      "materials": {
+        "asv": {
+          "arm": "asv",
+          "url": "https://www.biblegateway.com/passage/?search=Matthew+20%3A16&version=ASV"
+        },
+        "tlb": {
+          "arm": "tlb",
+          "url": "https://www.biblegateway.com/passage/?search=Matthew+20%3A16&version=TLB"
+        }
+      }
+    },
+    {
+      "id": "john-14-6-exclusive-access",
+      "passage_id": "john-14-6",
+      "relation_id": "exclusive-father-access",
+      "expected_class": "CARRY",
+      "hypothesis": "Both carriers should make the access relation recoverable.",
+      "prompt": "By what route does the saying describe access to the Father?",
+      "options": [
+        "Through knowledge alone",
+        "Through the speaker",
+        "Through ancestry",
+        "Through any equally valid route"
+      ],
+      "correct_index": 1,
+      "materials": {
+        "asv": {
+          "arm": "asv",
+          "url": "https://www.biblegateway.com/passage/?search=John+14%3A6&version=ASV"
+        },
+        "tlb": {
+          "arm": "tlb",
+          "url": "https://www.biblegateway.com/passage/?search=John+14%3A6&version=TLB"
+        }
+      }
+    },
+    {
+      "id": "john-8-58-prior-existence",
+      "passage_id": "john-8-58",
+      "relation_id": "prior-existence",
+      "expected_class": "CARRY",
+      "hypothesis": "Both carriers should preserve the claim that the speaker precedes Abraham.",
+      "prompt": "Relative to Abraham, when does the speaker locate his own existence?",
+      "options": [
+        "Only after Abraham",
+        "At exactly the same beginning",
+        "Before Abraham",
+        "The sentence denies any temporal relation"
+      ],
+      "correct_index": 2,
+      "materials": {
+        "asv": {
+          "arm": "asv",
+          "url": "https://www.biblegateway.com/passage/?search=John+8%3A58&version=ASV"
+        },
+        "tlb": {
+          "arm": "tlb",
+          "url": "https://www.biblegateway.com/passage/?search=John+8%3A58&version=TLB"
+        }
+      }
+    },
+    {
+      "id": "john-8-58-tense-contrast",
+      "passage_id": "john-8-58",
+      "relation_id": "become-i-am-tense-contrast",
+      "expected_class": "LOSS",
+      "hypothesis": "The paraphrase may reduce recovery of the source-layer becoming/present-being contrast.",
+      "prompt": "Which more specific grammatical contrast is tracked by the source-layer analysis?",
+      "options": [
+        "Abraham speaks while the speaker is silent",
+        "Abraham remembers while the speaker forgets",
+        "Abraham moves while the speaker rests",
+        "Abraham comes-to-be while the speaker uses present being"
+      ],
+      "correct_index": 3,
+      "materials": {
+        "asv": {
+          "arm": "asv",
+          "url": "https://www.biblegateway.com/passage/?search=John+8%3A58&version=ASV"
+        },
+        "tlb": {
+          "arm": "tlb",
+          "url": "https://www.biblegateway.com/passage/?search=John+8%3A58&version=TLB"
+        }
+      }
+    },
+    {
+      "id": "matthew-24-34-generation",
+      "passage_id": "matthew-24-34",
+      "relation_id": "generation-referent",
+      "expected_class": "LOSS",
+      "hypothesis": "The paraphrase may reduce recovery of the explicit generation referent.",
+      "prompt": "What temporal group-word is explicitly tracked in the source-layer relation?",
+      "options": [
+        "Empire",
+        "Generation",
+        "Century",
+        "Season"
+      ],
+      "correct_index": 1,
+      "materials": {
+        "asv": {
+          "arm": "asv",
+          "url": "https://www.biblegateway.com/passage/?search=Matthew+24%3A34&version=ASV"
+        },
+        "tlb": {
+          "arm": "tlb",
+          "url": "https://www.biblegateway.com/passage/?search=Matthew+24%3A34&version=TLB"
+        }
+      }
+    },
+    {
+      "id": "luke-9-60-spiritual-death",
+      "passage_id": "luke-9-60",
+      "relation_id": "spiritual-death-reading",
+      "expected_class": "PROJECTION",
+      "hypothesis": "The paraphrase may increase recovery of one particular interpretation of the first 'dead' group.",
+      "prompt": "Which interpretation of the first group is made explicit in the tracked paraphrase relation?",
+      "options": [
+        "They are spiritually dead or without eternal life",
+        "They are physically asleep",
+        "They are political prisoners",
+        "They are all literal corpses"
+      ],
+      "correct_index": 0,
+      "materials": {
+        "asv": {
+          "arm": "asv",
+          "url": "https://www.biblegateway.com/passage/?search=Luke+9%3A60&version=ASV"
+        },
+        "tlb": {
+          "arm": "tlb",
+          "url": "https://www.biblegateway.com/passage/?search=Luke+9%3A60&version=TLB"
+        }
+      }
+    },
+    {
+      "id": "luke-19-40-stone-praise",
+      "passage_id": "luke-19-40",
+      "relation_id": "stone-praise-reading",
+      "expected_class": "PROJECTION",
+      "hypothesis": "The paraphrase may increase recovery of a celebratory interpretation of the stones' cry.",
+      "prompt": "What kind of vocal response does the tracked paraphrase interpretation assign to the stones?",
+      "options": [
+        "A legal accusation",
+        "A warning of weather",
+        "Celebratory praise",
+        "A request for silence"
+      ],
+      "correct_index": 2,
+      "materials": {
+        "asv": {
+          "arm": "asv",
+          "url": "https://www.biblegateway.com/passage/?search=Luke+19%3A40&version=ASV"
+        },
+        "tlb": {
+          "arm": "tlb",
+          "url": "https://www.biblegateway.com/passage/?search=Luke+19%3A40&version=TLB"
+        }
+      }
+    }
+  ],
+  "analysis_boundaries": [
+    "Do not combine comprehension with preference into a single score.",
+    "Do not treat perceived fidelity as source-language fidelity.",
+    "Do not infer population effects before declared sampling and adequate cell sizes.",
+    "Do not interpret PROJECTION comprehension as proof that the projected interpretation is correct.",
+    "Do not use reader response to rewrite CARRY/REVEAL/PROJECTION/LOSS source declarations."
+  ]
+}

@@ -170,3 +170,57 @@ node tools/linguistic-carry/scripts/build-rp2018-reference.mjs \
 ```
 
 See `threads/linguistic-carry/LC-004-independent-reference.md`.
+
+
+## LC-005 — receiver-aware paraphrase transformations
+
+The Living Bible study adds a typed transformation ledger over twelve Red Letter passages. It distinguishes **CARRY**, **REVEAL**, **PROJECTION**, **LOSS**, and **HOLD** without pretending the executable can infer semantics from raw text.
+
+```bash
+node tools/linguistic-carry/transform-cli.mjs check
+node tools/linguistic-carry/transform-cli.mjs report
+node tools/linguistic-carry/transform-cli.mjs passage john-8-58
+```
+
+The TLB target text is not vendored. The study preserves external source locators plus researcher-declared, non-substitutive observations. `REVEAL` is explicitly receiver-relative; `PROJECTION` does not mean false; `LOSS` does not mean globally inferior.
+
+See `threads/linguistic-carry/LC-005-living-bible-carry.md`.
+
+
+## LC-005B — blinded receiver-local uptake
+
+LC-005B gives `REVEAL` an empirical path. Ten relation-specific probes are assigned between ASV and TLB with participant-scoped deterministic blinding. Participant-facing assignments contain opaque trial/material tokens only; presenter-side resolution is separate so item identity, hypothesis, translation identity, and URLs do not leak.
+
+The response receipt keeps five channels separate:
+
+- comprehension;
+- clarity;
+- preference;
+- perceived fidelity;
+- theological agreement.
+
+```bash
+node tools/linguistic-carry/receiver-cli.mjs check
+node tools/linguistic-carry/receiver-cli.mjs assign participant-local-key
+
+# Local browser instrument
+python3 -m http.server 8765 -d tools/linguistic-carry/survey
+```
+
+The browser instrument splits presenter and participant entrypoints. Its **current participant page is pilot-only**: it verifies SHA-256 packet receipts but exports usability feedback with no comprehension answers. The separate Node scoring kernel remains a future substantive-study component, not the pilot's output path. See `tools/linguistic-carry/survey/README.md`.
+
+Aggregation HOLDS until both arms meet the declared cell floor, then reports descriptive arm-local comprehension deltas without ranking translations or converting reader response into source-text authority.
+
+See `threads/linguistic-carry/LC-005B-receiver-uptake.md`.
+
+
+## LC-005C — frozen local-only pilot gate
+
+The original ten-item receiver study is pinned by a Git blob hash in `studies/living-bible-pilot-freeze-001.json`. The participant page now requires voluntary pilot-information acknowledgement and exports only `pilot_only` usability feedback. Normal comprehension scoring and aggregation explicitly reject pilot feedback.
+
+```bash
+node tools/linguistic-carry/pilot-cli.mjs check
+node --test tools/linguistic-carry/*.test.mjs
+```
+
+See `threads/linguistic-carry/LC-005C-pilot-gate.md` and `survey/README.md`. No participants have been recruited or results collected by this repository change.

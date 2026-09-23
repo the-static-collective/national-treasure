@@ -1,0 +1,22 @@
+{
+  "schema": "national-treasure.linguistic-carry.pilot-freeze.v1",
+  "id": "LC-005C-PILOT-FREEZE-001",
+  "date": "2026-09-23",
+  "status": "pilot_only",
+  "study_id": "NT-LC005-RECEIVER-UPTAKE-001",
+  "study_path": "tools/linguistic-carry/studies/living-bible-receiver-study-001.json",
+  "study_git_blob_sha1": "b07edb8f68d2c6af12cf95ad72211caf8b7d8b32",
+  "analytical_admission": false,
+  "permitted_output": "pilot usability feedback only; never comprehension scores",
+  "protocol_version": "lc005c-pilot-v1",
+  "retention": {
+    "participant_files": "Local browser downloads remain on the participant's device until the participant deletes them; this prototype does not automatically delete files.",
+    "operator_shared_feedback": "If feedback is voluntarily shared with an operator, keep it locally for no more than seven days and delete it manually. Do not upload passage packets or raw responses to GitHub.",
+    "collection": "No background transmission, account, cookies, localStorage, telemetry, or remote submission."
+  },
+  "nonclaims": [
+    "SHA-256 is a tamper-evident content fingerprint, not a digital signature or proof of authorship.",
+    "Masking version labels does not prevent a knowledgeable reader from recognizing a translation.",
+    "This pilot cannot establish translation comprehension, fidelity, or a population effect."
+  ]
+}
