@@ -170,3 +170,18 @@ node tools/linguistic-carry/scripts/build-rp2018-reference.mjs \
 ```
 
 See `threads/linguistic-carry/LC-004-independent-reference.md`.
+
+
+## LC-005 — receiver-aware paraphrase transformations
+
+The Living Bible study adds a typed transformation ledger over twelve Red Letter passages. It distinguishes **CARRY**, **REVEAL**, **PROJECTION**, **LOSS**, and **HOLD** without pretending the executable can infer semantics from raw text.
+
+```bash
+node tools/linguistic-carry/transform-cli.mjs check
+node tools/linguistic-carry/transform-cli.mjs report
+node tools/linguistic-carry/transform-cli.mjs passage john-8-58
+```
+
+The TLB target text is not vendored. The study preserves external source locators plus researcher-declared, non-substitutive observations. `REVEAL` is explicitly receiver-relative; `PROJECTION` does not mean false; `LOSS` does not mean globally inferior.
+
+See `threads/linguistic-carry/LC-005-living-bible-carry.md`.
