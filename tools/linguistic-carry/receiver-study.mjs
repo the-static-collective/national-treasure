@@ -182,7 +182,11 @@ export function validateTrialPacket(study, assignment, packet) {
   const trial=assignment.trials.find((candidate)=>candidate.trial_token===packet?.trial_token);
   if (!trial) errors.push("unknown packet trial token");
   if (trial && trial.material_token!==packet?.material_token) errors.push("packet material token mismatch");
+  const item=trial ? itemForTrialToken(study,assignment.participant,trial.trial_token) : null;
+  if (!item) errors.push("packet trial does not resolve to study item");
   if (!packet?.passage_text || !packet?.prompt || !Array.isArray(packet?.options)) errors.push("packet content incomplete");
+  if (item && packet?.prompt!==item.prompt) errors.push("packet prompt differs from frozen study");
+  if (item && JSON.stringify(packet?.options)!==JSON.stringify(item.options)) errors.push("packet options differ from frozen study");
   const forbidden=findForbiddenKeys(packet);
   if (forbidden.length) errors.push(`participant packet leaks forbidden keys: ${forbidden.join(", ")}`);
   if (packet?.packet_receipt) {
