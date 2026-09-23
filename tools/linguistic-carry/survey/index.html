@@ -3,48 +3,74 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Receiver Study</title>
+  <title>Receiver Study · Pilot-only Interface</title>
   <link rel="stylesheet" href="./survey.css">
 </head>
 <body>
   <main class="shell">
     <header class="mast">
-      <p class="eyebrow">LC-005B · receiver-local uptake</p>
-      <h1>Read one passage. Answer one narrow question.</h1>
-      <p class="lede">The translation identity is intentionally hidden. Your answer, clarity, preference, perceived fidelity, and theological agreement are recorded separately.</p>
+      <p class="eyebrow">LC-005C · pilot-only interface</p>
+      <h1>Try the reading interface. Tell us what is unclear.</h1>
+      <p class="lede">This pilot tests the interface and wording of the questions. It does not collect comprehension answers or contribute to a translation comparison.</p>
     </header>
-
+    <section class="panel" id="pilot-info">
+      <h2>Before you begin</h2>
+      <p>Participation is voluntary. You can stop by closing this page before downloading any feedback. You do not have to answer any question or explain why you stopped.</p>
+      <p>The page runs locally and does not automatically transmit your responses. A feedback file downloads to your device only when you choose to create one; you decide whether to share it with the presenter. Your local files remain until you delete them. The presenter should delete any feedback you voluntarily share within seven days. Do not include your name, contact details, health information, or other personal information in comments.</p>
+      <p>You will see one passage and a comprehension question, but your answer to that question is <strong>not collected</strong>. Only usability feedback is exported. Version labels are masked, but you might recognize a translation from its language.</p>
+      <label class="choice"><input id="pilot-ack" type="checkbox"> I have read this information and choose to try this optional interface pilot.</label>
+    </section>
     <section id="loader" class="panel">
       <h2>Load trial packet</h2>
-      <p>Select the packet supplied by the presenter. It contains the passage and question, but no version identity or answer key.</p>
-      <input id="packet-file" type="file" accept=".json,application/json">
+      <p>Select the packet provided by the presenter after acknowledging the pilot information.</p>
+      <input id="packet-file" type="file" accept=".json,application/json" disabled>
       <p id="load-status" class="status" aria-live="polite"></p>
     </section>
 
-    <form id="study-form" class="panel hidden">
-      <div class="receipt-line"><span>Trial</span><code id="trial-label"></code></div>
+    <form id="pilot-form" class="panel hidden">
+      <div class="receipt-line"><span>Pilot trial</span><code id="trial-label"></code></div>
       <blockquote id="passage"></blockquote>
       <fieldset>
         <legend id="prompt"></legend>
         <div id="options" class="options"></div>
+        <p class="fine">Read the options to see whether they are understandable. Do not submit a choice; no comprehension answer is collected in this pilot.</p>
       </fieldset>
 
-      <div class="ratings">
-        <label>Clarity <select name="clarity_1_5"><option value="">optional</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
-        <label>Preference <select name="preference_1_5"><option value="">optional</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
-        <label>Perceived fidelity <select name="perceived_fidelity_1_5"><option value="">optional</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
-        <label>Theological agreement <select name="theological_agreement_1_5"><option value="">optional</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
-      </div>
+      <fieldset class="ratings">
+        <label>Were the instructions clear?
+          <select name="instructions_clear" required><option value="">Choose one</option><option value="yes">Yes</option><option value="no">No</option><option value="unsure">Unsure</option></select>
+        </label>
+        <label>Was the question understandable?
+          <select name="question_clear" required><option value="">Choose one</option><option value="yes">Yes</option><option value="no">No</option><option value="unsure">Unsure</option></select>
+        </label>
+        <label>Was the page usable on this device?
+          <select name="layout_usable" required><option value="">Choose one</option><option value="yes">Yes</option><option value="no">No</option><option value="unsure">Unsure</option></select>
+        </label>
+      </fieldset>
 
-      <button type="submit">Seal response receipt</button>
-      <p class="fine">Preference is not fidelity. Perceived fidelity is not source-language fidelity. Agreement is not comprehension.</p>
+      <fieldset>
+        <legend>What, if anything, was difficult?</legend>
+        <div class="options">
+          <label class="choice"><input type="checkbox" name="issues" value="passage_visibility"> Passage was hard to see or read</label>
+          <label class="choice"><input type="checkbox" name="issues" value="question_ambiguous"> Question could mean several things</label>
+          <label class="choice"><input type="checkbox" name="issues" value="choices_ambiguous"> Answer choices overlap or are confusing</label>
+          <label class="choice"><input type="checkbox" name="issues" value="device_layout"> Page layout or controls did not work well</label>
+          <label class="choice"><input type="checkbox" name="issues" value="version_recognized"> I could recognize the version despite hidden labels</label>
+          <label class="choice"><input type="checkbox" name="issues" value="other"> Other issue</label>
+        </div>
+      </fieldset>
+      <label class="stack">Optional interface note (no personal information)
+        <textarea name="notes" maxlength="500" rows="3" placeholder="What should be clearer?"></textarea>
+      </label>
+      <button type="submit">Create pilot-only feedback file</button>
+      <p class="fine">This feedback file contains no comprehension answer, translation arm, passage text, or identity. It cannot be used by the main study's scoring and aggregation commands.</p>
       <p id="form-status" class="status" aria-live="polite"></p>
     </form>
 
     <section id="done" class="panel hidden">
-      <h2>Response sealed</h2>
-      <p>The downloaded JSON contains your response and the packet receipt, not the hidden translation identity.</p>
-      <button id="download-again" type="button">Download receipt again</button>
+      <h2>Feedback file created</h2>
+      <p>The feedback file is on your device; nothing was submitted automatically. Share it only if you choose. Delete the file when you no longer need it.</p>
+      <button id="download-again" type="button">Download feedback again</button>
     </section>
   </main>
   <script type="module" src="./participant.mjs"></script>
