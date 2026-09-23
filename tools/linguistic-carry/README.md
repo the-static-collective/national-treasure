@@ -189,7 +189,7 @@ See `threads/linguistic-carry/LC-005-living-bible-carry.md`.
 
 ## LC-005B — blinded receiver-local uptake
 
-LC-005B gives `REVEAL` an empirical path. Ten relation-specific probes are assigned between ASV and TLB with participant-scoped deterministic blinding. Public assignments contain opaque material tokens only; presenter-side resolution is separate so translation identity and URLs do not leak.
+LC-005B gives `REVEAL` an empirical path. Ten relation-specific probes are assigned between ASV and TLB with participant-scoped deterministic blinding. Participant-facing assignments contain opaque trial/material tokens only; presenter-side resolution is separate so item identity, hypothesis, translation identity, and URLs do not leak.
 
 The response receipt keeps five channels separate:
 
@@ -202,7 +202,12 @@ The response receipt keeps five channels separate:
 ```bash
 node tools/linguistic-carry/receiver-cli.mjs check
 node tools/linguistic-carry/receiver-cli.mjs assign participant-local-key
+
+# Local browser instrument
+python3 -m http.server 8765 -d tools/linguistic-carry/survey
 ```
+
+The browser instrument splits presenter and participant entrypoints and emits SHA-256 packet-bound response receipts interoperable with the Node verifier. See `tools/linguistic-carry/survey/README.md`.
 
 Aggregation HOLDS until both arms meet the declared cell floor, then reports descriptive arm-local comprehension deltas without ranking translations or converting reader response into source-text authority.
 
