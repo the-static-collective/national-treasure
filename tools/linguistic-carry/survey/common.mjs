@@ -124,3 +124,40 @@ export function downloadJson(filename,value) {
 export async function readJsonFile(file) {
   return JSON.parse(await file.text());
 }
+
+export const PILOT_MANIFEST_ID="LC-005C-PILOT-FREEZE-001";
+export const PILOT_ISSUES=new Set([
+  "passage_visibility","question_ambiguous","choices_ambiguous",
+  "device_layout","version_recognized","other"
+]);
+
+export async function buildPilotFeedback(packet,values) {
+  const validation=await validateParticipantPacket(packet);
+  if (!validation.passed) throw new Error(validation.errors.join("; "));
+  if (values.acknowledged!==true) throw new Error("Read and acknowledge the pilot information first");
+  const issues=Array.isArray(values.issues) ? values.issues : [];
+  if (issues.some(issue=>!PILOT_ISSUES.has(issue)) || new Set(issues).size!==issues.length) {
+    throw new Error("invalid or repeated issue code");
+  }
+  const response={
+    schema:"national-treasure.linguistic-carry.pilot-feedback.v1",
+    mode:"pilot_only",
+    analytical_admission:false,
+    manifest_id:PILOT_MANIFEST_ID,
+    study_receipt:packet.study_receipt,
+    packet_receipt:packet.packet_receipt,
+    trial_token:packet.trial_token,
+    consent_version:"lc005c-pilot-v1",
+    instructions_clear:values.instructions_clear,
+    question_clear:values.question_clear,
+    layout_usable:values.layout_usable,
+    issues,
+    notes:String(values.notes??"").trim(),
+    recorded_at:new Date().toISOString()
+  };
+  for(const field of ["instructions_clear","question_clear","layout_usable"]) {
+    if (!["yes","no","unsure"].includes(response[field])) throw new Error("Select a response for "+field);
+  }
+  if (response.notes.length>500) throw new Error("Notes must be 500 characters or fewer");
+  return {...response,feedback_receipt:await sha256Hex(canonicalString(response))};
+}
