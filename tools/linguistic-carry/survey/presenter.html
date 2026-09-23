@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Receiver Study · Presenter</title>
+  <link rel="stylesheet" href="./survey.css">
+</head>
+<body>
+  <main class="shell wide">
+    <header class="mast">
+      <p class="eyebrow">LC-005B · operator surface</p>
+      <h1>Resolve privately. Present blindly.</h1>
+      <p class="lede">This screen may know the study arm and source URL. The participant screen must not.</p>
+    </header>
+
+    <section class="panel">
+      <h2>1 · Load opaque assignment</h2>
+      <input id="assignment-file" type="file" accept=".json,application/json">
+      <div id="assignment-info" class="stack hidden">
+        <label>Trial
+          <select id="trial-select"></select>
+        </label>
+        <div class="command-box">
+          <span>Resolve command</span>
+          <code id="resolve-command"></code>
+          <button id="copy-command" type="button" class="secondary">Copy</button>
+        </div>
+      </div>
+      <p id="assignment-status" class="status" aria-live="polite"></p>
+    </section>
+
+    <section class="panel">
+      <h2>2 · Load presenter-only resolution</h2>
+      <p>Run the command above and save its JSON output, then load that file here.</p>
+      <input id="resolution-file" type="file" accept=".json,application/json">
+      <div id="resolution-info" class="operator-card hidden">
+        <div><span>Internal item</span><code id="item-id"></code></div>
+        <div><span>Arm</span><strong id="arm"></strong></div>
+        <a id="source-link" target="_blank" rel="noopener noreferrer">Open source rendering</a>
+      </div>
+      <p id="resolution-status" class="status" aria-live="polite"></p>
+    </section>
+
+    <section class="panel">
+      <h2>3 · Paste only the passage text</h2>
+      <p>Open the source rendering above, copy only the scoped passage wording, and paste it below. The source URL and arm will not enter the participant packet.</p>
+      <textarea id="passage-text" rows="7" placeholder="Passage text shown to participant"></textarea>
+      <button id="build-packet" type="button">Mint participant packet</button>
+      <p id="packet-status" class="status" aria-live="polite"></p>
+    </section>
+
+    <section class="panel boundary">
+      <h2>Boundary</h2>
+      <p>The presenter may know item identity, arm, and source URL. The exported packet contains none of them. Keep this screen out of participant view.</p>
+      <a href="./index.html">Open participant surface</a>
+    </section>
+  </main>
+  <script type="module" src="./presenter.mjs"></script>
+</body>
+</html>
