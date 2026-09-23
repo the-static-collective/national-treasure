@@ -84,7 +84,11 @@ export function compileAssignment(study, participantKey) {
   if (!validation.passed) throw new Error(validation.errors.join("; "));
   const participant=participantPseudonym(study,participantKey);
   const study_receipt=studyReceipt(study);
-  const trials=study.items.map((item,index)=>({
+  const ordered=[...study.items].sort((a,b)=>
+    sha256(`${study.blinding.seed}\0${participant}\0order\0${a.id}`)
+      .localeCompare(sha256(`${study.blinding.seed}\0${participant}\0order\0${b.id}`))
+  );
+  const trials=ordered.map((item,index)=>({
     trial_index:index,
     item_id:item.id,
     passage_id:item.passage_id,
@@ -93,7 +97,7 @@ export function compileAssignment(study, participantKey) {
     material_token:materialToken(study,participant,item.id),
     prompt:item.prompt,
     options:item.options,
-    response_fields:["answer_index","clarity_1_5","preference_1_5","theological_agreement_1_5"],
+    response_fields:["answer_index","clarity_1_5","preference_1_5","perceived_fidelity_1_5","theological_agreement_1_5"],
     nonclaim:"Material token is opaque presentation routing only. It carries no truth, fidelity, or authority status."
   }));
   return {
@@ -114,7 +118,7 @@ export function scoreResponse(study, assignment, response) {
   if (!item || !trial) throw new Error("unknown response item");
   if (!Number.isInteger(response.answer_index)) throw new Error("answer_index must be an integer");
 
-  const ratingFields=["clarity_1_5","preference_1_5","theological_agreement_1_5"];
+  const ratingFields=["clarity_1_5","preference_1_5","perceived_fidelity_1_5","theological_agreement_1_5"];
   for (const field of ratingFields) {
     if (response[field] !== undefined && (!Number.isInteger(response[field]) || response[field] < 1 || response[field] > 5)) {
       throw new Error(`${field} must be an integer from 1 to 5`);
@@ -134,11 +138,13 @@ export function scoreResponse(study, assignment, response) {
     answer_index:response.answer_index,
     clarity_1_5:response.clarity_1_5 ?? null,
     preference_1_5:response.preference_1_5 ?? null,
+    perceived_fidelity_1_5:response.perceived_fidelity_1_5 ?? null,
     theological_agreement_1_5:response.theological_agreement_1_5 ?? null,
     recorded_at:response.recorded_at ?? null,
     nonclaims:[
       "Correctness measures only the declared comprehension probe.",
       "Preference is not fidelity.",
+      "Perceived fidelity is a reader judgment, not source-language fidelity.",
       "Theological agreement is not comprehension.",
       "A reader response does not alter source-text evidence."
     ]
@@ -179,6 +185,7 @@ export function summarizeReceipts(study, assignmentMap, receipts, {minimum_cell=
         comprehension_rate:mean(correctness),
         clarity_mean:mean(rows.map((row)=>row.clarity_1_5).filter((value)=>value!==null)),
         preference_mean:mean(rows.map((row)=>row.preference_1_5).filter((value)=>value!==null)),
+        perceived_fidelity_mean:mean(rows.map((row)=>row.perceived_fidelity_1_5).filter((value)=>value!==null)),
         theological_agreement_mean:mean(rows.map((row)=>row.theological_agreement_1_5).filter((value)=>value!==null)),
         cell_ready:rows.length>=minimum_cell
       };
@@ -205,6 +212,6 @@ export function summarizeReceipts(study, assignmentMap, receipts, {minimum_cell=
     minimum_cell,
     items,
     global_nonclaim:
-      "This report separates comprehension, clarity, preference, and theological agreement. It does not rank Bible translations or establish fidelity to source languages."
+      "This report separates comprehension, clarity, preference, perceived fidelity, and theological agreement. Perceived fidelity is not source-language fidelity; the report does not rank Bible translations."
   };
 }
