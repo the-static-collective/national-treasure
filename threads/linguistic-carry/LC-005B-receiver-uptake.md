@@ -29,7 +29,7 @@ The same participant never needs to compare two named translations. Arm allocati
 ```text
 participant key
     ↓ one-way study-scoped pseudonym
-opaque material token
+opaque trial + material tokens
     ↓ presenter-only resolver
 ASV or TLB rendering
     ↓
@@ -43,7 +43,7 @@ perceived fidelity
 theological agreement
 ```
 
-The public assignment does not contain an arm name, translation name, or source URL.
+The participant-facing assignment contains only opaque trial/material tokens. It does not contain the question, passage/relation identifier, expected class, hypothesis, answer key, arm name, translation name, or source URL.
 
 ## Why the channels stay separate
 
@@ -156,25 +156,36 @@ node tools/linguistic-carry/receiver-cli.mjs check
 node tools/linguistic-carry/receiver-cli.mjs assign participant-local-key
 
 # Presenter-side only
-node tools/linguistic-carry/receiver-cli.mjs resolve <participant-pseudonym> <item-id>
+node tools/linguistic-carry/receiver-cli.mjs resolve <participant-pseudonym> <trial-token>
 
-# Score one response
-node tools/linguistic-carry/receiver-cli.mjs score assignment.json response.json
+# Score one response and verify the participant packet
+node tools/linguistic-carry/receiver-cli.mjs score assignment.json response.json packet.json
 
 # Aggregate previously scored receipts
 node tools/linguistic-carry/receiver-cli.mjs summarize assignments.json receipts.json
 ```
 
+## Browser surface
+
+A dependency-free local browser instrument now lives under `tools/linguistic-carry/survey/`.
+
+It deliberately splits presenter and participant surfaces. The presenter may resolve an opaque trial into the assigned arm/source URL, paste only the scoped passage text, and mint a SHA-256 participant packet. The participant page verifies that packet before rendering it and exports a response bound to the packet receipt.
+
+The browser packet hash is interoperable with the Node verifier. Source URL, arm identity, item/relation identity, expected class, hypothesis, and answer key never enter the participant packet.
+
+See `tools/linguistic-carry/survey/README.md`.
+
 ## Next gate
 
-Before collecting real human responses:
+Before substantive real-world collection:
 
-1. render a tiny local/browser survey surface so presenter-only material resolution cannot leak metadata;
-2. freeze the study manifest and SHA-256 receipt;
-3. add consent/privacy language appropriate to the actual deployment context;
+1. freeze the study manifest and SHA-256 receipt;
+2. add consent/privacy language appropriate to the actual deployment context;
+3. declare data-retention/deletion rules;
 4. pilot only for question ambiguity and interface failure;
-5. freeze any revisions before substantive collection;
-6. declare sample/recruitment rules before looking at comparative results.
+5. freeze any revisions after the pilot and before substantive collection;
+6. declare sample/recruitment rules before looking at comparative results;
+7. determine whether any institutional review is applicable to the intended deployment.
 
 The important architectural result already exists:
 
