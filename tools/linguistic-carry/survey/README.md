@@ -1,6 +1,6 @@
 # LC-005B Browser Survey
 
-A dependency-free local browser surface for the receiver-local uptake experiment.
+A dependency-free local browser surface for the receiver-local uptake *pilot*. The participant page collects usability feedback only; it does not collect or export scored comprehension answers.
 
 ## Boundary
 
@@ -65,13 +65,21 @@ Load `resolution.json` into the presenter page. Open the supplied source link, c
 
 Give only that packet to the participant.
 
-The participant page verifies its SHA-256 receipt before rendering. After the participant answers, it downloads a response JSON.
+The participant page requires voluntary acknowledgement, then verifies the packet's SHA-256 receipt before rendering. The participant reads the passage and choices for interface testing, without submitting a comprehension answer. The downloaded artifact is `pilot-feedback-*.json`, which excludes the answer and is marked permanently non-analytic.
 
-Score with the original assignment and participant packet:
+Before any pilot, check the pinned baseline:
 
 ```bash
-node tools/linguistic-carry/receiver-cli.mjs score assignment.json response.json packet.json
+node tools/linguistic-carry/pilot-cli.mjs check
 ```
+
+If feedback is voluntarily shared, the operator may collect individual pilot-feedback files into a local JSON array and run:
+
+```bash
+node tools/linguistic-carry/pilot-cli.mjs review local-pilot-feedback-array.json
+```
+
+Do not run the normal study `score` or `summarize` commands on pilot feedback; those paths explicitly reject it.
 
 ## Copyright / custody
 
@@ -92,4 +100,4 @@ Before substantive real-world collection, freeze:
 - pilot-vs-analysis separation;
 - final study manifest and receipt.
 
-The current surface is suitable for interface/protocol testing and carefully bounded informal pilots.
+The current participant surface is pilot-only and does not produce experimental comprehension data. See `threads/linguistic-carry/LC-005C-pilot-gate.md` for custody, retention, and analytic-exclusion controls. The local browser does not automatically delete downloaded files.
