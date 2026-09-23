@@ -2,7 +2,7 @@ import crypto from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { studyReceipt } from "./receiver-study.mjs";
+import { studyReceipt, packetReceipt } from "./receiver-study.mjs";
 
 const root=path.dirname(fileURLToPath(import.meta.url));
 export const FREEZE_PATH=path.join(root,"studies","living-bible-pilot-freeze-001.json");
@@ -34,6 +34,10 @@ export function validatePilotFeedback(record,freeze) {
   if (!/^[a-f0-9]{64}$/.test(record?.packet_receipt??"")) errors.push("missing packet receipt");
   if (!/^[a-f0-9]{32}$/.test(record?.trial_token??"")) errors.push("missing trial token");
   if (record?.consent_version!=="lc005c-pilot-v1") errors.push("missing pilot consent acknowledgement");
+  if (record?.feedback_receipt) {
+    const {feedback_receipt,...base}=record;
+    if (feedback_receipt!==packetReceipt(base)) errors.push("pilot feedback receipt mismatch");
+  } else errors.push("missing pilot feedback receipt");
   if (!Array.isArray(record?.issues) || record.issues.some(issue=>!ISSUE_CODES.has(issue))) errors.push("unknown issue code");
   if (new Set(record?.issues??[]).size!==(record?.issues??[]).length) errors.push("duplicate issue codes");
   if (!["yes","no","unsure"].includes(record?.instructions_clear)) errors.push("missing instruction clarity");
