@@ -2,7 +2,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { compileAssignment, resolveTrialMaterial, scoreResponse, summarizeReceipts, validateReceiverStudy } from "./receiver-study.mjs";
+import { buildTrialPacket, compileAssignment, resolveTrialMaterial, scoreResponse, summarizeReceipts, validateReceiverStudy } from "./receiver-study.mjs";
 
 const root=path.dirname(fileURLToPath(import.meta.url));
 const studyPath=path.join(root,"studies","living-bible-receiver-study-001.json");
@@ -29,15 +29,25 @@ async function main() {
     return;
   }
   if (mode==="resolve") {
-    const [participantPseudo,itemId]=args;
-    if (!participantPseudo || !itemId) throw new Error("resolve requires participant-pseudonym item-id");
-    console.log(JSON.stringify(resolveTrialMaterial(study,participantPseudo,itemId),null,2));
+    const [participantPseudo,trialToken]=args;
+    if (!participantPseudo || !trialToken) throw new Error("resolve requires participant-pseudonym trial-token");
+    console.log(JSON.stringify(resolveTrialMaterial(study,participantPseudo,trialToken),null,2));
+    return;
+  }
+  if (mode==="packet") {
+    const [assignmentFile,resolutionFile,passageFile]=args;
+    if (!assignmentFile || !resolutionFile || !passageFile) throw new Error("packet requires assignment.json resolution.json passage.txt");
+    console.log(JSON.stringify(
+      buildTrialPacket(study,await readJson(assignmentFile),await readJson(resolutionFile),await fs.readFile(passageFile,"utf8")),
+      null,2
+    ));
     return;
   }
   if (mode==="score") {
-    const [assignmentFile,responseFile]=args;
-    if (!assignmentFile || !responseFile) throw new Error("score requires assignment.json response.json");
-    console.log(JSON.stringify(scoreResponse(study,await readJson(assignmentFile),await readJson(responseFile)),null,2));
+    const [assignmentFile,responseFile,packetFile]=args;
+    if (!assignmentFile || !responseFile) throw new Error("score requires assignment.json response.json [packet.json]");
+    const packet=packetFile ? await readJson(packetFile) : null;
+    console.log(JSON.stringify(scoreResponse(study,await readJson(assignmentFile),await readJson(responseFile),packet),null,2));
     return;
   }
   if (mode==="summarize") {
@@ -49,7 +59,7 @@ async function main() {
     ));
     return;
   }
-  throw new Error("usage: receiver-cli.mjs check | assign <participant-key> | resolve <participant-pseudonym> <item-id> | score <assignment.json> <response.json> | summarize <assignments.json> <receipts.json>");
+  throw new Error("usage: receiver-cli.mjs check | assign <participant-key> | resolve <participant-pseudonym> <trial-token> | packet <assignment.json> <resolution.json> <passage.txt> | score <assignment.json> <response.json> [packet.json] | summarize <assignments.json> <receipts.json>");
 }
 
 if (process.argv[1] && path.resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
