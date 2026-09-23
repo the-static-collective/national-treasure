@@ -59,34 +59,49 @@ function assignmentBit(seed, participantPseudo, itemId) {
   return parseInt(digest.slice(0,2),16) % 2;
 }
 
+export function armFor(study, participantPseudo, itemId) {
+  return assignmentBit(study.blinding.seed,participantPseudo,itemId)===0 ? "asv" : "tlb";
+}
+
+export function materialToken(study, participantPseudo, itemId) {
+  return sha256(`${study.study_id}\0${study.blinding.seed}\0${participantPseudo}\0${itemId}\0material`).slice(0,32);
+}
+
+export function resolveTrialMaterial(study, participantPseudo, itemId) {
+  const item=study.items.find((candidate)=>candidate.id===itemId);
+  if (!item) throw new Error("unknown study item");
+  const arm=armFor(study,participantPseudo,itemId);
+  return {
+    material_token:materialToken(study,participantPseudo,itemId),
+    arm,
+    url:item.materials[arm].url,
+    presenter_boundary:"Presenter-side resolution only. Do not expose version metadata, URL query parameters, or arm identity to the participant."
+  };
+}
+
 export function compileAssignment(study, participantKey) {
   const validation=validateReceiverStudy(study);
   if (!validation.passed) throw new Error(validation.errors.join("; "));
   const participant=participantPseudonym(study,participantKey);
   const study_receipt=studyReceipt(study);
-  const trials=study.items.map((item,index)=>{
-    const arm=assignmentBit(study.blinding.seed,participant,item.id)===0 ? "asv" : "tlb";
-    const blind_label=arm==="asv" ? "X" : "Y";
-    return {
-      trial_index:index,
-      item_id:item.id,
-      passage_id:item.passage_id,
-      relation_id:item.relation_id,
-      expected_class:item.expected_class,
-      blind_label,
-      material_url:item.materials[arm].url,
-      prompt:item.prompt,
-      options:item.options,
-      response_fields:["answer_index","clarity_1_5","preference_1_5","theological_agreement_1_5"],
-      nonclaim:"Blind label is presentation-only. It carries no truth, fidelity, or authority status."
-    };
-  });
+  const trials=study.items.map((item,index)=>({
+    trial_index:index,
+    item_id:item.id,
+    passage_id:item.passage_id,
+    relation_id:item.relation_id,
+    expected_class:item.expected_class,
+    material_token:materialToken(study,participant,item.id),
+    prompt:item.prompt,
+    options:item.options,
+    response_fields:["answer_index","clarity_1_5","preference_1_5","theological_agreement_1_5"],
+    nonclaim:"Material token is opaque presentation routing only. It carries no truth, fidelity, or authority status."
+  }));
   return {
     study_id:study.study_id,
     study_receipt,
     participant,
     trials,
-    privacy:"participant key is not stored; only the study-scoped pseudonym belongs in response receipts"
+    privacy:"participant key and arm identity are absent from the public assignment; only the study-scoped pseudonym belongs in response receipts"
   };
 }
 
@@ -114,7 +129,7 @@ export function scoreResponse(study, assignment, response) {
     passage_id:item.passage_id,
     relation_id:item.relation_id,
     expected_class:item.expected_class,
-    blind_label:trial.blind_label,
+    material_token:trial.material_token,
     correct:response.answer_index===item.correct_index,
     answer_index:response.answer_index,
     clarity_1_5:response.clarity_1_5 ?? null,
@@ -136,18 +151,19 @@ function mean(values) {
 }
 
 export function summarizeReceipts(study, assignmentMap, receipts, {minimum_cell=5}={}) {
-  const armByParticipantItem=new Map();
+  const assignmentKeys=new Set();
   for (const assignment of assignmentMap) {
     for (const trial of assignment.trials) {
-      armByParticipantItem.set(`${assignment.participant}\0${trial.item_id}`,trial.blind_label==="X" ? "asv" : "tlb");
+      assignmentKeys.add(`${assignment.participant}\0${trial.item_id}\0${trial.material_token}`);
     }
   }
 
   const groups=new Map();
   for (const receipt of receipts) {
     if (receipt.study_receipt !== studyReceipt(study)) throw new Error("mixed study receipts");
-    const arm=armByParticipantItem.get(`${receipt.participant}\0${receipt.item_id}`);
-    if (!arm) throw new Error("receipt lacks matching assignment");
+    const assignmentKey=`${receipt.participant}\0${receipt.item_id}\0${receipt.material_token}`;
+    if (!assignmentKeys.has(assignmentKey)) throw new Error("receipt lacks matching assignment");
+    const arm=armFor(study,receipt.participant,receipt.item_id);
     const key=`${receipt.item_id}\0${arm}`;
     if (!groups.has(key)) groups.set(key,[]);
     groups.get(key).push(receipt);
