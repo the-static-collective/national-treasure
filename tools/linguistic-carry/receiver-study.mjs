@@ -197,6 +197,9 @@ export function validateTrialPacket(study, assignment, packet) {
 }
 
 export function scoreResponse(study, assignment, response, packet=null) {
+  if (response?.mode==="pilot_only" || response?.analytical_admission===false || response?.schema==="national-treasure.linguistic-carry.pilot-feedback.v1") {
+    throw new Error("pilot-only feedback is excluded from comprehension scoring");
+  }
   if (assignment.study_id !== study.study_id || assignment.study_receipt !== studyReceipt(study)) {
     throw new Error("assignment does not match current study receipt");
   }
@@ -266,6 +269,9 @@ export function summarizeReceipts(study, assignmentMap, receipts, {minimum_cell=
 
   const groups=new Map();
   for (const receipt of receipts) {
+    if (receipt?.mode==="pilot_only" || receipt?.analytical_admission===false || receipt?.schema==="national-treasure.linguistic-carry.pilot-feedback.v1") {
+      throw new Error("pilot-only feedback is excluded from analytical aggregation");
+    }
     if (receipt.study_receipt !== studyReceipt(study)) throw new Error("mixed study receipts");
     const assignmentKey=`${receipt.participant}\0${receipt.trial_token}\0${receipt.material_token}`;
     if (!assignmentKeys.has(assignmentKey)) throw new Error("receipt lacks matching assignment");
