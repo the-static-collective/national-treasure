@@ -1,0 +1,470 @@
+{
+  "schema": "national-treasure.linguistic-carry.transform-study.v1",
+  "study_id": "NT-LC005-TLB-REDLETTER-001",
+  "title": "Living Bible Red Letter carry study",
+  "status": "research-only / executable typed declarations",
+  "date": "2026-09-23",
+  "ancestry": [
+    "LINGUISTIC-CARRY-001",
+    "LC-002",
+    "LC-003",
+    "LC-004"
+  ],
+  "comparison_route": [
+    "attested-gospel-greek",
+    "asv-english",
+    "tlb-english"
+  ],
+  "target": {
+    "id": "tlb-english",
+    "edition": "The Living Bible (1971)",
+    "witness_class": "copyrighted English paraphrase",
+    "text_policy": "external-reference-only",
+    "lineage_note": "TLB was produced as a paraphrase using the ASV as its principal English base; this study does not collapse ASV, Greek witnesses, and TLB into one textual layer."
+  },
+  "receiver": {
+    "id": "modern-general-english-reader-v1",
+    "status": "declared analytic receiver constitution, not a measured population",
+    "question": "Does the paraphrase make a declared relation more available to an ordinary modern English reader?",
+    "caveat": "receiver_access_delta is a researcher declaration. It is not psychometric evidence and does not establish better translation fidelity."
+  },
+  "copyright_boundary": "Do not vendor TLB verse text. Preserve external locators and non-substitutive transformation observations only.",
+  "authority_boundary": "Classification is a typed research receipt over declared observations. It does not decide doctrine, historical spoken wording, authorial intent, or canonical authority.",
+  "passages": [
+    {
+      "id": "luke-4-21",
+      "verse": "Luke 4:21",
+      "corpus_witness_id": "NT-LC003-LUKE-4-21",
+      "sources": [
+        {
+          "role": "Greek display witness",
+          "url": "https://www.greekbible.com/luke/4/21"
+        },
+        {
+          "role": "ASV English witness",
+          "url": "https://www.biblegateway.com/passage/?search=Luke+4%3A21&version=ASV"
+        },
+        {
+          "role": "TLB target witness",
+          "url": "https://www.biblegateway.com/passage/?search=Luke+4%3A21&version=TLB"
+        }
+      ],
+      "relations": [
+        {
+          "id": "today-fulfillment",
+          "description": "present-time fulfillment relation",
+          "source_support": "explicit",
+          "target_expression": "explicit",
+          "receiver_access_delta": "gain",
+          "evidence_class": "researcher-declared from cited textual witnesses",
+          "observation": "The paraphrase keeps the today/fulfillment event while converting the fulfillment idiom into ordinary modern speech."
+        },
+        {
+          "id": "receiver-ear-locus",
+          "description": "fulfillment located in the hearers' ears",
+          "source_support": "explicit",
+          "target_expression": "absent",
+          "receiver_access_delta": "loss",
+          "evidence_class": "researcher-declared from cited textual witnesses",
+          "observation": "The compact receiver-locus carried by the Greek/KJV comparison is not surfaced in the paraphrase."
+        }
+      ]
+    },
+    {
+      "id": "matthew-10-27",
+      "verse": "Matthew 10:27",
+      "corpus_witness_id": "NT-LC003-MATTHEW-10-27",
+      "sources": [
+        {
+          "role": "Greek display witness",
+          "url": "https://www.greekbible.com/matthew/10/27"
+        },
+        {
+          "role": "ASV English witness",
+          "url": "https://www.biblegateway.com/passage/?search=Matthew+10%3A27&version=ASV"
+        },
+        {
+          "role": "TLB target witness",
+          "url": "https://www.biblegateway.com/passage/?search=Matthew+10%3A27&version=TLB"
+        }
+      ],
+      "relations": [
+        {
+          "id": "private-to-public-transmission",
+          "description": "hidden/heard speech becomes public proclamation",
+          "source_support": "explicit",
+          "target_expression": "explicit",
+          "receiver_access_delta": "stable",
+          "evidence_class": "researcher-declared from cited textual witnesses",
+          "observation": "The two-stage transmission geometry remains recognizable across the paraphrase."
+        }
+      ]
+    },
+    {
+      "id": "mark-2-27",
+      "verse": "Mark 2:27",
+      "corpus_witness_id": "NT-LC003-MARK-2-27",
+      "sources": [
+        {
+          "role": "Greek display witness",
+          "url": "https://www.greekbible.com/mark/2/27"
+        },
+        {
+          "role": "ASV English witness",
+          "url": "https://www.biblegateway.com/passage/?search=Mark+2%3A27&version=ASV"
+        },
+        {
+          "role": "TLB target witness",
+          "url": "https://www.biblegateway.com/passage/?search=Mark+2%3A27&version=TLB"
+        }
+      ],
+      "relations": [
+        {
+          "id": "sabbath-for-human-purpose",
+          "description": "Sabbath is ordered toward the human rather than the human toward Sabbath",
+          "source_support": "explicit",
+          "target_expression": "explicit",
+          "receiver_access_delta": "gain",
+          "evidence_class": "researcher-declared from cited textual witnesses",
+          "observation": "The paraphrase supplies a functional-benefit gloss that makes the purpose relation unusually explicit."
+        }
+      ]
+    },
+    {
+      "id": "luke-9-60",
+      "verse": "Luke 9:60",
+      "corpus_witness_id": "NT-LC003-LUKE-9-60",
+      "sources": [
+        {
+          "role": "Greek display witness",
+          "url": "https://www.greekbible.com/luke/9/60"
+        },
+        {
+          "role": "ASV English witness",
+          "url": "https://www.biblegateway.com/passage/?search=Luke+9%3A60&version=ASV"
+        },
+        {
+          "role": "TLB target witness",
+          "url": "https://www.biblegateway.com/passage/?search=Luke+9%3A60&version=TLB"
+        }
+      ],
+      "relations": [
+        {
+          "id": "dead-dead-lexical-pair",
+          "description": "one repeated dead lexeme supports a deliberately difficult double use",
+          "source_support": "explicit",
+          "target_expression": "absent",
+          "receiver_access_delta": "loss",
+          "evidence_class": "researcher-declared from cited textual witnesses",
+          "observation": "The surface paraphrase resolves the repeated lexical collision instead of carrying it as a repeated word."
+        },
+        {
+          "id": "spiritual-death-reading",
+          "description": "first dead group is interpreted as spiritually dead / without eternal life",
+          "source_support": "ambiguous",
+          "target_expression": "explicit",
+          "receiver_access_delta": "gain",
+          "evidence_class": "researcher-declared from cited textual witnesses",
+          "observation": "One interpretive reading of the double-dead saying is compiled into the target surface."
+        }
+      ]
+    },
+    {
+      "id": "matthew-20-16",
+      "verse": "Matthew 20:16",
+      "corpus_witness_id": "NT-LC003-MATTHEW-20-16",
+      "sources": [
+        {
+          "role": "Greek display witness",
+          "url": "https://www.greekbible.com/matthew/20/16"
+        },
+        {
+          "role": "ASV English witness",
+          "url": "https://www.biblegateway.com/passage/?search=Matthew+20%3A16&version=ASV"
+        },
+        {
+          "role": "TLB target witness",
+          "url": "https://www.biblegateway.com/passage/?search=Matthew+20%3A16&version=TLB"
+        }
+      ],
+      "relations": [
+        {
+          "id": "first-last-reversal",
+          "description": "last/first and first/last rank inversion",
+          "source_support": "explicit",
+          "target_expression": "explicit",
+          "receiver_access_delta": "stable",
+          "evidence_class": "researcher-declared from cited textual witnesses",
+          "observation": "The chiasmic rank reversal survives with very little interpretive expansion."
+        }
+      ]
+    },
+    {
+      "id": "matthew-23-24",
+      "verse": "Matthew 23:24",
+      "corpus_witness_id": "NT-LC003-MATTHEW-23-24",
+      "sources": [
+        {
+          "role": "Greek display witness",
+          "url": "https://www.greekbible.com/matthew/23/24"
+        },
+        {
+          "role": "ASV English witness",
+          "url": "https://www.biblegateway.com/passage/?search=Matthew+23%3A24&version=ASV"
+        },
+        {
+          "role": "TLB target witness",
+          "url": "https://www.biblegateway.com/passage/?search=Matthew+23%3A24&version=TLB"
+        }
+      ],
+      "relations": [
+        {
+          "id": "strain-out-operation",
+          "description": "small contaminant is strained out before the absurd larger ingestion",
+          "source_support": "explicit",
+          "target_expression": "explicit",
+          "receiver_access_delta": "stable",
+          "evidence_class": "researcher-declared from cited textual witnesses",
+          "observation": "The physical filtering operation is retained rather than the historically familiar English misreading strain-at."
+        },
+        {
+          "id": "gnat-camel-scale-reversal",
+          "description": "tiny exclusion / enormous ingestion scale inversion",
+          "source_support": "explicit",
+          "target_expression": "explicit",
+          "receiver_access_delta": "stable",
+          "evidence_class": "researcher-declared from cited textual witnesses",
+          "observation": "The comic scale reversal survives directly."
+        }
+      ]
+    },
+    {
+      "id": "luke-19-40",
+      "verse": "Luke 19:40",
+      "corpus_witness_id": "NT-LC003-LUKE-19-40",
+      "sources": [
+        {
+          "role": "Greek display witness",
+          "url": "https://www.greekbible.com/luke/19/40"
+        },
+        {
+          "role": "ASV English witness",
+          "url": "https://www.biblegateway.com/passage/?search=Luke+19%3A40&version=ASV"
+        },
+        {
+          "role": "TLB target witness",
+          "url": "https://www.biblegateway.com/passage/?search=Luke+19%3A40&version=TLB"
+        }
+      ],
+      "relations": [
+        {
+          "id": "silence-stone-vocalization",
+          "description": "if human speakers go silent, stones become the vocal agent",
+          "source_support": "explicit",
+          "target_expression": "explicit",
+          "receiver_access_delta": "stable",
+          "evidence_class": "researcher-declared from cited textual witnesses",
+          "observation": "The agent substitution and impossible-stone speech relation survives."
+        },
+        {
+          "id": "stone-praise-reading",
+          "description": "the stones' cry is explicitly construed as celebratory praise",
+          "source_support": "ambiguous",
+          "target_expression": "explicit",
+          "receiver_access_delta": "gain",
+          "evidence_class": "researcher-declared from cited textual witnesses",
+          "observation": "The target resolves the kind of stone-cry more narrowly than the verb by itself requires."
+        }
+      ]
+    },
+    {
+      "id": "john-8-58",
+      "verse": "John 8:58",
+      "corpus_witness_id": "NT-LC003-JOHN-8-58",
+      "sources": [
+        {
+          "role": "Greek display witness",
+          "url": "https://www.greekbible.com/john/8/58"
+        },
+        {
+          "role": "ASV English witness",
+          "url": "https://www.biblegateway.com/passage/?search=John+8%3A58&version=ASV"
+        },
+        {
+          "role": "TLB target witness",
+          "url": "https://www.biblegateway.com/passage/?search=John+8%3A58&version=TLB"
+        }
+      ],
+      "relations": [
+        {
+          "id": "prior-existence",
+          "description": "speaker's existence is asserted prior to Abraham",
+          "source_support": "explicit",
+          "target_expression": "explicit",
+          "receiver_access_delta": "stable",
+          "evidence_class": "researcher-declared from cited textual witnesses",
+          "observation": "The prior-existence assertion remains unmistakable."
+        },
+        {
+          "id": "become-i-am-tense-contrast",
+          "description": "Abraham coming-to-be is contrasted with first-person present being",
+          "source_support": "explicit",
+          "target_expression": "absent",
+          "receiver_access_delta": "loss",
+          "evidence_class": "researcher-declared from cited textual witnesses",
+          "observation": "The paraphrase resolves the claim into ordinary temporal existence language and does not carry the Greek tense contrast as such."
+        }
+      ]
+    },
+    {
+      "id": "matthew-24-34",
+      "verse": "Matthew 24:34",
+      "sources": [
+        {
+          "role": "Greek display witness",
+          "url": "https://www.greekbible.com/matthew/24/34"
+        },
+        {
+          "role": "ASV English witness",
+          "url": "https://www.biblegateway.com/passage/?search=Matthew+24%3A34&version=ASV"
+        },
+        {
+          "role": "TLB target witness",
+          "url": "https://www.biblegateway.com/passage/?search=Matthew+24%3A34&version=TLB"
+        }
+      ],
+      "relations": [
+        {
+          "id": "generation-referent",
+          "description": "the saying contains an explicit generation referent",
+          "source_support": "explicit",
+          "target_expression": "absent",
+          "receiver_access_delta": "loss",
+          "evidence_class": "researcher-declared from cited textual witnesses",
+          "observation": "The target surface does not preserve the generation term as an unresolved referent."
+        },
+        {
+          "id": "age-closure-reading",
+          "description": "the line is rendered as the closure of an age",
+          "source_support": "ambiguous",
+          "target_expression": "explicit",
+          "receiver_access_delta": "gain",
+          "evidence_class": "researcher-declared from cited textual witnesses",
+          "observation": "The paraphrase compiles a particular temporal interpretation into the sentence; its own footnote exposes the more literal generation wording."
+        }
+      ]
+    },
+    {
+      "id": "matthew-5-44",
+      "verse": "Matthew 5:44",
+      "sources": [
+        {
+          "role": "Greek display witness",
+          "url": "https://www.greekbible.com/matthew/5/44"
+        },
+        {
+          "role": "ASV English witness",
+          "url": "https://www.biblegateway.com/passage/?search=Matthew+5%3A44&version=ASV"
+        },
+        {
+          "role": "TLB target witness",
+          "url": "https://www.biblegateway.com/passage/?search=Matthew+5%3A44&version=TLB"
+        }
+      ],
+      "relations": [
+        {
+          "id": "enemy-love-prayer",
+          "description": "love toward enemies is paired with prayer toward persecutors",
+          "source_support": "explicit",
+          "target_expression": "explicit",
+          "receiver_access_delta": "stable",
+          "evidence_class": "researcher-declared from cited textual witnesses",
+          "observation": "The imperative pair crosses with minimal interpretive expansion."
+        }
+      ]
+    },
+    {
+      "id": "matthew-6-34",
+      "verse": "Matthew 6:34",
+      "sources": [
+        {
+          "role": "Greek display witness",
+          "url": "https://www.greekbible.com/matthew/6/34"
+        },
+        {
+          "role": "ASV English witness",
+          "url": "https://www.biblegateway.com/passage/?search=Matthew+6%3A34&version=ASV"
+        },
+        {
+          "role": "TLB target witness",
+          "url": "https://www.biblegateway.com/passage/?search=Matthew+6%3A34&version=TLB"
+        }
+      ],
+      "relations": [
+        {
+          "id": "day-local-sufficiency",
+          "description": "today's trouble is bounded to today rather than borrowed from tomorrow",
+          "source_support": "explicit",
+          "target_expression": "explicit",
+          "receiver_access_delta": "gain",
+          "evidence_class": "researcher-declared from cited textual witnesses",
+          "observation": "The proverbial relation is re-expressed as a direct one-day-at-a-time instruction."
+        },
+        {
+          "id": "divine-care-of-tomorrow",
+          "description": "trust in divine care is made the explicit reason not to be anxious about tomorrow",
+          "source_support": "licensed",
+          "target_expression": "explicit",
+          "receiver_access_delta": "gain",
+          "evidence_class": "researcher-declared from cited textual witnesses",
+          "observation": "The surrounding discourse licenses divine care, while the paraphrase imports that rationale directly into this verse."
+        }
+      ]
+    },
+    {
+      "id": "john-14-6",
+      "verse": "John 14:6",
+      "sources": [
+        {
+          "role": "Greek display witness",
+          "url": "https://www.greekbible.com/john/14/6"
+        },
+        {
+          "role": "ASV English witness",
+          "url": "https://www.biblegateway.com/passage/?search=John+14%3A6&version=ASV"
+        },
+        {
+          "role": "TLB target witness",
+          "url": "https://www.biblegateway.com/passage/?search=John+14%3A6&version=TLB"
+        }
+      ],
+      "relations": [
+        {
+          "id": "way-truth-life-triad",
+          "description": "speaker identifies himself with way, truth, and life",
+          "source_support": "explicit",
+          "target_expression": "explicit",
+          "receiver_access_delta": "stable",
+          "evidence_class": "researcher-declared from cited textual witnesses",
+          "observation": "The three-part identity structure is carried directly."
+        },
+        {
+          "id": "exclusive-father-access",
+          "description": "access to the Father is exclusively through the speaker",
+          "source_support": "explicit",
+          "target_expression": "explicit",
+          "receiver_access_delta": "stable",
+          "evidence_class": "researcher-declared from cited textual witnesses",
+          "observation": "The exclusive access relation is carried without needing a new interpretive bridge."
+        }
+      ]
+    }
+  ],
+  "nonclaims": [
+    "The classifier does not decide whether TLB is better or worse than another Bible.",
+    "The classifier does not infer the historical spoken language of Jesus.",
+    "A PROJECTION label means an interpretation has been made explicit relative to the declared source status; it does not mean the interpretation is false.",
+    "A LOSS label means a tracked relation is absent from the target surface; it does not mean the target is globally inferior.",
+    "A REVEAL label is receiver-relative and hypothesis-level until tested with actual readers."
+  ]
+}
