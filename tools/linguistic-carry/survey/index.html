@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Receiver Study</title>
+  <link rel="stylesheet" href="./survey.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="mast">
+      <p class="eyebrow">LC-005B · receiver-local uptake</p>
+      <h1>Read one passage. Answer one narrow question.</h1>
+      <p class="lede">The translation identity is intentionally hidden. Your answer, clarity, preference, perceived fidelity, and theological agreement are recorded separately.</p>
+    </header>
+
+    <section id="loader" class="panel">
+      <h2>Load trial packet</h2>
+      <p>Select the packet supplied by the presenter. It contains the passage and question, but no version identity or answer key.</p>
+      <input id="packet-file" type="file" accept=".json,application/json">
+      <p id="load-status" class="status" aria-live="polite"></p>
+    </section>
+
+    <form id="study-form" class="panel hidden">
+      <div class="receipt-line"><span>Trial</span><code id="trial-label"></code></div>
+      <blockquote id="passage"></blockquote>
+      <fieldset>
+        <legend id="prompt"></legend>
+        <div id="options" class="options"></div>
+      </fieldset>
+
+      <div class="ratings">
+        <label>Clarity <select name="clarity_1_5"><option value="">optional</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
+        <label>Preference <select name="preference_1_5"><option value="">optional</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
+        <label>Perceived fidelity <select name="perceived_fidelity_1_5"><option value="">optional</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
+        <label>Theological agreement <select name="theological_agreement_1_5"><option value="">optional</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
+      </div>
+
+      <button type="submit">Seal response receipt</button>
+      <p class="fine">Preference is not fidelity. Perceived fidelity is not source-language fidelity. Agreement is not comprehension.</p>
+      <p id="form-status" class="status" aria-live="polite"></p>
+    </form>
+
+    <section id="done" class="panel hidden">
+      <h2>Response sealed</h2>
+      <p>The downloaded JSON contains your response and the packet receipt, not the hidden translation identity.</p>
+      <button id="download-again" type="button">Download receipt again</button>
+    </section>
+  </main>
+  <script type="module" src="./participant.mjs"></script>
+</body>
+</html>
