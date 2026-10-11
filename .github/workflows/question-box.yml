@@ -1,0 +1,19 @@
+name: question-box
+on:
+  pull_request:
+    paths:
+      - 'tools/question-box/**'
+      - '.github/workflows/question-box.yml'
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tools/question-box/test.mjs
+      - run: node tools/question-box/memento.test.mjs
